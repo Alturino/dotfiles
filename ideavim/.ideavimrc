@@ -72,18 +72,23 @@ nnoremap <leader>fc :action GotoClass<CR>
 nnoremap <leader>fa :action GotoAction<CR>
 nnoremap <leader>zc :action CollapseAllRegions<CR>
 nnoremap <leader>zo :action ExpandAllRegions<CR>
+nnoremap <leader>gc :action Generate<CR>
 nnoremap <leader>fu :action FindUsages<CR>
 nnoremap <leader>fch :action CallHierarchy.BaseOnThisMethod<CR>
-nnoremap ge :action GotoNextError<CR>
 nnoremap ]e :action GotoNextError<CR>
-nnoremap gE :action GotoPreviousError<CR>
 nnoremap [e :action GotoPreviousError<CR>
 nnoremap gi :action GotoImplementation<CR>
+nnoremap gs :action GotoSuperMethod<CR>
 nnoremap gd :action GotoDeclaration<CR>
-nnoremap gD :action GotoDefinition<CR>
+nnoremap gD :action GotoTypeDeclaration<CR>
 nnoremap gp :action Back<CR>
 nnoremap gn :action Forward<CR>
+nnoremap gt :action GotoTest<CR>
 nnoremap <leader>bp :action ToggleLineBreakpoint<CR>
+nnoremap <leader>sd :action Debug<CR>
+nnoremap <leader>so :action StepOver<CR>
+nnoremap <leader>si :action StepInto<CR>
+nnoremap <leader>su :action StepOut<CR>
 nnoremap <C-d> <C-d>zz<CR>
 nnoremap <C-u> <C-u>zz<CR>
 nnoremap <C-h> <C-w>h
