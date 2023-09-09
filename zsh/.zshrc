@@ -101,15 +101,12 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Aliases
-alias exa='exa '\''--icons'\'' '\''--git'\'''
-alias la='exa -a'
-alias ll='exa -l'
-alias lla='exa -la'
-alias ls='exa'
-alias lt='exa --tree'
-
-alias vi='nvim'
-alias vim='vim'
+alias eza='eza '\''--icons'\'' '\''--git'\'''
+alias la='eza -a'
+alias ll='eza -l'
+alias lla='eza -la'
+alias ls='eza'
+alias lt='eza --tree'
 
 HISTSIZE="10000"
 SAVEHIST="10000"

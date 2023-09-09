@@ -6,25 +6,33 @@
     homeDirectory = "/home/onirutla";
     stateVersion = "22.11";
     packages = with pkgs; [
-      htop
-      neofetch
-      lazygit
-      speedtest-cli
-      ripgrep
-      gitui
-      trash-cli
-      bat
-      zoxide
-      starship 
-      exa
+	vim
+	neovim
+	fish
+	tmux
+	htop
+	neofetch
+	lazygit
+	speedtest-cli
+	ripgrep
+	gitui
+	trash-cli
+	bat
+	zoxide
+	starship 
+	eza
     ];
   };
 
   programs = {
-    
-    home-manager = {
-      enable = true;
-    };
+	git = {
+		enable = true;
+		userName = "onirutlA";
+		userEmail = "alturino001@gmail.com";
+	};
+	home-manager = {
+		enable = true;
+	};
     
   };
 }
