@@ -85,7 +85,7 @@ export LANG=en_US.UTF-8
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
-  export EDITOR='mvim'
+  export EDITOR='nvim'
 fi
 
 # Compilation flags
@@ -131,6 +131,7 @@ export NVM_DIR="$HOME/.nvm"
 # Path
 export PATH=$PATH:/usr/local/go/bin
 export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$PATH:$HOME/.cargo/env"
 export GOPATH="$HOME/Personal/coding/go"
 export PATH="$PATH:$GOROOT/bin:$GOPATH/bin"
 export TERM="xterm-256color"

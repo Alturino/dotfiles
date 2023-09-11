@@ -384,6 +384,23 @@ local plugins = {
     lazy = false,
     cmd = { "Obsess" },
   },
+
+  {
+    "mfussenegger/nvim-jdtls",
+    filetypes = { "java", "*.properties", "*.gradle" },
+    event = "BufEnter *.java",
+    cmd = {
+      "JdtCompile",
+      "JdtSetRuntime",
+      "JdtUpdateConfig",
+      "JdtUpdateDebugConfig",
+      "JdtUpdateHotCode",
+      "JdtBytecode",
+      "JdtJol",
+      "JdtJshell",
+      "JdtRestart",
+    },
+  },
 }
 
 return plugins

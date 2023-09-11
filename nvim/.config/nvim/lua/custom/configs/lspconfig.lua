@@ -6,6 +6,8 @@ require("neodev").setup {
   library = { plugins = { "nvim-dap-ui" }, types = true },
 }
 
+require "custom.configs.jdtls"
+
 local lspconfig = require "lspconfig"
 
 local default_config_servers = {
