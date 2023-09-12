@@ -6,6 +6,11 @@ local clipboard = opt.clipboard
 
 vim.scriptencoding = "utf-8"
 
+opt.foldmethod = "expr"
+opt.foldexpr = "nvim_treesitter#foldexpr()"
+opt.foldenable = false
+opt.foldlevelstart = 99
+opt.foldlevel = 99
 opt.autowrite = true
 opt.encoding = "utf-8"
 opt.fileencoding = "utf-8"
@@ -32,6 +37,10 @@ opt.cmdheight = 1
 opt.termguicolors = true
 g.vscode_snippets_path = "./snippets/vscode/"
 g.lua_snippets_path = "./snippets/lua/"
+g.dart_html_in_string = true
+g.dart_style_guid = 2
+g.dart_format_on_save = true
+g.dart_trailing_comma_indent = true
 
 -- Auto resize panes when resizing nvim window
 autocmd("VimResized", {

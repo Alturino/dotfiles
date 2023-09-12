@@ -271,7 +271,18 @@ local plugins = {
       "stevearc/dressing.nvim", -- optional for vim.ui.select
     },
     config = function()
-      require("flutter-tools").setup {}
+      require("flutter-tools").setup {
+        lsp = {
+          color = {
+            enabled = true,
+            background = true,
+            virtual_text = true,
+          },
+        },
+        widget_guides = {
+          enabled = true,
+        },
+      }
     end,
     cmd = {
       "FlutterRun",
@@ -328,7 +339,7 @@ local plugins = {
     },
     config = function()
       require("nvim-ts-autotag").setup {
-        filetypes = {
+        ft = {
           "html",
           "javascript",
           "typescript",
@@ -387,7 +398,7 @@ local plugins = {
 
   {
     "mfussenegger/nvim-jdtls",
-    filetypes = { "java", "*.properties", "*.gradle" },
+    ft = { "java", "*.properties", "*.gradle" },
     event = "BufEnter *.java",
     cmd = {
       "JdtCompile",
@@ -400,6 +411,12 @@ local plugins = {
       "JdtJshell",
       "JdtRestart",
     },
+  },
+
+  {
+    "dart-lang/dart-vim-plugin",
+    ft = { "dart" },
+    event = "BufEnter *.dart",
   },
 }
 

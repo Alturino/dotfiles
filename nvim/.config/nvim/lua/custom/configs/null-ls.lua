@@ -20,6 +20,7 @@ local sources = {
   f.goimports_reviser,
   f.golines,
   f.isort,
+  f.dart_format,
   f.ktlint,
   f.latexindent,
   f.prettierd,
