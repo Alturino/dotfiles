@@ -9,5 +9,6 @@
         "/home/onirutla/dotfiles/nvim/.config/nvim/lua",
         "/home/onirutla/dotfiles/nvim/.config/nvim/lua",
         "${3rd}/luv/library"
-    ]
+    ],
+    "workspace.checkThirdParty": false
 }

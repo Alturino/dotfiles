@@ -267,12 +267,22 @@ local plugins = {
     "akinsho/flutter-tools.nvim",
     event = "BufEnter *.dart",
     dependencies = {
+      "neovim/nvim-lspconfig",
+      "dart-lang/dart-vim-plugin",
       "nvim-lua/plenary.nvim",
       "stevearc/dressing.nvim", -- optional for vim.ui.select
     },
     config = function()
+      local on_attach = require("plugins.configs.lspconfig").on_attach
+      local capabilities = require("plugins.configs.lspconfig").capabilities
       require("flutter-tools").setup {
+        dev_tools = {
+          autostart = true,
+          auto_open_browser = true,
+        },
         lsp = {
+          on_attach = on_attach,
+          capabilities = capabilities,
           color = {
             enabled = true,
             background = true,
@@ -283,6 +293,12 @@ local plugins = {
           enabled = true,
         },
       }
+      vim.keymap.set("n", "<leader>rn", "<CMD>FlutterRun<CR>", { noremap = true, silent = true })
+      vim.keymap.set("n", "<leader>fd", "<CMD>FlutterDevices<CR>", { noremap = true, silent = true })
+      vim.keymap.set("n", "<leader>fe", "<CMD>FlutterEmulators<CR>", { noremap = true, silent = true })
+      vim.keymap.set("n", "<leader>fr", "<CMD>FlutterReload<CR>", { noremap = true, silent = true })
+      vim.keymap.set("n", "<leader>fR", "<CMD>FlutterRestart<CR>", { noremap = true, silent = true })
+      vim.keymap.set("n", "<leader>fq", "<CMD>FlutterQuit<CR>", { noremap = true, silent = true })
     end,
     cmd = {
       "FlutterRun",
@@ -400,6 +416,68 @@ local plugins = {
     "mfussenegger/nvim-jdtls",
     ft = { "java", "*.properties", "*.gradle" },
     event = "BufEnter *.java",
+    config = function()
+      vim.keymap.set("n", "<leader>jc", "<cmd>JdtCompile<cr>", { noremap = true, silent = true })
+      vim.keymap.set("n", "<leader>jsr", "<cmd>JdtSetRuntime<cr>", { noremap = true, silent = true })
+      vim.keymap.set("n", "<leader>juc", "<cmd>JdtUpdateConfig<cr>", { noremap = true, silent = true })
+      vim.keymap.set("n", "<leader>jud", "<cmd>JdtUpdateDebugConfig<cr>", { noremap = true, silent = true })
+      vim.keymap.set("n", "<leader>juh", "<cmd>JdtUpdateHotCode<cr>", { noremap = true, silent = true })
+      vim.keymap.set("n", "<leader>jb", "<cmd>JdtBytecode<cr>", { noremap = true, silent = true })
+      vim.keymap.set("n", "<leader>jr", "<cmd>JdtRestart<cr>", { noremap = true, silent = true })
+      vim.keymap.set("n", "<leader>oi", function()
+        return require("jdtls").organize_imports()
+      end, {
+        noremap = true,
+        silent = true,
+      })
+
+      vim.keymap.set("n", "<leader>ev", function()
+        return require("jdtls").extract_variable()
+      end, {
+        noremap = true,
+        silent = true,
+      })
+      vim.keymap.set("v", "<leader>ev", function()
+        return require("jdtls").extract_variable(true)
+      end, {
+        noremap = true,
+        silent = true,
+      })
+
+      vim.keymap.set("n", "<leader>ec", function()
+        return require("jdtls").extract_constant()
+      end, {
+        noremap = true,
+        silent = true,
+      })
+      vim.keymap.set("v", "<leader>ec", function()
+        return require("jdtls").extract_constant(true)
+      end, {
+        noremap = true,
+        silent = true,
+      })
+
+      vim.keymap.set("v", "<leader>em", function()
+        return require("jdtls").extract_method(true)
+      end, {
+        noremap = true,
+        silent = true,
+      })
+
+      vim.keymap.set("n", "<leader>df", function()
+        return require("jdtls").test_class()
+      end, {
+        noremap = true,
+        silent = true,
+      })
+
+      vim.keymap.set("n", "<leader>dn", function()
+        return require("jdtls").test_nearest_method()
+      end, {
+        noremap = true,
+        silent = true,
+      })
+    end,
     cmd = {
       "JdtCompile",
       "JdtSetRuntime",
