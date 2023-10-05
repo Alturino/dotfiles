@@ -1,5 +1,6 @@
 local autocmd = vim.api.nvim_create_autocmd
 
+local vim = vim
 local g = vim.g
 local opt = vim.opt
 local clipboard = opt.clipboard
@@ -49,7 +50,7 @@ autocmd("VimResized", {
 })
 
 autocmd("FileType", {
-  pattern = "go",
+  pattern = "*.go",
   callback = function()
     vim.schedule(function()
       opt.shiftwidth = 4
@@ -60,7 +61,7 @@ autocmd("FileType", {
 })
 
 autocmd("FileType", {
-  pattern = { "*.java", "*.kotlin" },
+  pattern = { "*.java", "*.kotlin", "*.python" },
   callback = function()
     vim.schedule(function()
       opt.shiftwidth = 4

@@ -159,6 +159,9 @@ local must_installed = {
   "texlab",
   "tflint",
   "typescript-language-server",
+  "jdtls",
+  "emmet-ls",
+  "nginx-language-server",
 
   -- Linter
   "luacheck",
@@ -296,6 +299,14 @@ M.dapui = {
 
 M.telescope = {
   extensions_list = { "themes", "terms", "fzf", "notify" },
+  extensions = {
+    fzf = {
+      fuzzy = true,
+      override_generic_sorter = true,
+      override_file_sorter = true,
+      case_mode = "smart_case",
+    },
+  },
 }
 
 local cmp = require "cmp"
