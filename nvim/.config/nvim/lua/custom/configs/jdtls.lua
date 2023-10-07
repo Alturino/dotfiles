@@ -1,6 +1,7 @@
 local nvchad_on_attach = require("plugins.configs.lspconfig").on_attach
 local nvchad_capabilities = require("plugins.configs.lspconfig").capabilities
 local java_cmds = vim.api.nvim_create_augroup("java_cmds", { clear = true })
+local vim = vim
 local cache_vars = {}
 
 local root_files = {

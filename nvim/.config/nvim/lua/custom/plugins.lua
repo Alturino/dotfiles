@@ -122,6 +122,12 @@ local plugins = {
 
   {
     "fatih/vim-go",
+    config = function()
+      vim.keymap.set("n", "<leader>rn", "<cmd>GoRun<cr>", { silent = true, noremap = true })
+      vim.keymap.set("n", "<leader>ri", "<cmd>GoInstall<cr>", { silent = true, noremap = true })
+      vim.keymap.set("n", "<leader>rb", "<cmd>GoBuild<cr>", { silent = true, noremap = true })
+      vim.keymap.set("n", "<leader>rt", "<cmd>GoTest<cr>", { silent = true, noremap = true })
+    end,
     cmd = {
       "GoBuild",
       "GoInstall",
@@ -140,9 +146,6 @@ local plugins = {
     build = ":GoUpdateBinaries",
     enabled = true,
     ft = { "go", "gomod", "gosum" },
-    keys = {
-      { "<leader>rn", "<cmd>GoRun<cr>", desc = "Run go" },
-    },
   },
 
   {
@@ -153,16 +156,12 @@ local plugins = {
   {
     "mfussenegger/nvim-dap",
     dependencies = {
-      {
-        "rcarriga/nvim-dap-ui",
-        config = function()
-          require("dapui").setup()
-        end,
-      },
+      { "rcarriga/nvim-dap-ui" },
       {
         "jay-babu/mason-nvim-dap.nvim",
         cmd = { "DapInstall", "DapUninstall" },
         config = function()
+          require("dapui").setup()
           require("mason-nvim-dap").setup {
             automatic_setup = overrides.mason_dap.automatic_setup,
             ensure_installed = overrides.mason_dap.ensure_installed,
@@ -172,6 +171,7 @@ local plugins = {
       },
       {
         "leoluz/nvim-dap-go",
+        ft = "go",
         opts = overrides.dap_go,
         config = function(_, opts)
           require("dap-go").setup(opts)
@@ -237,8 +237,7 @@ local plugins = {
     },
     cmd = { "Refactor" },
     config = function()
-      local refactoring = require "refactoring"
-      refactoring.setup {
+      require("refactoring").setup {
         prompt_func_return_type = {
           go = true,
           java = true,
@@ -417,6 +416,7 @@ local plugins = {
     ft = { "java", "*.properties", "*.gradle" },
     event = "BufEnter *.java",
     config = function()
+      local vim = vim
       vim.keymap.set("n", "<leader>jc", "<cmd>JdtCompile<cr>", { noremap = true, silent = true })
       vim.keymap.set("n", "<leader>jsr", "<cmd>JdtSetRuntime<cr>", { noremap = true, silent = true })
       vim.keymap.set("n", "<leader>juc", "<cmd>JdtUpdateConfig<cr>", { noremap = true, silent = true })
@@ -431,27 +431,15 @@ local plugins = {
         silent = true,
       })
 
-      vim.keymap.set("n", "<leader>ev", function()
+      vim.keymap.set({ "n", "v" }, "<leader>ev", function()
         return require("jdtls").extract_variable()
       end, {
         noremap = true,
         silent = true,
       })
-      vim.keymap.set("v", "<leader>ev", function()
-        return require("jdtls").extract_variable(true)
-      end, {
-        noremap = true,
-        silent = true,
-      })
 
-      vim.keymap.set("n", "<leader>ec", function()
+      vim.keymap.set({ "n", "v" }, "<leader>ec", function()
         return require("jdtls").extract_constant()
-      end, {
-        noremap = true,
-        silent = true,
-      })
-      vim.keymap.set("v", "<leader>ec", function()
-        return require("jdtls").extract_constant(true)
       end, {
         noremap = true,
         silent = true,
