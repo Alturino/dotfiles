@@ -51,7 +51,7 @@ set ttimeoutlen = 0
 nnoremap <leader>fm :action ReformatCode<CR>
 nnoremap <leader>rn :action Run<CR>
 nnoremap <leader>ra :action RenameElement<CR>
-nnoremap <leader>rc :action MakeGradleProject<CR>
+nnoremap <leader>rb :action MakeGradleProject<CR>
 nnoremap <leader>rs :action Android.SyncProject<CR>
 nnoremap <leader>sd :action Debug<CR>
 nnoremap <leader>ca :action ShowIntentionActions<CR>

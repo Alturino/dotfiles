@@ -134,6 +134,7 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$PATH:$HOME/.cargo/env"
 export GOPATH="$HOME/Personal/coding/go"
 export PATH="$PATH:$GOROOT/bin:$GOPATH/bin"
+export PATH="$PATH:$HOME/Android/Sdk/platform-tools"
 export TERM="xterm-256color"
 
 source ~/.zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh

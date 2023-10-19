@@ -15,24 +15,25 @@ local sources = {
   f.clang_format.with {
     filetypes = { "c", "cpp" },
   },
+  f.dart_format,
+  f.eslint_d,
   f.gofumpt,
   f.goimports,
   f.goimports_reviser,
   f.golines,
+  f.google_java_format,
   f.isort,
-  f.dart_format,
   f.ktlint,
   f.latexindent,
   f.prettierd,
+  f.rubocop,
+  f.ruff,
   f.shellharden,
   f.sqlfmt,
-  f.stylua,
   f.standardts,
+  f.stylua,
   f.xmlformat,
   f.yamlfmt,
-  f.rubocop,
-  f.google_java_format,
-  f.eslint_d,
 
   d.actionlint,
   d.commitlint,
@@ -45,16 +46,9 @@ local sources = {
   d.jsonlint,
   d.ktlint,
   d.luacheck,
-  d.mypy,
-  d.pydocstyle,
-  d.pylama,
-  d.pylint.with {
-    diagnostics_postprocess = function(diagnostic)
-      diagnostic.code = diagnostic.message_id
-    end,
-  },
   d.revive,
   d.rubocop,
+  d.ruff,
   d.shellcheck,
   d.sqlfluff,
   d.staticcheck,
@@ -64,11 +58,11 @@ local sources = {
   d.vint,
   d.yamllint,
 
-  ca.gomodifytags,
-  ca.gitsigns,
-  ca.refactoring,
   ca.eslint_d,
+  ca.gitsigns,
+  ca.gomodifytags,
   ca.impl,
+  ca.refactoring,
 }
 
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})

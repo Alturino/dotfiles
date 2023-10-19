@@ -14,6 +14,7 @@ local plugins = {
           require "custom.configs.null-ls"
         end,
       },
+      { "mfussenegger/nvim-jdtls" },
     },
     config = function()
       require "plugins.configs.lspconfig"

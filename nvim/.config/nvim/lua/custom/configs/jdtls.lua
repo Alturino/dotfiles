@@ -83,6 +83,10 @@ local function get_jdtls_paths()
     --   path = vim.fn.expand('~/.sdkman/candidates/java/17.0.6-tem'),
     -- },
     {
+      name = "JavaSE-11",
+      path = vim.fn.expand "~/.sdkman/candidates/java/11.0.19-amzn",
+    },
+    {
       name = "JavaSE-17",
       path = vim.fn.expand "~/.sdkman/candidates/java/17.0.7-amzn",
     },
