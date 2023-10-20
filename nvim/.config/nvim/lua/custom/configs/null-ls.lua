@@ -9,9 +9,6 @@ local d = null_ls.builtins.diagnostics
 local ca = null_ls.builtins.code_actions
 
 local sources = {
-  f.autoflake,
-  f.autopep8,
-  f.black,
   f.clang_format.with {
     filetypes = { "c", "cpp" },
   },
@@ -22,7 +19,6 @@ local sources = {
   f.goimports_reviser,
   f.golines,
   f.google_java_format,
-  f.isort,
   f.ktlint,
   f.latexindent,
   f.prettierd,
@@ -39,7 +35,6 @@ local sources = {
   d.commitlint,
   d.cpplint,
   d.eslint_d,
-  d.flake8,
   d.gitlint,
   d.golangci_lint,
   d.hadolint,
