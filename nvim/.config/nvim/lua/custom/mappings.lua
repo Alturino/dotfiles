@@ -21,14 +21,60 @@ M.general = {
       opts = { nowait = true, noremap = true },
     },
 
-    -- Buffer management
-    ["<C-x>"] = { "<C-w>o", "Close all buffer except current buffer", opts = { nowait = true, noremap = true } },
-    ["<leader>gn"] = { "<C-6>", "Goto Next Edited Buffer", opts = { nowait = true, noremap = true } },
-    ["<leader>gp"] = { "<C-^>", "Goto Previous Edited Buffer", opts = { nowait = true, noremap = true } },
-
     -- Scroll half and focus center
     ["<C-d>"] = { "<C-d>zz", "Scroll down and focus center", opts = { nowait = true, noremap = true } },
     ["<C-u>"] = { "<C-u>zz", "Scroll up and focus center", opts = { nowait = true, noremap = true } },
+  },
+}
+
+M.tabufline = {
+  plugin = true,
+  n = {
+    ["<leader>xa"] = {
+      function()
+        require("nvchad.tabufline").closeOtherBufs()
+      end,
+      "Close buffers except current buffer",
+      opts = { nowait = true, noremap = true },
+    },
+    ["[b"] = {
+      function()
+        local ts_move = require "nvim-treesitter.textobjects.repeatable_move"
+
+        local n = function()
+          require("nvchad.tabufline").tabuflineNext()
+        end
+
+        local p = function()
+          return require("nvchad.tabufline").tabuflinePrev()
+        end
+
+        local _, prev = ts_move.make_repeatable_move_pair(n, p)
+
+        return prev()
+      end,
+      "Goto prev buffer",
+      opts = { nowait = true, noremap = true },
+    },
+    ["]b"] = {
+      function()
+        local ts_move = require "nvim-treesitter.textobjects.repeatable_move"
+
+        local n = function()
+          require("nvchad.tabufline").tabuflineNext()
+        end
+
+        local p = function()
+          return require("nvchad.tabufline").tabuflinePrev()
+        end
+
+        local next, _ = ts_move.make_repeatable_move_pair(n, p)
+
+        return next()
+      end,
+      "Goto next buffer",
+      opts = { nowait = true, noremap = true },
+    },
   },
 }
 
