@@ -165,7 +165,6 @@ local must_installed = {
   "clangd",
   "css-lsp",
   "cssmodules-language-server",
-  "deno",
   "docker-compose-language-service",
   "dockerfile-language-server",
   "emmet-ls",
