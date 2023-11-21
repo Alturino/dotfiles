@@ -25,10 +25,6 @@ M.general = {
     ["<C-d>"] = { "<C-d>zz", "Scroll down and focus center", opts = { nowait = true, noremap = true } },
     ["<C-u>"] = { "<C-u>zz", "Scroll up and focus center", opts = { nowait = true, noremap = true } },
   },
-  i = {
-    ["jk"] = { "<ESC>", "Alternative Escape", opts = { nowait = true, noremap = true } },
-    ["jj"] = { "<ESC>", "Alternative Escape", opts = { nowait = true, noremap = true } },
-  },
 }
 
 M.tabufline = {
