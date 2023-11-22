@@ -24,6 +24,7 @@ return {
       end,
     },
     config = function(_, opts)
+      dofile(vim.g.base46_cache .. "notify")
       local notify = require "notify"
       notify.setup(opts)
       vim.notify = notify

@@ -23,6 +23,7 @@ local plugins = {
     "williamboman/mason.nvim",
     opts = overrides.mason,
     build = ":MasonUpdate",
+    dependencies = { "williamboman/mason-lspconfig" },
   },
 
   {
