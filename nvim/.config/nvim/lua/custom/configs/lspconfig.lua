@@ -1,5 +1,5 @@
 local on_attach = function(client, bufnr)
-  require("core.utils").load_mappings("lspconfig", { buffer = bufnr })
+  require("plugins.configs.lspconfig").on_attach(client, bufnr)
   if client.name == "ruff_lsp" then
     client.server_capabilities.hoverProvider = false
   end
@@ -28,7 +28,6 @@ local default_config_servers = {
   "html",
   "jsonls",
   "ltex",
-  "lua_ls",
   "marksman",
   "nil_ls",
   "prismals",

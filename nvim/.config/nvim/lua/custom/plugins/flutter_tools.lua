@@ -12,9 +12,23 @@ return {
       local on_attach = require("plugins.configs.lspconfig").on_attach
       local capabilities = require("plugins.configs.lspconfig").capabilities
       require("flutter-tools").setup {
+        ui = {
+          notification_style = "plugin",
+        },
+        decorations = {
+          statusline = {
+            app_version = true,
+            device = true,
+            project_config = true,
+          },
+        },
         dev_tools = {
           autostart = true,
           auto_open_browser = true,
+        },
+        debugger = {
+          enabled = true,
+          run_via_dap = true,
         },
         lsp = {
           on_attach = on_attach,
