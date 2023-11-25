@@ -21,7 +21,7 @@ opt.relativenumber = true
 opt.ignorecase = true
 opt.ruler = true
 opt.wrap = false
-opt.lazyredraw = true
+opt.lazyredraw = false
 
 opt.title = true
 opt.autoindent = true
@@ -77,16 +77,16 @@ local is_mac = has "macunix" == 1
 local is_wsl = has "wsl" == 1
 local is_linux = has "linux" == 1
 
--- if is_win then
---  clipboard:preprend { "unnamed", "unnamedplus" }
---  opt.shell = "pwsh.exe"
---  opt.shellcmdflag =
---    "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;"
---  opt.shellxquote = ""
---  opt.shellquote = ""
---  opt.shellredir = ""
---  opt.shellpipe = ""
--- end
+if is_win then
+  clipboard:preprend { "unnamed", "unnamedplus" }
+  opt.shell = "pwsh.exe"
+  opt.shellcmdflag =
+    "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;"
+  opt.shellxquote = ""
+  opt.shellquote = ""
+  opt.shellredir = ""
+  opt.shellpipe = ""
+end
 
 if is_wsl then
   vim.cmd [[

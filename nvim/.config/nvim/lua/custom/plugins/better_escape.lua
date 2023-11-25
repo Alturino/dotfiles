@@ -4,7 +4,7 @@ return {
     event = "BufEnter",
     opts = {
       mapping = { "jk", "jj", "kj", "kk" },
-      timeout = vim.o.timeoutlen,
+      timeout = 150,
       clear_empty_lines = false,
       keys = "<ESC>",
     },

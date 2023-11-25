@@ -28,7 +28,6 @@ M.general = {
 }
 
 M.tabufline = {
-  plugin = true,
   n = {
     ["<leader>xa"] = {
       function()
@@ -467,20 +466,6 @@ M.trouble = {
       "TroubleToggle [Q]uick [F]ix",
       opts = { nowait = true, noremap = true },
     },
-  },
-}
-
-M.refactoring = {
-  x = {
-    ["<leader>re"] = { "<Cmd>Refactor extract<CR>", "Extract" },
-    ["<leader>rf"] = { "<Cmd>Refactor extract_to_file<CR>", "Extract block to file" },
-    ["<leader>rv"] = { "<Cmd>Refactor extract_var<CR>", "Extract block to variable" },
-    ["<leader>ri"] = { "<Cmd>Refactor inline_var<CR>", "Extrack block to inline variable" },
-  },
-  n = {
-    ["<leader>ri"] = { "<Cmd>Refactor inline_var<CR>", "Extrack block to inline variable" },
-    ["<leader>rb"] = { "<Cmd>Refactor extract_block<CR>", "Extrack block" },
-    ["<leader>rbf"] = { "<Cmd>Refactor extract_block_to_file<CR>", "Extrack block to file" },
   },
 }
 

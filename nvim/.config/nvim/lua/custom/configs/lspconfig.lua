@@ -1,4 +1,12 @@
-local on_attach = require("plugins.configs.lspconfig").on_attach
+local on_attach = function(client, bufnr)
+  require("core.utils").load_mappings("lspconfig", { buffer = bufnr })
+  if client.name == "ruff_lsp" then
+    client.server_capabilities.hoverProvider = false
+  end
+  if client.name == "yamlls" then
+    client.server_capabilities.documentFormattingProvider = true
+  end
+end
 local capabilities = require("plugins.configs.lspconfig").capabilities
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 

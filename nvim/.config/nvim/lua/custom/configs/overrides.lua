@@ -266,9 +266,14 @@ M.nvimtree = {
 }
 
 M.telescope = {
-  extensions_list = { "themes", "terms", "fzf", "notify", "ui-select" },
+  extensions_list = {
+    "fzf",
+    "notify",
+    "refactoring",
+    "terms",
+    "themes",
+  },
   extensions = {
-    ["ui-select"] = {},
     fzf = {
       fuzzy = true,
       override_generic_sorter = true,
