@@ -141,6 +141,21 @@ local plugins = {
     cmd = "Telescope",
     opts = overrides.telescope,
   },
+
+  {
+    "hrsh7th/nvim-cmp",
+    dependencies = { "hrsh7th/cmp-nvim-lsp-signature-help" },
+    opts = {
+      sources = {
+        { name = "nvim_lsp" },
+        { name = "nvim_lsp_signature_help" },
+        { name = "nvim_lua" },
+        { name = "luasnip" },
+        { name = "buffer" },
+        { name = "path" },
+      },
+    },
+  },
 }
 
 return plugins
