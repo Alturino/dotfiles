@@ -22,8 +22,7 @@ return {
       "GoErrCheck",
     },
     event = "BufEnter *.go",
-    build = ":GoUpdateBinaries",
-    enabled = true,
+    build = { ":GoUpdateBinaries", ":GoInstallBinaries" },
     ft = { "go", "gomod", "gosum" },
   },
 }

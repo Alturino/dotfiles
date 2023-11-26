@@ -8,27 +8,7 @@ return {
     cmd = { "Refactor" },
     keys = {
       {
-        "<leader>rb",
-        function()
-          require("refactoring").refactor "Extract Block"
-        end,
-        desc = "Extrack block",
-        noremap = true,
-        nowait = true,
-        silent = true,
-      },
-      {
-        "<leader>rbf",
-        function()
-          require("refactoring").refactor "Extract Block To File"
-        end,
-        desc = "Extrack block to file",
-        noremap = true,
-        nowait = true,
-        silent = true,
-      },
-      {
-        "<leader>rI",
+        "<leader>if",
         function()
           require("refactoring").refactor "Inline Function"
         end,
@@ -39,7 +19,7 @@ return {
       },
       {
         mode = { "n", "x" },
-        "<leader>ri",
+        "<leader>iv",
         function()
           require("refactoring").refactor "Inline Var"
         end,
@@ -55,28 +35,6 @@ return {
           require("telescope").extensions.refactoring.refactors()
         end,
         desc = "Telescope Refactor Selection",
-        noremap = true,
-        nowait = true,
-        silent = true,
-      },
-      {
-        mode = { "x" },
-        "<leader>re",
-        function()
-          require("refactoring").refactor "Extract Function"
-        end,
-        desc = "Extract",
-        noremap = true,
-        nowait = true,
-        silent = true,
-      },
-      {
-        mode = { "x" },
-        "<leader>rf",
-        function()
-          require("refactoring").refactor "Extract Function To File"
-        end,
-        desc = "Extract block to file",
         noremap = true,
         nowait = true,
         silent = true,

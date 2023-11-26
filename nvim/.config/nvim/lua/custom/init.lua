@@ -78,7 +78,7 @@ local is_wsl = has "wsl" == 1
 local is_linux = has "linux" == 1
 
 if is_win then
-  clipboard:preprend { "unnamed", "unnamedplus" }
+  clipboard:prepend { "unnamed", "unnamedplus" }
   opt.shell = "pwsh.exe"
   opt.shellcmdflag =
     "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;"
