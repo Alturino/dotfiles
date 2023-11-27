@@ -9,6 +9,39 @@ local plugins = {
         "jose-elias-alvarez/null-ls.nvim",
         opts = function()
           local null_ls = require "null-ls"
+          local helpers = require "null-ls.helpers"
+          local methods = require "null-ls.methods"
+          local FORMATTING = methods.internal.FORMATTING
+
+          local prismaFmt = helpers.make_builtin {
+            name = "prismaFmt",
+            meta = {
+              url = "https://github.com/prisma/prisma-engines",
+              description = "Formatter for the prisma file type",
+            },
+            method = FORMATTING,
+            filetypes = { "prisma" },
+            generator_opts = {
+              command = { "prisma" },
+              args = { "format", "$FILENAME" },
+              to_stdin = false,
+            },
+            factory = function(opts)
+              if opts.ignore_stderr == nil then
+                opts.ignore_stderr = true
+              end
+
+              if opts.to_temp_file then
+                opts.from_temp_file = true
+              end
+
+              opts.on_output = function(_, done)
+                return done()
+              end
+
+              return helpers.generator_factory(opts)
+            end,
+          }
 
           local f = null_ls.builtins.formatting
           local d = null_ls.builtins.diagnostics
@@ -52,7 +85,7 @@ local plugins = {
             f.ktlint,
             f.latexindent,
             f.prettierd,
-            f.prismaFmt.with { command = { "prisma", "format" }, to_stdin = false },
+            prismaFmt,
             f.rubocop,
             f.ruff.with { command = { "ruff", "format" }, args = { "-n", "--stdin-filename", "$FILENAME" } },
             f.shellharden,
@@ -88,7 +121,6 @@ local plugins = {
         end,
         config = function(_, opts)
           require("null-ls").setup(opts)
-          require "custom.configs.null-ls"
         end,
       },
     },
