@@ -1,8 +1,23 @@
-""" Idea specific settings ------------------
-sethandler <S-Tab> a:vim
+let mapleader = " "
+
+set NERDTree
+set clipboard+=ideaput
+set clipboard+=unnamed
+set ic
+set ideajoin
+set incsearch
+set nu
+set number
+set number relativenumber
+set scrolloff = 5
+set showmode
+set timeout
+set timeoutlen = 100
+set ttimeoutlen = 100
+
 sethandler <C-A> a:vim
 sethandler <C-B> a:ide
-sethandler <C-C> a:ide
+sethandler <C-C> a:vim
 sethandler <C-D> a:vim
 sethandler <C-E> a:vim
 sethandler <C-F> a:ide
@@ -14,6 +29,7 @@ sethandler <C-L> a:vim
 sethandler <C-M> a:vim
 sethandler <C-N> a:vim
 sethandler <C-O> a:ide
+sethandler <C-O> a:vim
 sethandler <C-P> a:vim
 sethandler <C-Q> a:vim
 sethandler <C-R> a:vim
@@ -26,85 +42,69 @@ sethandler <C-X> a:vim
 sethandler <C-Y> a:vim
 sethandler <C-[> a:vim
 sethandler <C-\> a:vim
-sethandler <C-O> a:vim
-set ideajoin
-set clipboard+=unnamed
-set clipboard+=ideaput
-set NERDTree
+sethandler <S-Tab> a:vim
 
-"Number"
-set number
-set number relativenumber
+inoremap <nowait> jj <ESC>
+inoremap <nowait> jk <ESC>
+inoremap <nowait> kj <ESC>
+inoremap <nowait> kk <ESC>
 
-""" Common settings -------------------------
-let mapleader = " "
-set scrolloff = 5
-set showmode
-set incsearch
-set nu
-set ic
-set timeout
-set timeoutlen = 0
-set ttimeoutlen = 0
+nnoremap <nowait> <C-d> <C-d>zz<CR>
+nnoremap <nowait> <C-h> <C-w>h
+nnoremap <nowait> <C-j> <C-w>j
+nnoremap <nowait> <C-k> <C-w>k
+nnoremap <nowait> <C-l> <C-w>l
+nnoremap <nowait> <C-n> :NERDTreeToggle<CR>
+nnoremap <nowait> <C-t> :action ActivateTerminalToolWindow<CR>
+nnoremap <nowait> <C-u> <C-u>zz<CR>
+nnoremap <nowait> <S-TAB> :action PreviousTab<CR>
+nnoremap <nowait> <TAB> :action NextTab<CR>
+nnoremap <nowait> <leader>bp :action ToggleLineBreakpoint<CR>
+nnoremap <nowait> <leader>ca :action ShowIntentionActions<CR>
+nnoremap <nowait> <leader>cp :action CloseProject<CR>
+nnoremap <nowait> <leader>e :NERDTreeFocus<CR>
+nnoremap <nowait> <leader>fa :action GotoAction<CR>
+nnoremap <nowait> <leader>fc :action GotoClass<CR>
+nnoremap <nowait> <leader>ff :action GotoFile<CR>
+nnoremap <nowait> <leader>fm :action ReformatCode<CR>
+nnoremap <nowait> <leader>fs :action GotoSymbol<CR>
+nnoremap <nowait> <leader>fu :action FindUsages<CR>
+nnoremap <nowait> <leader>fw :action FindInPath<CR>
+nnoremap <nowait> <leader>h :action SplitHorizontally<CR>
+nnoremap <nowait> <leader>np :action NewProject<CR>
+nnoremap <nowait> <leader>op :action OpenFile<CR>
+nnoremap <nowait> <leader>ra :action RenameElement<CR>
+nnoremap <nowait> <leader>rb :action MakeGradleProject<CR>
+nnoremap <nowait> <leader>rc :action Compile<CR>
+nnoremap <nowait> <leader>rn :action Run<CR>
+nnoremap <nowait> <leader>ro :action IdeaVim.ReloadVimRc.reload <CR>
+nnoremap <nowait> <leader>rs :action Android.SyncProject<CR>
+nnoremap <nowait> <leader>sd :action Debug<CR>
+nnoremap <nowait> <leader>si :action StepInto<CR>
+nnoremap <nowait> <leader>so :action StepOver<CR>
+nnoremap <nowait> <leader>su :action StepOut<CR>
+nnoremap <nowait> <leader>t :action Terminal.OpenInTerminal<CR>
+nnoremap <nowait> <leader>v :action SplitVertically<CR>
+nnoremap <nowait> <leader>xa :action CloseAllEditorsButActive<CR>
+nnoremap <nowait> <leader>xl :action CloseAllEditors<CR>
+nnoremap <nowait> <leader>xx :action CloseEditor<CR>
+nnoremap <nowait> <leader>zc :action CollapseAllRegions<CR>
+nnoremap <nowait> <leader>zo :action ExpandAllRegions<CR>
+nnoremap <nowait> [b :action Back<CR>
+nnoremap <nowait> [e :action GotoPreviousError<CR>
+nnoremap <nowait> [t :action PreviousTab<CR>
+nnoremap <nowait> ]b :action Forward<CR>
+nnoremap <nowait> ]e :action GotoNextError<CR>
+nnoremap <nowait> ]t :action NextTab<CR>
+nnoremap <nowait> ch :action CallHierarchy<CR>
+nnoremap <nowait> gD :action GotoTypeDeclaration<CR>
+nnoremap <nowait> gc :action Generate<CR>
+nnoremap <nowait> gd :action GotoDeclaration<CR>
+nnoremap <nowait> gi :action GotoImplementation<CR>
+nnoremap <nowait> gs :action GotoSuperMethod<CR>
+nnoremap <nowait> gt :action GotoTest<CR>
 
-"-- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
-nnoremap <leader>fm :action ReformatCode<CR>
-nnoremap <leader>rn :action Run<CR>
-nnoremap <leader>ra :action RenameElement<CR>
-nnoremap <leader>rb :action MakeGradleProject<CR>
-nnoremap <leader>rs :action Android.SyncProject<CR>
-nnoremap <leader>sd :action Debug<CR>
-nnoremap <leader>ca :action ShowIntentionActions<CR>
-nnoremap <TAB> :action NextTab<CR>
-nnoremap ]t :action NextTab<CR>
-nnoremap <S-TAB> :action PreviousTab<CR>
-nnoremap [t :action PreviousTab<CR>
-nnoremap <leader>v :action SplitVertically<CR>
-nnoremap <leader>h :action SplitHorizontally<CR>
-nnoremap <C-t> :action ActivateTerminalToolWindow<CR>
-nnoremap <leader>t :action Terminal.OpenInTerminal<CR>
-nnoremap <leader>xx :action CloseEditor<CR>
-nnoremap <leader>xl :action CloseAllEditors<CR>
-nnoremap <leader>xa :action CloseAllEditorsButActive<CR>
-nnoremap <leader>ff :action GotoFile<CR>
-nnoremap <leader>fs :action GotoSymbol<CR>
-nnoremap <leader>fc :action GotoClass<CR>
-nnoremap <leader>fa :action GotoAction<CR>
-nnoremap <leader>zc :action CollapseAllRegions<CR>
-nnoremap <leader>zo :action ExpandAllRegions<CR>
-nnoremap <leader>gc :action Generate<CR>
-nnoremap <leader>fu :action FindUsages<CR>
-nnoremap <leader>fch :action CallHierarchy.BaseOnThisMethod<CR>
-nnoremap ]e :action GotoNextError<CR>
-nnoremap [e :action GotoPreviousError<CR>
-nnoremap gi :action GotoImplementation<CR>
-nnoremap gs :action GotoSuperMethod<CR>
-nnoremap gd :action GotoDeclaration<CR>
-nnoremap gD :action GotoTypeDeclaration<CR>
-nnoremap gp :action Back<CR>
-nnoremap gn :action Forward<CR>
-nnoremap gt :action GotoTest<CR>
-nnoremap <leader>bp :action ToggleLineBreakpoint<CR>
-nnoremap <leader>sd :action Debug<CR>
-nnoremap <leader>so :action StepOver<CR>
-nnoremap <leader>si :action StepInto<CR>
-nnoremap <leader>su :action StepOut<CR>
-nnoremap <C-d> <C-d>zz<CR>
-nnoremap <C-u> <C-u>zz<CR>
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-n> :NERDTreeToggle<CR>
-nnoremap <leader>e :NERDTreeFocus<CR>
-
-inoremap jk <ESC>
-inoremap jj <ESC>
-inoremap <C-h> <Left>
-inoremap <C-l> <Right>
-inoremap <C-j> <Down>
-inoremap <C-k> <Up>
-
-vnoremap <leader>ef :action ExtractFunction<CR>
-vnoremap <leader>ev :action IntroduceVariable<CR>
-vnoremap <leader>ec :action IntroduceConstant<CR>
+xnoremap <nowait> <leader>rcl :action ExtractClass<CR>
+xnoremap <nowait> <leader>ref :action ExtractFunction<CR>
+xnoremap <nowait> <leader>rif :action IntroduceConstant<CR>
+xnoremap <nowait> <leader>riv :action IntroduceVariable<CR>
