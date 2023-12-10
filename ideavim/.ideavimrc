@@ -46,65 +46,63 @@ sethandler <S-Tab> a:vim
 
 inoremap <nowait> jj <ESC>
 inoremap <nowait> jk <ESC>
-inoremap <nowait> kj <ESC>
-inoremap <nowait> kk <ESC>
 
-nnoremap <nowait> <C-d> <C-d>zz<CR>
-nnoremap <nowait> <C-h> <C-w>h
-nnoremap <nowait> <C-j> <C-w>j
-nnoremap <nowait> <C-k> <C-w>k
-nnoremap <nowait> <C-l> <C-w>l
-nnoremap <nowait> <C-n> :NERDTreeToggle<CR>
-nnoremap <nowait> <C-t> :action ActivateTerminalToolWindow<CR>
-nnoremap <nowait> <C-u> <C-u>zz<CR>
-nnoremap <nowait> <S-TAB> :action PreviousTab<CR>
-nnoremap <nowait> <TAB> :action NextTab<CR>
-nnoremap <nowait> <leader>bp :action ToggleLineBreakpoint<CR>
-nnoremap <nowait> <leader>ca :action ShowIntentionActions<CR>
-nnoremap <nowait> <leader>cp :action CloseProject<CR>
-nnoremap <nowait> <leader>e :NERDTreeFocus<CR>
-nnoremap <nowait> <leader>fa :action GotoAction<CR>
-nnoremap <nowait> <leader>fc :action GotoClass<CR>
-nnoremap <nowait> <leader>ff :action GotoFile<CR>
-nnoremap <nowait> <leader>fm :action ReformatCode<CR>
-nnoremap <nowait> <leader>fs :action GotoSymbol<CR>
-nnoremap <nowait> <leader>fu :action FindUsages<CR>
-nnoremap <nowait> <leader>fw :action FindInPath<CR>
-nnoremap <nowait> <leader>h :action SplitHorizontally<CR>
-nnoremap <nowait> <leader>np :action NewProject<CR>
-nnoremap <nowait> <leader>op :action OpenFile<CR>
-nnoremap <nowait> <leader>ra :action RenameElement<CR>
-nnoremap <nowait> <leader>rb :action MakeGradleProject<CR>
-nnoremap <nowait> <leader>rc :action Compile<CR>
-nnoremap <nowait> <leader>rn :action Run<CR>
-nnoremap <nowait> <leader>ro :action IdeaVim.ReloadVimRc.reload <CR>
-nnoremap <nowait> <leader>rs :action Android.SyncProject<CR>
-nnoremap <nowait> <leader>sd :action Debug<CR>
-nnoremap <nowait> <leader>si :action StepInto<CR>
-nnoremap <nowait> <leader>so :action StepOver<CR>
-nnoremap <nowait> <leader>su :action StepOut<CR>
-nnoremap <nowait> <leader>t :action Terminal.OpenInTerminal<CR>
-nnoremap <nowait> <leader>v :action SplitVertically<CR>
-nnoremap <nowait> <leader>xa :action CloseAllEditorsButActive<CR>
-nnoremap <nowait> <leader>xl :action CloseAllEditors<CR>
-nnoremap <nowait> <leader>xx :action CloseEditor<CR>
-nnoremap <nowait> <leader>zc :action CollapseAllRegions<CR>
-nnoremap <nowait> <leader>zo :action ExpandAllRegions<CR>
-nnoremap <nowait> [b :action Back<CR>
-nnoremap <nowait> [e :action GotoPreviousError<CR>
-nnoremap <nowait> [t :action PreviousTab<CR>
-nnoremap <nowait> ]b :action Forward<CR>
-nnoremap <nowait> ]e :action GotoNextError<CR>
-nnoremap <nowait> ]t :action NextTab<CR>
-nnoremap <nowait> ch :action CallHierarchy<CR>
-nnoremap <nowait> gD :action GotoTypeDeclaration<CR>
-nnoremap <nowait> gc :action Generate<CR>
-nnoremap <nowait> gd :action GotoDeclaration<CR>
-nnoremap <nowait> gi :action GotoImplementation<CR>
-nnoremap <nowait> gs :action GotoSuperMethod<CR>
-nnoremap <nowait> gt :action GotoTest<CR>
+nnoremap <C-d> <C-d>zz<CR>
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+nnoremap <C-n> :NERDTreeToggle<CR>
+nnoremap <C-t> :action ActivateTerminalToolWindow<CR>
+nnoremap <C-u> <C-u>zz<CR>
+nnoremap <S-TAB> :action PreviousTab<CR>
+nnoremap <TAB> :action NextTab<CR>
+nnoremap <leader>bp :action ToggleLineBreakpoint<CR>
+nnoremap <leader>ca :action ShowIntentionActions<CR>
+nnoremap <leader>cp :action CloseProject<CR>
+nnoremap <leader>e :NERDTreeFocus<CR>
+nnoremap <leader>fa :action GotoAction<CR>
+nnoremap <leader>fc :action GotoClass<CR>
+nnoremap <leader>ff :action GotoFile<CR>
+nnoremap <leader>fm :action ReformatCode<CR>
+nnoremap <leader>fs :action GotoSymbol<CR>
+nnoremap <leader>fu :action FindUsages<CR>
+nnoremap <leader>fw :action FindInPath<CR>
+nnoremap <leader>h :action SplitHorizontally<CR>
+nnoremap <leader>np :action NewProject<CR>
+nnoremap <leader>op :action OpenFile<CR>
+nnoremap <leader>ra :action RenameElement<CR>
+nnoremap <leader>rb :action MakeGradleProject<CR>
+nnoremap <leader>rc :action Compile<CR>
+nnoremap <leader>rn :action Run<CR>
+nnoremap <leader>ro :action IdeaVim.ReloadVimRc.reload <CR>
+nnoremap <leader>rs :action Android.SyncProject<CR>
+nnoremap <leader>sd :action Debug<CR>
+nnoremap <leader>si :action StepInto<CR>
+nnoremap <leader>so :action StepOver<CR>
+nnoremap <leader>su :action StepOut<CR>
+nnoremap <leader>t :action Terminal.OpenInTerminal<CR>
+nnoremap <leader>v :action SplitVertically<CR>
+nnoremap <leader>xa :action CloseAllEditorsButActive<CR>
+nnoremap <leader>xl :action CloseAllEditors<CR>
+nnoremap <leader>xx :action CloseEditor<CR>
+nnoremap <leader>zc :action CollapseAllRegions<CR>
+nnoremap <leader>zo :action ExpandAllRegions<CR>
+nnoremap [b :action Back<CR>
+nnoremap [e :action GotoPreviousError<CR>
+nnoremap [t :action PreviousTab<CR>
+nnoremap ]b :action Forward<CR>
+nnoremap ]e :action GotoNextError<CR>
+nnoremap ]t :action NextTab<CR>
+nnoremap ch :action CallHierarchy<CR>
+nnoremap gD :action GotoTypeDeclaration<CR>
+nnoremap gc :action Generate<CR>
+nnoremap gd :action GotoDeclaration<CR>
+nnoremap gi :action GotoImplementation<CR>
+nnoremap gs :action GotoSuperMethod<CR>
+nnoremap gt :action GotoTest<CR>
 
-xnoremap <nowait> <leader>rcl :action ExtractClass<CR>
-xnoremap <nowait> <leader>ref :action ExtractFunction<CR>
-xnoremap <nowait> <leader>rif :action IntroduceConstant<CR>
-xnoremap <nowait> <leader>riv :action IntroduceVariable<CR>
+xnoremap <leader>rcl :action ExtractClass<CR>
+xnoremap <leader>ref :action ExtractFunction<CR>
+xnoremap <leader>rif :action IntroduceConstant<CR>
+xnoremap <leader>riv :action IntroduceVariable<CR>
