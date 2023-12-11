@@ -44,6 +44,7 @@ M.treesitter = {
     "proto",
     "python",
     "regex",
+    "ruby",
     "rust",
     "sql",
     "ssh_config",

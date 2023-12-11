@@ -24,6 +24,7 @@ return {
         "marksman",
         "prismals",
         "pyright",
+        "rubocop",
         "spectral",
         "sqlls",
         "svelte",

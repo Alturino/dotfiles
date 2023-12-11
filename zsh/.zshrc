@@ -180,6 +180,9 @@ export GOPATH="$HOME/Personal/coding/go"
 export PATH="$PATH:$GOROOT/bin:$GOPATH/bin"
 export PATH="$PATH:$HOME/Android/Sdk/platform-tools"
 export TERM="xterm-256color"
+# export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
+# export PATH=$PATH:"$GEM_HOME/bin"
+export PATH="$PATH:$HOME/.maestro/bin"
 
 source ~/.zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh
 
