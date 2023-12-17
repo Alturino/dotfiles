@@ -1,6 +1,6 @@
 sudo dnf config-manager --save --setopt=fastestmirror=True
 sudo dnf update -y
-sudo dnf install alacritty clang cmake eza fzf gcc-c++ htop neovim nodejs python ripgrep stow texlive-full tmux vim zoxide zsh -y
+sudo dnf install alacritty clang cmake eza fzf gcc-c++ htop neovim nodejs python ripgrep stow syncthing texlive-full tmux vim zoxide zsh -y
 
 #Install ohmyzsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -15,7 +15,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # Install Rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-source $HOME/.cargo/env
+source "$HOME"/.cargo/env
 
 # Install Go
 # sudo rm -rf /usr/local/go && tar -C /usr/local -xzf go1.21.5.linux-amd64.tar.gz
