@@ -3,6 +3,7 @@ let mapleader = " "
 set NERDTree
 set clipboard+=ideaput
 set clipboard+=unnamed
+set clipboard+=unnamedplus
 set ic
 set ideajoin
 set incsearch
