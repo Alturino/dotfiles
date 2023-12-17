@@ -70,6 +70,12 @@ HIST_STAMPS="dd/mm/yyyy"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+if [ ! -d "$ZSH/plugins/zsh-syntax-highlighting" ]; then
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH/plugins/zsh-syntax-highlighting
+fi
+if [ ! -d "$ZSH/plugins/zsh-autosuggestions" ]; then
+  git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH/plugins/zsh-autosuggestions
+fi
 plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
@@ -176,7 +182,6 @@ export NVM_DIR="$HOME/.nvm"
 export PATH=$PATH:/usr/local/go/bin
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$PATH:$HOME/.cargo/env"
-export GOPATH="$HOME/Personal/coding/go"
 export PATH="$PATH:$GOROOT/bin:$GOPATH/bin"
 export PATH="$PATH:$HOME/Android/Sdk/platform-tools"
 export TERM="xterm-256color"
