@@ -107,3 +107,4 @@ xnoremap <leader>rcl :action ExtractClass<CR>
 xnoremap <leader>ref :action ExtractFunction<CR>
 xnoremap <leader>rif :action IntroduceConstant<CR>
 xnoremap <leader>riv :action IntroduceVariable<CR>
+xnoremap p "_dP
