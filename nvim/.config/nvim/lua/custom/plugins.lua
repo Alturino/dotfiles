@@ -123,8 +123,10 @@ local plugins = {
           require("null-ls").setup(opts)
         end,
       },
+      "nvim-java/nvim-java",
     },
     config = function()
+      require("java").setup()
       require "plugins.configs.lspconfig"
       require "custom.configs.lspconfig"
     end, -- Override to setup mason-lspconfig

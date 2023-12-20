@@ -249,6 +249,10 @@ local must_installed = {
 
 M.mason = {
   ensure_installed = must_installed,
+  registries = {
+    "github:nvim-java/mason-registry",
+    "github:mason-org/mason-registry",
+  },
 }
 
 M.nvimtree = {

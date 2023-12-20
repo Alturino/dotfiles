@@ -6,6 +6,9 @@ local on_attach = function(client, bufnr)
   if client.name == "yamlls" then
     client.server_capabilities.documentFormattingProvider = true
   end
+  if client.name == "jdtls" then
+    client.server_capabilities.semanticTokensProvider = nil
+  end
 end
 local capabilities = require("plugins.configs.lspconfig").capabilities
 capabilities.textDocument.completion.completionItem.snippetSupport = true
