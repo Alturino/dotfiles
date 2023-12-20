@@ -10,12 +10,12 @@ M.general = {
     ["<C-Right>"] = { "<C-w>>", "Increase buffer width", opts = { nowait = true, noremap = true } },
 
     -- Split window
-    ["<leader>v"] = {
+    ["<leader>vs"] = {
       "<Cmd>vsplit<CR><C-l>",
       "[V]ertical [S]plit Window",
       opts = { nowait = true, noremap = true },
     },
-    ["<leader>h"] = {
+    ["<leader>hs"] = {
       "<Cmd>split<CR><C-j>",
       "[H]orizontal [S]plit Window",
       opts = { nowait = true, noremap = true },
@@ -24,6 +24,14 @@ M.general = {
     -- Scroll half and focus center
     ["<C-d>"] = { "<C-d>zz", "Scroll down and focus center", opts = { nowait = true, noremap = true } },
     ["<C-u>"] = { "<C-u>zz", "Scroll up and focus center", opts = { nowait = true, noremap = true } },
+  },
+}
+
+M.disabled = {
+  n = {
+    ["<leader>v"] = "",
+    ["<leader>h"] = "",
+    ["<A-i>"] = "",
   },
 }
 
@@ -73,6 +81,69 @@ M.tabufline = {
       end,
       "Goto next buffer",
       opts = { nowait = true, noremap = true },
+    },
+  },
+}
+
+M.harpoon = {
+  n = {
+    ["<leader>ha"] = {
+      function()
+        local harpoon = require "harpoon"
+        harpoon:list():append()
+      end,
+      "Harpoon Add",
+    },
+    ["<leader>hm"] = {
+      function()
+        local harpoon = require "harpoon"
+        harpoon.ui:toggle_quick_menu(harpoon:list())
+      end,
+      "Harpoon Menu",
+    },
+    ["<leader>h1"] = {
+      function()
+        local harpoon = require "harpoon"
+        harpoon:list():select(1)
+      end,
+      "Harpoon Menu",
+    },
+    ["<leader>h2"] = {
+      function()
+        local harpoon = require "harpoon"
+        harpoon:list():select(2)
+      end,
+      "Harpoon Menu",
+    },
+    ["<leader>h3"] = {
+      function()
+        local harpoon = require "harpoon"
+        harpoon:list():select(3)
+      end,
+      "Harpoon Menu",
+    },
+    ["<leader>h4"] = {
+      function()
+        local harpoon = require "harpoon"
+        harpoon:list():select(4)
+      end,
+      "Harpoon Menu",
+    },
+    ["<leader>hls"] = {
+      function()
+        local harpoon = require "harpoon"
+        harpoon.logger:show()
+      end,
+      "Harpoon Menu",
+    },
+  },
+}
+
+M.telescope = {
+  n = {
+    ["<leader>fh"] = {
+      "<cmd>Telescope harpoon marks<cr>",
+      "Find Harpoon",
     },
   },
 }

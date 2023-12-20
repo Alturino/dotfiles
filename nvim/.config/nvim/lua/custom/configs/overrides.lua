@@ -273,6 +273,7 @@ M.telescope = {
     "refactoring",
     "terms",
     "themes",
+    "harpoon",
   },
   extensions = {
     fzf = {
