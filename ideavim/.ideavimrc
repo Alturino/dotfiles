@@ -78,6 +78,7 @@ nnoremap <leader>rc :action Compile<CR>
 nnoremap <leader>rn :action Run<CR>
 nnoremap <leader>ro :action IdeaVim.ReloadVimRc.reload <CR>
 nnoremap <leader>rs :action Android.SyncProject<CR>
+nnoremap <leader>rt :action RunClass<CR>
 nnoremap <leader>sd :action Debug<CR>
 nnoremap <leader>si :action StepInto<CR>
 nnoremap <leader>so :action StepOver<CR>
