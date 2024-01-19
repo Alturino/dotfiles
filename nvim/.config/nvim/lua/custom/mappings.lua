@@ -24,6 +24,12 @@ M.general = {
     -- Scroll half and focus center
     ["<C-d>"] = { "<C-d>zz", "Scroll down and focus center", opts = { nowait = true, noremap = true } },
     ["<C-u>"] = { "<C-u>zz", "Scroll up and focus center", opts = { nowait = true, noremap = true } },
+    ["<leader>fm"] = {
+      function()
+        require("conform").format { timeout_ms = 250, lsp_fallback = true, quiet = true }
+      end,
+      "formatting",
+    },
   },
 }
 

@@ -81,7 +81,7 @@ if is_win then
   clipboard:prepend { "unnamed", "unnamedplus" }
   opt.shell = "pwsh.exe"
   opt.shellcmdflag =
-    "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;"
+  "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;"
   opt.shellxquote = ""
   opt.shellquote = ""
   opt.shellredir = ""
