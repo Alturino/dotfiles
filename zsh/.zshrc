@@ -76,7 +76,22 @@ fi
 if [ ! -d "$ZSH/plugins/zsh-autosuggestions" ]; then
   git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH/plugins/zsh-autosuggestions
 fi
-plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
+if [ ! -d "$ZSH/plugins/fzf-tab" ]; then
+  git clone https://github.com/Aloxaf/fzf-tab $ZSH/plugins/fzf-tab
+fi
+plugins=(git zsh-syntax-highlighting zsh-autosuggestions fzf-tab)
+
+# disable sort when completing `git checkout`
+zstyle ':completion:*:git-checkout:*' sort false
+# set descriptions format to enable group support
+zstyle ':completion:*:descriptions' format '[%d]'
+# set list-colors to enable filename colorizing
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+# preview directory's content with exa when completing cd
+zstyle ':fzf-tab:complete:*:*' fzf-preview 'bat --color=always $realpath'
+# switch group using `,` and `.`
+zstyle ':fzf-tab:*' switch-group ',' '.'
+
 
 source $ZSH/oh-my-zsh.sh
 
@@ -187,6 +202,8 @@ export PATH="$PATH:$HOME/Android/Sdk/platform-tools"
 export TERM="xterm-256color"
 # export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
 # export PATH=$PATH:"$GEM_HOME/bin"
+export FZF_DEFAULT_COMMAND="fd --type f"
+export FZF_DEFAULT_OPTS="--preview 'bat --color=always {}'"
 export PATH="$PATH:$HOME/.maestro/bin"
 
 source ~/.zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh

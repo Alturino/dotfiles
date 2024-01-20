@@ -91,6 +91,28 @@ M.tabufline = {
   },
 }
 
+M.treesitter_context = {
+  n = {
+    ["<leader>tct"] = {
+      "<cmd>TSContextToggle<cr>",
+      "Treesitter context toggle",
+    },
+  },
+}
+
+M.dadbod_ui = {
+  n = {
+    ["<leader>dbt"] = {
+      "<cmd>DBUIToggle<cr>",
+      "Dadbod ui toggle",
+    },
+    ["<leader>dba"] = {
+      "<cmd>DBUIAddConnection<cr>",
+      "Dadbod ui add connection",
+    },
+  },
+}
+
 M.harpoon = {
   n = {
     ["<leader>ha"] = {
@@ -112,35 +134,35 @@ M.harpoon = {
         local harpoon = require "harpoon"
         harpoon:list():select(1)
       end,
-      "Harpoon Menu",
+      "Harpoon 1",
     },
     ["<leader>h2"] = {
       function()
         local harpoon = require "harpoon"
         harpoon:list():select(2)
       end,
-      "Harpoon Menu",
+      "Harpoon 2",
     },
     ["<leader>h3"] = {
       function()
         local harpoon = require "harpoon"
         harpoon:list():select(3)
       end,
-      "Harpoon Menu",
+      "Harpoon 3",
     },
     ["<leader>h4"] = {
       function()
         local harpoon = require "harpoon"
         harpoon:list():select(4)
       end,
-      "Harpoon Menu",
+      "Harpoon 4",
     },
     ["<leader>hls"] = {
       function()
         local harpoon = require "harpoon"
         harpoon.logger:show()
       end,
-      "Harpoon Menu",
+      "Harpoon logger show",
     },
   },
 }
@@ -160,7 +182,7 @@ M.lspconfig = {
       function()
         vim.lsp.buf.type_definition()
       end,
-      "[T]ype De[F]inition",
+      "Type definition",
       opts = { nowait = true, noremap = true },
     },
 
@@ -168,7 +190,7 @@ M.lspconfig = {
       function()
         require("telescope.builtin").lsp_document_symbols()
       end,
-      "[F]ind [S]ymbols",
+      "Find symbols",
       opts = { nowait = true, noremap = true },
     },
 
@@ -195,7 +217,7 @@ M.lspconfig = {
 
         return prev()
       end,
-      "[G]oto Diagnostics [P]revious",
+      "Goto previous warning",
       opts = { nowait = true, noremap = true },
     },
 
@@ -222,7 +244,7 @@ M.lspconfig = {
 
         return next()
       end,
-      "[G]oto Diagnostics [N]ext",
+      "Goto next warning",
       opts = { nowait = true, noremap = true },
     },
 
@@ -249,7 +271,7 @@ M.lspconfig = {
 
         return next()
       end,
-      "Goto Next Error",
+      "Goto previous error",
       opts = { nowait = true, noremap = true },
     },
 
@@ -276,7 +298,7 @@ M.lspconfig = {
 
         return prev()
       end,
-      "Goto Previous Error",
+      "Goto next error",
       opts = { nowait = true, noremap = true },
     },
     ["<leader>cA"] = {
@@ -330,7 +352,7 @@ M.dap = {
       function()
         require("dap").continue()
       end,
-      "[S]tart [D]ebugging",
+      "Start debugging",
       opts = { nowait = true, noremap = true },
     },
 
@@ -338,7 +360,7 @@ M.dap = {
       function()
         require("dap").step_over()
       end,
-      "[S]tep [O]ver",
+      "Step over",
       opts = { nowait = true, noremap = true },
     },
 
@@ -346,7 +368,7 @@ M.dap = {
       function()
         require("dap").step_out()
       end,
-      "[S]tep o[U]t",
+      "Step out",
       opts = { nowait = true, noremap = true },
     },
 
@@ -354,22 +376,22 @@ M.dap = {
       function()
         require("dap").step_into()
       end,
-      "[S]tep [I]nto",
+      "Step into",
       opts = { nowait = true, noremap = true },
     },
 
-    ["<leader>td"] = {
+    ["<leader>dt"] = {
       function()
         require("dapui").toggle()
       end,
-      "[T]oggle [D]ebug",
+      "Debug toggle",
       opts = { nowait = true, noremap = true },
     },
     ["<leader>bp"] = {
       function()
         require("dap").toggle_breakpoint()
       end,
-      "[T]oggle [B]reak[P]oint",
+      "Add break point",
       opts = { nowait = true, noremap = true },
     },
   },
@@ -529,18 +551,17 @@ M.trouble = {
   n = {
     ["<leader>tt"] = {
       "<Cmd>TroubleToggle<CR>",
-      "[T]rouble [T]oggle",
+      "Trouble toggle",
       opts = { nowait = true, noremap = true },
     },
-
     ["<leader>wd"] = {
       "<Cmd>TroubleToggle workspace_diagnostics<CR>",
-      "TroubleToggle [W]orkspace [D]iagnostics",
+      "TroubleToggle workspace diagnostics",
       opts = { nowait = true, noremap = true },
     },
     ["<leader>qf"] = {
       "<Cmd>TroubleToggle quickfix<CR>",
-      "TroubleToggle [Q]uick [F]ix",
+      "TroubleToggle quick fix",
       opts = { nowait = true, noremap = true },
     },
   },
@@ -555,7 +576,7 @@ M.gitsigns = {
         local _, prev_hunk = ts_move.make_repeatable_move_pair(gs.next_hunk, gs.prev_hunk)
         return prev_hunk()
       end,
-      "Repeat Prev Hunk",
+      "Goto previous hunk",
     },
     ["]h"] = {
       function()
@@ -564,7 +585,7 @@ M.gitsigns = {
         local next_hunk, _ = ts_move.make_repeatable_move_pair(gs.next_hunk, gs.prev_hunk)
         return next_hunk()
       end,
-      "Repeat Next Hunk",
+      "Goto next hunk",
     },
   },
 
@@ -576,7 +597,7 @@ M.gitsigns = {
         local next_hunk, prev_hunk = ts_move.make_repeatable_move_pair(gs.next_hunk, gs.prev_hunk)
         return next_hunk(), prev_hunk()
       end,
-      "Repeat Next Hunk",
+      "Goto previous hunk",
     },
     ["[h"] = {
       function()
@@ -585,7 +606,7 @@ M.gitsigns = {
         local next_hunk, prev_hunk = ts_move.make_repeatable_move_pair(gs.next_hunk, gs.prev_hunk)
         return next_hunk(), prev_hunk()
       end,
-      "Repeat Prev Hunk",
+      "Goto next hunk",
     },
   },
 
@@ -597,7 +618,7 @@ M.gitsigns = {
         local next_hunk, prev_hunk = ts_move.make_repeatable_move_pair(gs.next_hunk, gs.prev_hunk)
         return next_hunk(), prev_hunk()
       end,
-      "Repeat Next Hunk",
+      "Goto previous hunk",
     },
     ["[h"] = {
       function()
@@ -606,7 +627,7 @@ M.gitsigns = {
         local next_hunk, prev_hunk = ts_move.make_repeatable_move_pair(gs.next_hunk, gs.prev_hunk)
         return next_hunk(), prev_hunk()
       end,
-      "Repeat Prev Hunk",
+      "Goto next hunk",
     },
   },
 }
