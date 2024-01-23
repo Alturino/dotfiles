@@ -27,7 +27,6 @@ local plugins = {
             d.hadolint,
             d.jsonlint,
             d.ktlint,
-            d.luacheck,
             d.revive,
             d.rubocop,
             d.ruff.with { command = { "ruff", "check" }, args = { "-n", "--stdin-filename", "$FILENAME" } },
@@ -50,10 +49,8 @@ local plugins = {
           require("null-ls").setup(opts)
         end,
       },
-      "nvim-java/nvim-java",
     },
     config = function()
-      require("java").setup()
       require "plugins.configs.lspconfig"
       require "custom.configs.lspconfig"
     end, -- Override to setup mason-lspconfig

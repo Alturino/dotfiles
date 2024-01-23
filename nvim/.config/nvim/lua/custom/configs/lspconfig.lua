@@ -1,6 +1,5 @@
 local on_attach = require("plugins.configs.lspconfig").on_attach
 local capabilities = require("plugins.configs.lspconfig").capabilities
-capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 require("neodev").setup {
   library = { plugins = { "nvim-dap-ui" }, types = true },

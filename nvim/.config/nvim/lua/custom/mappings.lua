@@ -173,6 +173,10 @@ M.telescope = {
       "<cmd>Telescope harpoon marks<cr>",
       "Find Harpoon",
     },
+    ["<leader>ff"] = {
+      "<cmd>Telescope find_files no_ignore=false hidden=true<cr>",
+      "Find files",
+    },
   },
 }
 

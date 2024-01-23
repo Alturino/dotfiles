@@ -163,15 +163,21 @@ M.treesitter = {
 
 local must_installed = {
   -- LSP
+  "angular-language-server",
+  "ansible-language-server",
   "clangd",
   "css-lsp",
   "cssmodules-language-server",
+  "deno",
   "docker-compose-language-service",
   "dockerfile-language-server",
   "emmet-ls",
   "eslint-lsp",
   "golangci-lint-langserver",
   "gopls",
+  "gradle-language-server",
+  "graphql-language-service-cli",
+  "groovy-language-server",
   "html-lsp",
   "jdtls",
   "json-lsp",
@@ -179,6 +185,7 @@ local must_installed = {
   "lua-language-server",
   "marksman",
   "prisma-language-server",
+  "pyright",
   "ruff",
   "ruff-lsp",
   "rust-analyzer",
@@ -201,7 +208,6 @@ local must_installed = {
   "gitlint",
   "golangci-lint",
   "jsonlint",
-  "luacheck",
   "revive",
   "shellcheck",
   "shellharden",
@@ -211,7 +217,6 @@ local must_installed = {
   "textlint",
   "tflint",
   "tfsec",
-  "ts-standard",
   "vint",
   "yamllint",
 
@@ -224,10 +229,8 @@ local must_installed = {
   "gomodifytags",
   "gotests",
   "latexindent",
-  "prettier",
   "prettierd",
   "shellharden",
-  "sqlfmt",
   "stylua",
   "xmlformatter",
   "yamlfmt",
@@ -249,15 +252,15 @@ local must_installed = {
 
 M.mason = {
   ensure_installed = must_installed,
-  registries = {
-    "github:nvim-java/mason-registry",
-    "github:mason-org/mason-registry",
-  },
 }
 
 M.nvimtree = {
   git = {
     enable = true,
+  },
+
+  filters = {
+    custom = { ".git" },
   },
 
   renderer = {
@@ -268,9 +271,22 @@ M.nvimtree = {
       },
     },
   },
+
+  view = {
+    relativenumber = true,
+    centralize_selection = true,
+  },
 }
 
 M.telescope = {
+  defaults = {
+    file_ignore_patterns = {
+      "git",
+      "node_modules",
+      "build",
+      "dist",
+    },
+  },
   extensions_list = {
     "fzf",
     "notify",

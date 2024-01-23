@@ -107,6 +107,7 @@ plugins=(
   python
   redis-cli
   ripgrep
+  rvm
   spring
   terraform
   tmux
