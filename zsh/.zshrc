@@ -73,13 +73,47 @@ HIST_STAMPS="dd/mm/yyyy"
 if [ ! -d "$ZSH/plugins/zsh-syntax-highlighting" ]; then
   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH/plugins/zsh-syntax-highlighting
 fi
+if [ ! -d "$ZSH/plugins/fzf-tab" ]; then
+  git clone https://github.com/Aloxaf/fzf-tab.git $ZSH/plugins/fzf-tab
+fi
+if [ ! -d "$ZSH/plugins/fzf-tab-source" ]; then
+  git clone https://github.com/Freed-Wu/fzf-tab-source.git $ZSH/plugins/fzf-tab-source
+fi
 if [ ! -d "$ZSH/plugins/zsh-autosuggestions" ]; then
   git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH/plugins/zsh-autosuggestions
 fi
-if [ ! -d "$ZSH/plugins/fzf-tab" ]; then
-  git clone https://github.com/Aloxaf/fzf-tab $ZSH/plugins/fzf-tab
-fi
-plugins=(git zsh-syntax-highlighting zsh-autosuggestions fzf-tab fzf)
+plugins=(
+  adb
+  ansible
+  deno
+  dnf
+  docker
+  docker-compose
+  dotenv
+  flutter
+  fzf
+  fzf-tab
+  fzf-tab-source
+  gh
+  git
+  git-commit
+  golang
+  node
+  npm
+  nvm
+  pod
+  podman
+  postgres
+  python
+  redis-cli
+  ripgrep
+  spring
+  terraform
+  tmux
+  zoxide
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+)
 
 # disable sort when completing `git checkout`
 zstyle ':completion:*:git-checkout:*' sort false
@@ -87,11 +121,12 @@ zstyle ':completion:*:git-checkout:*' sort false
 zstyle ':completion:*:descriptions' format '[%d]'
 # set list-colors to enable filename colorizing
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-# preview directory's content with exa when completing cd
+# preview directory's content with eza when completing cd
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
-zstyle ':fzf-tab:complete:systemctl-*:*' fzf-preview 'SYSTEMD_COLORS=1 systemctl status $word'
 # switch group using `,` and `.`
 zstyle ':fzf-tab:*' switch-group ',' '.'
+
+source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
@@ -106,50 +141,6 @@ if [[ -n $SSH_CONNECTION ]]; then
 else
   export EDITOR='nvim'
 fi
-
-###-begin-flutter-completion-###
-if type complete &>/dev/null; then
-  __flutter_completion() {
-    local si="$IFS"
-    IFS=$'\n' COMPREPLY=($(COMP_CWORD="$COMP_CWORD" \
-                           COMP_LINE="$COMP_LINE" \
-                           COMP_POINT="$COMP_POINT" \
-                           flutter completion -- "${COMP_WORDS[@]}" \
-                           2>/dev/null)) || return $?
-    IFS="$si"
-  }
-  complete -F __flutter_completion flutter
-elif type compdef &>/dev/null; then
-  __flutter_completion() {
-    si=$IFS
-    compadd -- $(COMP_CWORD=$((CURRENT-1)) \
-                 COMP_LINE=$BUFFER \
-                 COMP_POINT=0 \
-                 flutter completion -- "${words[@]}" \
-                 2>/dev/null)
-    IFS=$si
-  }
-  compdef __flutter_completion flutter
-elif type compctl &>/dev/null; then
-  __flutter_completion() {
-    local cword line point words si
-    read -Ac words
-    read -cn cword
-    let cword-=1
-    read -l line
-    read -ln point
-    si="$IFS"
-    IFS=$'\n' reply=($(COMP_CWORD="$cword" \
-                       COMP_LINE="$line" \
-                       COMP_POINT="$point" \
-                       flutter completion -- "${words[@]}" \
-                       2>/dev/null)) || return $?
-    IFS="$si"
-  }
-  compctl -K __flutter_completion flutter
-fi
-
-###-end-flutter-completion-###
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
