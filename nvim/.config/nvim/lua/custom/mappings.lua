@@ -177,6 +177,55 @@ M.telescope = {
       "<cmd>Telescope find_files no_ignore=false hidden=true<cr>",
       "Find files",
     },
+    ["<leader>fs"] = {
+      function()
+        require("telescope.builtin").lsp_workspace_symbols()
+      end,
+      "Find symbols",
+      opts = { nowait = true, noremap = true },
+    },
+    ["<leader>fic"] = {
+      function()
+        require("telescope.builtin").lsp_incoming_calls()
+      end,
+      "Find lsp incoming call",
+      opts = { nowait = true, noremap = true },
+    },
+    ["<leader>foc"] = {
+      function()
+        require("telescope.builtin").lsp_outgoing_calls()
+      end,
+      "Find lsp outgoing call",
+      opts = { nowait = true, noremap = true },
+    },
+    ["<leader>gc"] = {
+      function()
+        require("telescope.builtin").git_commits()
+      end,
+      "Git commits",
+      opts = { nowait = true, noremap = true },
+    },
+    ["<leader>gb"] = {
+      function()
+        require("telescope.builtin").git_branches()
+      end,
+      "Git branches",
+      opts = { nowait = true, noremap = true },
+    },
+    ["<leader>gs"] = {
+      function()
+        require("telescope.builtin").git_status()
+      end,
+      "Git status",
+      opts = { nowait = true, noremap = true },
+    },
+    ["<leader>gst"] = {
+      function()
+        require("telescope.builtin").git_stash()
+      end,
+      "Git stash",
+      opts = { nowait = true, noremap = true },
+    },
   },
 }
 
@@ -187,14 +236,6 @@ M.lspconfig = {
         vim.lsp.buf.type_definition()
       end,
       "Type definition",
-      opts = { nowait = true, noremap = true },
-    },
-
-    ["<leader>fs"] = {
-      function()
-        require("telescope.builtin").lsp_document_symbols()
-      end,
-      "Find symbols",
       opts = { nowait = true, noremap = true },
     },
 
