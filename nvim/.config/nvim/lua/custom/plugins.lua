@@ -6,11 +6,12 @@ local plugins = {
     "neovim/nvim-lspconfig",
     dependencies = {
       {
-        "jose-elias-alvarez/null-ls.nvim",
+        "nvimtools/none-ls.nvim",
         opts = function()
           local null_ls = require "null-ls"
           local d = null_ls.builtins.diagnostics
           local ca = null_ls.builtins.code_actions
+          local f = null_ls.builtins.formatting
 
           local sources = {
             ca.eslint_d,
@@ -18,6 +19,7 @@ local plugins = {
             ca.gomodifytags,
             ca.impl,
             ca.refactoring,
+
             d.actionlint,
             d.commitlint,
             d.cpplint,
@@ -38,11 +40,45 @@ local plugins = {
             d.tfsec,
             d.vint,
             d.yamllint,
+
+            f.clang_format.with { filetypes = { "c", "cpp" } },
+            f.dart_format,
+            f.eslint_d,
+            f.gofumpt,
+            f.goimports,
+            f.goimports_reviser,
+            f.golines,
+            f.google_java_format,
+            f.ktlint,
+            f.latexindent,
+            f.prettierd,
+            f.rubocop,
+            f.ruff.with { command = { "ruff", "format" }, args = { "-n", "--stdin-filename", "$FILENAME" } },
+            f.shellharden,
+            f.stylua,
+            f.xmlformat,
+            f.yamlfmt,
           }
 
+          local vim = vim
+          local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
           return {
             debug = true,
             sources = sources,
+            on_attach = function(client, bufnr)
+              if client.supports_method "textDocument/formatting" then
+                vim.api.nvim_clear_autocmds { group = augroup, buffer = bufnr }
+                vim.api.nvim_create_autocmd("BufWritePre", {
+                  group = augroup,
+                  buffer = bufnr,
+                  callback = function()
+                    vim.lsp.buf.format {
+                      bufnr = bufnr,
+                    }
+                  end,
+                })
+              end
+            end,
           }
         end,
         config = function(_, opts)

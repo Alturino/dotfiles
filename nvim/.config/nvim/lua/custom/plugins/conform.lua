@@ -1,5 +1,3 @@
-local c = { "clang_format" }
-local js = { "eslint_d", "prettierd" }
 local slow_format_filetypes = {}
 return {
   {
@@ -7,12 +5,12 @@ return {
     init = function()
       vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
     end,
-    event = { "BufWritePre" },
+    ft = { "prisma", "sql" },
     cmd = { "ConformInfo" },
     opts = {
       lsp_fallback = true,
       formatters = {
-        prisma = {
+        prismaFmt = {
           command = "prisma",
           args = { "format", "$FILENAME" },
           stdin = false,
@@ -27,23 +25,8 @@ return {
         },
       },
       formatters_by_ft = {
-        c = c,
-        cpp = c,
-        css = { "prettierd" },
-        dart = { "dart_format" },
-        go = { "gofumpt", "goimports", "goimports_reviser", "golines" },
-        html = { "prettier" },
-        java = { "google_java_format" },
-        javascript = js,
-        lua = { "stylua" },
         prisma = { "prismaFmt" },
-        python = { "ruff_fix", "ruff_format" },
-        ruby = { "rubocop" },
-        sh = { "shfmt", "shellharden" },
         sql = { "sqlfluff", "pg_format" },
-        typescript = js,
-        xml = { "xmllint", "xmlformat" },
-        yml = { "yamlfmt" },
       },
       format_on_save = function(bufnr)
         if slow_format_filetypes[vim.bo[bufnr].filetype] then

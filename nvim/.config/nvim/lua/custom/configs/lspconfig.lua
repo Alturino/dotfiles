@@ -10,30 +10,38 @@ require "custom.configs.jdtls"
 local lspconfig = require "lspconfig"
 
 local default_config_servers = {
+  "angularls",
+  "ansiblels",
   "bashls",
+  "cssls",
+  "cssmodules_ls",
+  "denols",
   "docker_compose_language_service",
   "dockerls",
+  "emmet_ls",
   "gopls",
   "gradle_ls",
+  "graphql",
   "groovyls",
+  "helm_ls",
   "html",
   "jsonls",
   "ltex",
   "marksman",
-  "nil_ls",
   "prismals",
   "pyright",
-  "rnix",
   "rubocop",
   "ruff_lsp",
   "rust_analyzer",
-  "sorbet",
+  "spectral",
   "sqlls",
   "svelte",
+  "tailwindcss",
   "terraformls",
   "texlab",
   "tflint",
   "tsserver",
+  "typst_lsp",
   "vimls",
   "vuels",
   "yamlls",
@@ -54,14 +62,6 @@ lspconfig.golangci_lint_ls.setup {
   init_options = {
     command = { "golangci-lint", "run", "--out-format", "json", "--allow-parallel-runners" },
   },
-}
-
-lspconfig.kotlin_language_server.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-  filetypes = { "kotlin" },
-  cmd = { "kotlin-language-server" },
-  root_dir = lspconfig.util.root_pattern("", "build.gradle", "gradlew", ".git"),
 }
 
 lspconfig.clangd.setup {
@@ -94,41 +94,6 @@ lspconfig.eslint.setup {
     on_attach(client, bufnr)
   end,
   capabilities = capabilities,
-}
-
-lspconfig.tailwindcss.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-  filetypes = {
-    "astro",
-    "html",
-    "css",
-    "less",
-    "postcss",
-    "sass",
-    "scss",
-    "javascriptreact",
-    "typescriptreact",
-    "vue",
-    "svelte",
-  },
-}
-
-lspconfig.emmet_ls.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-  filetypes = {
-    "css",
-    "html",
-    "htmldjango",
-    "javascriptreact",
-    "less",
-    "pug",
-    "sass",
-    "scss",
-    "svelte",
-    "typescriptreact",
-  },
 }
 
 lspconfig.stylelint_lsp.setup {
