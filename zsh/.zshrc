@@ -196,6 +196,13 @@ export PATH="$PATH:$HOME/.maestro/bin"
 
 source ~/.zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh
 
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/bin/terraform terraform
+
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 

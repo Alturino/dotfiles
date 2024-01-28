@@ -141,3 +141,5 @@ export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 . "$HOME/.cargo/env"
 export PATH=$PATH:$HOME/.maestro/bin
+
+complete -C /usr/bin/terraform terraform
