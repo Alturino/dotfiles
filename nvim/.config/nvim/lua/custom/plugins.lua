@@ -74,6 +74,9 @@ local plugins = {
                   callback = function()
                     vim.lsp.buf.format {
                       bufnr = bufnr,
+                      filter = function(c)
+                        return c.name == "null-ls"
+                      end,
                     }
                   end,
                 })

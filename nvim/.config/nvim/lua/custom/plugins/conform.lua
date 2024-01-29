@@ -7,6 +7,15 @@ return {
     end,
     ft = { "prisma", "sql" },
     cmd = { "ConformInfo" },
+    keys = {
+      {
+        "<leader>cf",
+        function()
+          require("conform").format { lsp_fallback = true }
+        end,
+        desc = "Conform Format",
+      },
+    },
     opts = {
       lsp_fallback = true,
       formatters = {
