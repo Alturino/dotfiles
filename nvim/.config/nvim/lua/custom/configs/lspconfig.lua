@@ -14,7 +14,6 @@ local default_config_servers = {
   "ansiblels",
   "bashls",
   "cssls",
-  "cssmodules_ls",
   "docker_compose_language_service",
   "dockerls",
   "emmet_ls",
@@ -35,7 +34,6 @@ local default_config_servers = {
   "spectral",
   "sqlls",
   "svelte",
-  "tailwindcss",
   "terraformls",
   "texlab",
   "tflint",
@@ -52,6 +50,32 @@ for _, lsp in ipairs(default_config_servers) do
   }
 end
 
+lspconfig.clangd.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  cmd = {
+    "clangd",
+    "--offset-encoding=utf-16",
+  },
+}
+
+lspconfig.cssmodules_ls.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = { "typescriptreact", "javascriptreact", "tsx", "jsx" },
+}
+
+lspconfig.eslint.setup {
+  on_attach = function(client, bufnr)
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      buffer = bufnr,
+      command = "EslintFixAll",
+    })
+    on_attach(client, bufnr)
+  end,
+  capabilities = capabilities,
+}
+
 lspconfig.golangci_lint_ls.setup {
   on_attach = on_attach,
   capabilities = capabilities,
@@ -59,15 +83,6 @@ lspconfig.golangci_lint_ls.setup {
 
   init_options = {
     command = { "golangci-lint", "run", "--out-format", "json", "--allow-parallel-runners" },
-  },
-}
-
-lspconfig.clangd.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-  cmd = {
-    "clangd",
-    "--offset-encoding=utf-16",
   },
 }
 
@@ -83,17 +98,6 @@ lspconfig.lua_ls.setup {
   },
 }
 
-lspconfig.eslint.setup {
-  on_attach = function(client, bufnr)
-    vim.api.nvim_create_autocmd("BufWritePre", {
-      buffer = bufnr,
-      command = "EslintFixAll",
-    })
-    on_attach(client, bufnr)
-  end,
-  capabilities = capabilities,
-}
-
 lspconfig.stylelint_lsp.setup {
   on_attach = on_attach,
   capabilities = capabilities,
@@ -105,4 +109,39 @@ lspconfig.stylelint_lsp.setup {
     "javascriptreact",
     "typescriptreact",
   },
+}
+
+lspconfig.tailwindcss.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = {
+    "aspnetcorerazor",
+    "astro",
+    "htmldjango",
+    "ejs",
+    "erb",
+    "gohtml",
+    "gohtmltmpl",
+    "html",
+    "mdx",
+    "php",
+    "css",
+    "less",
+    "postcss",
+    "sass",
+    "scss",
+    "javascriptreact",
+    "typescriptreact",
+    "vue",
+    "svelte",
+  },
+}
+
+lspconfig.tsserver.setup {
+  on_attach = function(client, bufnr)
+    on_attach(client, bufnr)
+    client.server_capabilities.documentFormattingProvider = false
+    client.server_capabilities.documentRangeFormattingProvider = false
+  end,
+  capabilities = capabilities,
 }

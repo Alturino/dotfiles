@@ -5,7 +5,7 @@ return {
     init = function()
       vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
     end,
-    ft = { "prisma", "sql" },
+    ft = { "sql" },
     cmd = { "ConformInfo" },
     keys = {
       {
@@ -19,12 +19,6 @@ return {
     opts = {
       lsp_fallback = true,
       formatters = {
-        prismaFmt = {
-          command = "prisma",
-          args = { "format", "$FILENAME" },
-          stdin = false,
-          require_cwd = false,
-        },
         sqlfluff = {
           inherit = false,
           command = "sqlfluff",
@@ -34,7 +28,6 @@ return {
         },
       },
       formatters_by_ft = {
-        prisma = { "prismaFmt" },
         sql = { "sqlfluff", "pg_format" },
       },
       format_on_save = function(bufnr)
