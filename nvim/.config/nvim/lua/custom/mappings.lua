@@ -436,7 +436,14 @@ M.dap = {
       function()
         require("dap").toggle_breakpoint()
       end,
-      "Add break point",
+      "Toggle break point",
+      opts = { nowait = true, noremap = true },
+    },
+    ["<leader>cbp"] = {
+      function()
+        require("dap").set_breakpoint(vim.fn.input "Conditional breakpoint: ")
+      end,
+      "Conditional break point",
       opts = { nowait = true, noremap = true },
     },
   },

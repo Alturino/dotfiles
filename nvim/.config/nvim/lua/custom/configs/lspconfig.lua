@@ -22,7 +22,6 @@ local default_config_servers = {
   "graphql",
   "groovyls",
   "helm_ls",
-  "html",
   "jsonls",
   "ltex",
   "marksman",
@@ -62,7 +61,7 @@ lspconfig.clangd.setup {
 lspconfig.cssmodules_ls.setup {
   on_attach = on_attach,
   capabilities = capabilities,
-  filetypes = { "typescriptreact", "javascriptreact", "tsx", "jsx" },
+  filetypes = { "typescriptreact", "javascriptreact" },
 }
 
 lspconfig.eslint.setup {
@@ -86,6 +85,16 @@ lspconfig.golangci_lint_ls.setup {
   },
 }
 
+lspconfig.html.setup {
+  on_attach = function(client, bufnr)
+    on_attach(client, bufnr)
+    client.server_capabilities.documentFormattingProvider = false
+    client.server_capabilities.documentRangeFormattingProvider = false
+  end,
+  capabilities = capabilities,
+  filetypes = { "html", "typescriptreact", "javascriptreact" },
+}
+
 lspconfig.lua_ls.setup {
   on_attach = on_attach,
   capabilities = capabilities,
@@ -103,11 +112,11 @@ lspconfig.stylelint_lsp.setup {
   capabilities = capabilities,
   filetypes = {
     "css",
+    "javascriptreact",
     "less",
     "scss",
-    "vue",
-    "javascriptreact",
     "typescriptreact",
+    "vue",
   },
 }
 
@@ -117,23 +126,23 @@ lspconfig.tailwindcss.setup {
   filetypes = {
     "aspnetcorerazor",
     "astro",
-    "htmldjango",
+    "css",
     "ejs",
     "erb",
     "gohtml",
     "gohtmltmpl",
     "html",
+    "htmldjango",
+    "javascriptreact",
+    "less",
     "mdx",
     "php",
-    "css",
-    "less",
     "postcss",
     "sass",
     "scss",
-    "javascriptreact",
+    "svelte",
     "typescriptreact",
     "vue",
-    "svelte",
   },
 }
 
