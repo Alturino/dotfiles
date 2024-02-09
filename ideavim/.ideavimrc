@@ -72,6 +72,7 @@ nnoremap <leader>fw :action FindInPath<CR>
 nnoremap <leader>h :action SplitHorizontally<CR>
 nnoremap <leader>np :action NewProject<CR>
 nnoremap <leader>op :action OpenFile<CR>
+nnoremap <leader>rh :action Vcs.RollbackChangedLines<CR>
 nnoremap <leader>ra :action RenameElement<CR>
 nnoremap <leader>rb :action MakeGradleProject<CR>
 nnoremap <leader>rc :action Compile<CR>

@@ -264,7 +264,12 @@ M.nvimtree = {
   },
 
   filters = {
-    custom = { ".git" },
+    custom = {
+      "build",
+      "dist",
+      "lib",
+      "node_modules",
+    },
   },
 
   renderer = {
@@ -285,7 +290,6 @@ M.nvimtree = {
 M.telescope = {
   defaults = {
     file_ignore_patterns = {
-      "git",
       "node_modules",
       "build",
       "dist",

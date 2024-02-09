@@ -23,7 +23,6 @@ local default_config_servers = {
   "groovyls",
   "helm_ls",
   "jsonls",
-  "ltex",
   "marksman",
   "prismals",
   "pyright",
@@ -105,6 +104,12 @@ lspconfig.lua_ls.setup {
       },
     },
   },
+}
+
+lspconfig.ltex.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = { "latex" },
 }
 
 lspconfig.stylelint_lsp.setup {
