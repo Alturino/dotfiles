@@ -22,7 +22,6 @@ local default_config_servers = {
   "graphql",
   "groovyls",
   "helm_ls",
-  "jsonls",
   "marksman",
   "prismals",
   "pyright",
@@ -38,7 +37,6 @@ local default_config_servers = {
   "typst_lsp",
   "vimls",
   "vuels",
-  "yamlls",
 }
 
 for _, lsp in ipairs(default_config_servers) do
@@ -92,6 +90,17 @@ lspconfig.html.setup {
   end,
   capabilities = capabilities,
   filetypes = { "html", "typescriptreact", "javascriptreact" },
+}
+
+lspconfig.jsonls.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  settings = {
+    json = {
+      validate = { enable = true },
+      schemas = require("schemastore").json.schemas(),
+    },
+  },
 }
 
 lspconfig.lua_ls.setup {
@@ -158,4 +167,24 @@ lspconfig.tsserver.setup {
     client.server_capabilities.documentRangeFormattingProvider = false
   end,
   capabilities = capabilities,
+}
+
+lspconfig.yamlls.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  settings = {
+    yaml = {
+      schemaStore = { enable = false, url = "" },
+      schemas = require("schemastore").yaml.schemas {
+        extra = {
+          {
+            description = "kubernetes json schema",
+            fileMatch = "*.{yaml, yml}",
+            name = "kubernetes",
+            url = "https://kubernetesjsonschema.dev/master/all.json",
+          },
+        },
+      },
+    },
+  },
 }

@@ -14,6 +14,7 @@ local plugins = {
           require("null-ls").setup(opts)
         end,
       },
+      { "b0o/schemastore.nvim" },
     },
     config = function()
       require "plugins.configs.lspconfig"
