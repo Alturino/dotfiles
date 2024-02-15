@@ -14,7 +14,6 @@ local default_config_servers = {
   "ansiblels",
   "bashls",
   "cssls",
-  "docker_compose_language_service",
   "dockerls",
   "emmet_ls",
   "gopls",
@@ -59,6 +58,12 @@ lspconfig.cssmodules_ls.setup {
   on_attach = on_attach,
   capabilities = capabilities,
   filetypes = { "typescriptreact", "javascriptreact" },
+}
+
+lspconfig.docker_compose_language_service.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = { "yaml", "yml", "yaml.docker-compose" },
 }
 
 lspconfig.eslint.setup {
@@ -173,6 +178,11 @@ lspconfig.yamlls.setup {
   on_attach = on_attach,
   capabilities = capabilities,
   settings = {
+    redhat = {
+      telemetry = {
+        enabled = false,
+      },
+    },
     yaml = {
       schemaStore = { enable = false, url = "" },
       schemas = require("schemastore").yaml.schemas {

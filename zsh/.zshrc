@@ -85,11 +85,14 @@ fi
 plugins=(
   adb
   ansible
+  bun
+  catimg
   deno
   dnf
   docker
   docker-compose
   dotenv
+  fd
   flutter
   fzf
   fzf-tab
@@ -98,9 +101,14 @@ plugins=(
   git
   git-commit
   golang
+  gpg-agent
+  gradle
+  kubectl
+  minikube
   node
   npm
   nvm
+  pip
   pod
   podman
   postgres
@@ -109,8 +117,10 @@ plugins=(
   ripgrep
   rvm
   spring
+  systemd
   terraform
   tmux
+  yarn
   zoxide
   zsh-autosuggestions
   zsh-syntax-highlighting
@@ -184,11 +194,14 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Path
-export PATH=$PATH:/usr/local/go/bin
+export GRAPHVIZ_DOT=/usr/bin/dot
+export PATH="$PATH:/usr/local/go/bin/"
+export PATH="$PATH:$HOME/go/bin/"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$PATH:$HOME/.cargo/env"
 export PATH="$PATH:$GOROOT/bin:$GOPATH/bin"
 export PATH="$PATH:$HOME/Android/Sdk/platform-tools"
+export PATH="$PATH:$GRAPHVIZ_DOT"
 export TERM="xterm-256color"
 # export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
 # export PATH=$PATH:"$GEM_HOME/bin"
