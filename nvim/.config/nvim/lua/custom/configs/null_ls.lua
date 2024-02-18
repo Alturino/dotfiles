@@ -29,7 +29,6 @@ local sources = {
   d.textlint,
   d.tfsec,
   d.vint,
-  d.yamllint,
 
   f.clang_format.with { filetypes = { "c", "cpp" } },
   f.dart_format,
@@ -46,7 +45,6 @@ local sources = {
   f.shellharden,
   f.stylua,
   f.xmlformat,
-  f.yamlfmt,
 }
 
 local vim = vim

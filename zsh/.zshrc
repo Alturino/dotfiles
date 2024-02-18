@@ -9,6 +9,9 @@ export ZSH="$HOME/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="robbyrussell"
+ZSH_TMUX_AUTOSTART=true
+ZSH_TMUX_AUTOQUIT=false
+ZSH_TMUX_FIXTERM=true
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -25,11 +28,11 @@ ZSH_THEME="robbyrussell"
 
 # Uncomment one of the following lines to change the auto-update behavior
 # zstyle ':omz:update' mode disabled  # disable automatic updates
-# zstyle ':omz:update' mode auto      # update automatically without asking
+zstyle ':omz:update' mode auto      # update automatically without asking
 # zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 # Uncomment the following line to change how often to auto-update (in days).
-# zstyle ':omz:update' frequency 13
+zstyle ':omz:update' frequency 13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
@@ -132,6 +135,8 @@ zstyle ':completion:*:git-checkout:*' sort false
 zstyle ':completion:*:descriptions' format '[%d]'
 # set list-colors to enable filename colorizing
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*:*:docker:*' option-stacking yes
+zstyle ':completion:*:*:docker-*:*' option-stacking yes
 # preview directory's content with eza when completing cd
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
 # switch group using `,` and `.`
@@ -173,18 +178,19 @@ alias lla='eza -la'
 alias ls='eza'
 alias lt='eza --tree'
 
-HISTSIZE="10000"
-SAVEHIST="10000"
+HISTSIZE="100000000000"
+SAVEHIST="100000000000"
 
 HISTFILE="$HOME/.zsh_history"
 mkdir -p "$(dirname "$HISTFILE")"
 
+setopt EXTENDED_HISTORY
+setopt HIST_EXPIRE_DUPS_FIRST
 setopt HIST_FCNTL_LOCK
+setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_SPACE
-setopt HIST_EXPIRE_DUPS_FIRST
 setopt SHARE_HISTORY
-setopt EXTENDED_HISTORY
 setopt autocd
 
 eval "$(zoxide init zsh)"
@@ -194,18 +200,18 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Path
-export GRAPHVIZ_DOT=/usr/bin/dot
-export PATH="$PATH:/usr/local/go/bin/"
-export PATH="$PATH:$HOME/go/bin/"
-export PATH="$HOME/.cargo/bin:$PATH"
-export PATH="$PATH:$HOME/.cargo/env"
-export PATH="$PATH:$GOROOT/bin:$GOPATH/bin"
-export PATH="$PATH:$HOME/Android/Sdk/platform-tools"
-export PATH="$PATH:$GRAPHVIZ_DOT"
-export TERM="xterm-256color"
 # export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
 # export PATH=$PATH:"$GEM_HOME/bin"
+export GRAPHVIZ_DOT=/usr/bin/dot
+export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$PATH:$GOROOT/bin:$GOPATH/bin"
+export PATH="$PATH:$GRAPHVIZ_DOT"
+export PATH="$PATH:$HOME/.cargo/env"
 export PATH="$PATH:$HOME/.maestro/bin"
+export PATH="$PATH:$HOME/Android/Sdk/platform-tools"
+export PATH="$PATH:$HOME/go/bin/"
+export PATH="$PATH:/usr/local/go/bin/"
+export TERM="xterm-256color"
 
 source ~/.zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh
 
