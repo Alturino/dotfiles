@@ -108,6 +108,7 @@ plugins=(
   gradle
   kubectl
   minikube
+  ng
   node
   npm
   nvm
@@ -195,10 +196,6 @@ setopt autocd
 
 eval "$(zoxide init zsh)"
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 # Path
 # export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
 # export PATH=$PATH:"$GEM_HOME/bin"
@@ -215,13 +212,5 @@ export TERM="xterm-256color"
 
 source ~/.zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh
 
-
-# Load Angular CLI autocompletion.
-source <(ng completion script)
-
-autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /usr/bin/terraform terraform
-
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-

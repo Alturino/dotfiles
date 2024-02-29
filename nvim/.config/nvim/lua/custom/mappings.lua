@@ -26,7 +26,7 @@ M.general = {
     ["<C-u>"] = { "<C-u>zz", "Scroll up and focus center", opts = { nowait = true, noremap = true } },
     ["<leader>fm"] = {
       function()
-        vim.lsp.buf.format()
+        vim.lsp.buf.format { async = true }
       end,
       "LSP formatting",
     },
@@ -182,6 +182,13 @@ M.telescope = {
         require("telescope.builtin").lsp_workspace_symbols()
       end,
       "Find symbols",
+      opts = { nowait = true, noremap = true },
+    },
+    ["<leader>fu"] = {
+      function()
+        require("telescope.builtin").lsp_references()
+      end,
+      "Find Usages",
       opts = { nowait = true, noremap = true },
     },
     ["<leader>fic"] = {

@@ -11,7 +11,7 @@ return {
       {
         "<leader>cf",
         function()
-          require("conform").format { lsp_fallback = true }
+          require("conform").format { lsp_fallback = true, async = true, timeout_ms = 1000 }
         end,
         desc = "Conform Format",
       },
@@ -22,7 +22,7 @@ return {
         sqlfluff = {
           inherit = false,
           command = "sqlfluff",
-          args = { "format", "--disable-progress-bar", "-n" },
+          args = { "fix", "--disable-progress-bar", "-n", "-v", "-f" },
           stdin = false,
           require_cwd = false,
         },
@@ -31,6 +31,9 @@ return {
         sql = { "sqlfluff", "pg_format" },
       },
       format_on_save = function(bufnr)
+        if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
+          return
+        end
         if slow_format_filetypes[vim.bo[bufnr].filetype] then
           return
         end
