@@ -70,6 +70,7 @@ nnoremap <leader>fs :action GotoSymbol<CR>
 nnoremap <leader>fu :action FindUsages<CR>
 nnoremap <leader>fw :action FindInPath<CR>
 nnoremap <leader>h :action SplitHorizontally<CR>
+nnoremap <leader>sh :action Vcs.ShowTabbedFileHistory<CR>
 nnoremap <leader>np :action NewProject<CR>
 nnoremap <leader>op :action OpenFile<CR>
 nnoremap <leader>rh :action Vcs.RollbackChangedLines<CR>
