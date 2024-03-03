@@ -70,12 +70,11 @@ nnoremap <leader>fs :action GotoSymbol<CR>
 nnoremap <leader>fu :action FindUsages<CR>
 nnoremap <leader>fw :action FindInPath<CR>
 nnoremap <leader>h :action SplitHorizontally<CR>
-nnoremap <leader>sh :action Vcs.ShowTabbedFileHistory<CR>
 nnoremap <leader>np :action NewProject<CR>
 nnoremap <leader>op :action OpenFile<CR>
-nnoremap <leader>rh :action Vcs.RollbackChangedLines<CR>
 nnoremap <leader>ra :action RenameElement<CR>
 nnoremap <leader>rb :action MakeGradleProject<CR>
+nnoremap <leader>rd :action Resume<CR>
 nnoremap <leader>rc :action Compile<CR>
 nnoremap <leader>rn :action Run<CR>
 nnoremap <leader>ro :action IdeaVim.ReloadVimRc.reload <CR>
