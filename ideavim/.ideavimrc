@@ -69,7 +69,7 @@ nnoremap <leader>fm :action ReformatCode<CR>
 nnoremap <leader>fs :action GotoSymbol<CR>
 nnoremap <leader>fu :action FindUsages<CR>
 nnoremap <leader>fw :action FindInPath<CR>
-nnoremap <leader>h :action SplitHorizontally<CR>
+nnoremap <leader>hs :action SplitHorizontally<CR>
 nnoremap <leader>np :action NewProject<CR>
 nnoremap <leader>op :action OpenFile<CR>
 nnoremap <leader>ra :action RenameElement<CR>
@@ -87,7 +87,7 @@ nnoremap <leader>si :action StepInto<CR>
 nnoremap <leader>so :action StepOver<CR>
 nnoremap <leader>su :action StepOut<CR>
 nnoremap <leader>t :action Terminal.OpenInTerminal<CR>
-nnoremap <leader>v :action SplitVertically<CR>
+nnoremap <leader>vs :action SplitVertically<CR>
 nnoremap <leader>xa :action CloseAllEditorsButActive<CR>
 nnoremap <leader>xl :action CloseAllEditors<CR>
 nnoremap <leader>xx :action CloseEditor<CR>
