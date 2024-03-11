@@ -2,10 +2,6 @@ local on_attach = require("nvchad.configs.lspconfig").on_attach
 local on_init = require("nvchad.configs.lspconfig").on_init
 local capabilities = require("nvchad.configs.lspconfig").capabilities
 
-require("neodev").setup {
-  library = { plugins = { "nvim-dap-ui" }, types = true },
-}
-
 require "configs.jdtls"
 
 local lspconfig = require "lspconfig"

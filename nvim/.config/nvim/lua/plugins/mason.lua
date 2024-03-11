@@ -3,7 +3,6 @@ return {
     "williamboman/mason.nvim",
     opts = {
       log_level = vim.log.levels.DEBUG,
-      max_concurrent_installers = 7,
       ensure_installed = {
         -- LSP
         "angular-language-server",
@@ -95,7 +94,7 @@ return {
         "java-test",
         "js-debug-adapter",
         "node-debug2-adapter",
-      }
+      },
     },
     build = ":MasonUpdate",
     dependencies = { "williamboman/mason-lspconfig" },

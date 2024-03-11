@@ -47,7 +47,7 @@ return {
     end,
     keys = {
       {
-        "<leader>fd",
+        "<leader>fld",
         "<CMD>FlutterDevices<CR>",
         desc = "Flutter Devices",
         noremap = true,
@@ -55,7 +55,7 @@ return {
         silent = true,
       },
       {
-        "<leader>fe",
+        "<leader>fle",
         "<CMD>FlutterEmulators<CR>",
         desc = "Flutter Emulators",
         noremap = true,
@@ -63,7 +63,7 @@ return {
         silent = true,
       },
       {
-        "<leader>fr",
+        "<leader>flr",
         "<CMD>FlutterReload<CR>",
         desc = "Flutter Reload",
         noremap = true,
@@ -71,7 +71,7 @@ return {
         silent = true,
       },
       {
-        "<leader>fR",
+        "<leader>flR",
         "<CMD>FlutterRestart<CR>",
         desc = "Flutter Restart",
         noremap = true,
@@ -79,7 +79,7 @@ return {
         silent = true,
       },
       {
-        "<leader>fq",
+        "<leader>flq",
         "<CMD>FlutterQuit<CR>",
         desc = "Flutter Quit",
         noremap = true,
