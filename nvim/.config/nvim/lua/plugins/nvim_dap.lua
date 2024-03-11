@@ -9,7 +9,7 @@ return {
     },
     config = function()
       dofile(vim.g.base46_cache .. "dap")
-      require "custom.configs.nvim-dap"
+      require "configs.nvim_dap"
     end,
   },
 }

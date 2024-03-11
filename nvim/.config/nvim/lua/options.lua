@@ -1,47 +1,51 @@
+require "nvchad.options"
+
+-- add yours here!
 local autocmd = vim.api.nvim_create_autocmd
 
 local vim = vim
 local g = vim.g
+
 local opt = vim.opt
 local clipboard = opt.clipboard
 
 vim.scriptencoding = "utf-8"
 
-opt.foldmethod = "expr"
-opt.foldexpr = "nvim_treesitter#foldexpr()"
-opt.foldenable = false
-opt.foldlevelstart = 99
-opt.foldlevel = 99
 opt.autowrite = true
 opt.encoding = "utf-8"
 opt.fileencoding = "utf-8"
-opt.number = true
-opt.smartcase = true
-opt.relativenumber = true
+opt.foldenable = false
+opt.foldexpr = "nvim_treesitter#foldexpr()"
+opt.foldlevel = 99
+opt.foldlevelstart = 99
+opt.foldmethod = "expr"
 opt.ignorecase = true
+opt.lazyredraw = true
+opt.number = true
+opt.relativenumber = true
 opt.ruler = true
+opt.smartcase = true
 opt.wrap = false
-opt.lazyredraw = false
 
-opt.title = true
-opt.autoindent = true
-opt.smartindent = true
-opt.breakindent = true
-opt.smarttab = true
-opt.expandtab = true
-opt.tabstop = 2
-opt.shiftwidth = 2
-opt.hlsearch = true
-opt.backup = false
-opt.showcmd = true
-opt.cmdheight = 1
-opt.termguicolors = true
-g.vscode_snippets_path = "./snippets/vscode/"
-g.lua_snippets_path = "./snippets/lua/"
+g.dart_format_on_save = true
 g.dart_html_in_string = true
 g.dart_style_guid = 2
-g.dart_format_on_save = true
 g.dart_trailing_comma_indent = true
+g.lua_snippets_path = "./snippets/lua/"
+g.vscode_snippets_path = "./snippets/vscode/"
+opt.autoindent = true
+opt.backup = false
+opt.breakindent = true
+opt.cmdheight = 1
+opt.expandtab = true
+opt.hlsearch = true
+opt.shiftwidth = 2
+opt.showcmd = true
+opt.smartindent = true
+opt.smarttab = true
+opt.tabstop = 2
+opt.termguicolors = true
+opt.title = true
 
 -- Auto resize panes when resizing nvim window
 autocmd("VimResized", {

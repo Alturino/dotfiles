@@ -1,11 +1,12 @@
-local on_attach = require("plugins.configs.lspconfig").on_attach
-local capabilities = require("plugins.configs.lspconfig").capabilities
+local on_attach = require("nvchad.configs.lspconfig").on_attach
+local on_init = require("nvchad.configs.lspconfig").on_init
+local capabilities = require("nvchad.configs.lspconfig").capabilities
 
 require("neodev").setup {
   library = { plugins = { "nvim-dap-ui" }, types = true },
 }
 
-require "custom.configs.jdtls"
+require "configs.jdtls"
 
 local lspconfig = require "lspconfig"
 
@@ -40,12 +41,14 @@ local default_config_servers = {
 
 for _, lsp in ipairs(default_config_servers) do
   lspconfig[lsp].setup {
+    on_init = on_init,
     on_attach = on_attach,
     capabilities = capabilities,
   }
 end
 
 lspconfig.clangd.setup {
+  on_init = on_init,
   on_attach = on_attach,
   capabilities = capabilities,
   cmd = {
@@ -55,18 +58,21 @@ lspconfig.clangd.setup {
 }
 
 lspconfig.cssmodules_ls.setup {
+  on_init = on_init,
   on_attach = on_attach,
   capabilities = capabilities,
   filetypes = { "typescriptreact", "javascriptreact" },
 }
 
 lspconfig.docker_compose_language_service.setup {
+  on_init = on_init,
   on_attach = on_attach,
   capabilities = capabilities,
   filetypes = { "yaml", "yml", "yaml.docker-compose" },
 }
 
 lspconfig.eslint.setup {
+  on_init = on_init,
   on_attach = function(client, bufnr)
     vim.api.nvim_create_autocmd("BufWritePre", {
       buffer = bufnr,
@@ -78,6 +84,7 @@ lspconfig.eslint.setup {
 }
 
 lspconfig.golangci_lint_ls.setup {
+  on_init = on_init,
   on_attach = on_attach,
   capabilities = capabilities,
   filetypes = { "go", "gomod", "gosum" },
@@ -88,6 +95,7 @@ lspconfig.golangci_lint_ls.setup {
 }
 
 lspconfig.html.setup {
+  on_init = on_init,
   on_attach = function(client, bufnr)
     on_attach(client, bufnr)
     client.server_capabilities.documentFormattingProvider = false
@@ -98,6 +106,7 @@ lspconfig.html.setup {
 }
 
 lspconfig.jsonls.setup {
+  on_init = on_init,
   on_attach = on_attach,
   capabilities = capabilities,
   settings = {
@@ -121,12 +130,14 @@ lspconfig.lua_ls.setup {
 }
 
 lspconfig.ltex.setup {
+  on_init = on_init,
   on_attach = on_attach,
   capabilities = capabilities,
   filetypes = { "latex" },
 }
 
 lspconfig.stylelint_lsp.setup {
+  on_init = on_init,
   on_attach = on_attach,
   capabilities = capabilities,
   filetypes = {
@@ -140,6 +151,7 @@ lspconfig.stylelint_lsp.setup {
 }
 
 lspconfig.tailwindcss.setup {
+  on_init = on_init,
   on_attach = on_attach,
   capabilities = capabilities,
   filetypes = {
@@ -166,6 +178,7 @@ lspconfig.tailwindcss.setup {
 }
 
 lspconfig.tsserver.setup {
+  on_init = on_init,
   on_attach = function(client, bufnr)
     on_attach(client, bufnr)
     client.server_capabilities.documentFormattingProvider = false
@@ -175,6 +188,7 @@ lspconfig.tsserver.setup {
 }
 
 lspconfig.yamlls.setup {
+  on_init = on_init,
   on_attach = on_attach,
   capabilities = capabilities,
   settings = {

@@ -1,7 +1,7 @@
 local dap = require "dap"
 local dapui = require "dapui"
-local dap_adapters = require("custom.configs.dap").adapters
-local dap_configurations = require("custom.configs.dap").configurations
+local dap_adapters = require("configs.dap").adapters
+local dap_configurations = require("configs.dap").configurations
 
 dap.listeners.after.event_initialized["dapui_config"] = function()
   dapui.open()

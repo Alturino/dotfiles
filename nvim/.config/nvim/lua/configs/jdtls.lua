@@ -1,5 +1,5 @@
-local nvchad_on_attach = require("plugins.configs.lspconfig").on_attach
-local nvchad_capabilities = require("plugins.configs.lspconfig").capabilities
+local nvchad_on_attach = require("nvchad.configs.lspconfig").on_attach
+local nvchad_capabilities = require("nvchad.configs.lspconfig").capabilities
 local java_cmds = vim.api.nvim_create_augroup("java_cmds", { clear = true })
 local vim = vim
 local cache_vars = {}
@@ -62,7 +62,7 @@ local function get_jdtls_paths()
   local java_debug_path = require("mason-registry").get_package("java-debug-adapter"):get_install_path()
 
   local java_debug_bundle =
-    vim.split(vim.fn.glob(java_debug_path .. "/extension/server/com.microsoft.java.debug.plugin-*.jar"), "\n")
+      vim.split(vim.fn.glob(java_debug_path .. "/extension/server/com.microsoft.java.debug.plugin-*.jar"), "\n")
 
   if java_debug_bundle[1] ~= "" then
     vim.list_extend(path.bundles, java_debug_bundle)
