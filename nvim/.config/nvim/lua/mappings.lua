@@ -4,6 +4,8 @@ require "nvchad.mappings"
 
 local map = vim.keymap.set
 
+vim.keymap.del("n", "<leader>b")
+
 -- General
 map("n", "<C-Down>", "<C-w>-", { desc = "Decrease buffer height", silent = true, noremap = true })
 map("n", "<C-Left>", "<C-w><", { desc = "Decrease buffer width", silent = true, noremap = true })
@@ -281,6 +283,46 @@ end, { desc = "Goto Preview close_all_win", silent = true, noremap = true })
 map("n", "gpr", function()
   require("goto-preview").goto_preview_references()
 end, { desc = "Goto Preview close_all_win", silent = true, noremap = true })
+
+map("n", "<leader>bp", function()
+  require("dap").toggle_breakpoint()
+end, { desc = "ESC", silent = true, noremap = true })
+
+map("n", "<leader>dc", function()
+  require("dap").continue()
+end, { desc = "Dap continue" })
+map("n", "<leader>dr", function()
+  require("dap").restart()
+end, { desc = "Dap restart" })
+map("n", "<leader>so", function()
+  require("dap").step_over()
+end, { desc = "Dap step over" })
+map("n", "<leader>si", function()
+  require("dap").step_into()
+end, { desc = "Dap step into" })
+map("n", "<leader>su", function()
+  require("dap").step_out()
+end, { desc = "Dap step out" })
+map("n", "<leader>bp", function()
+  require("dap").toggle_breakpoint()
+end, { desc = "Dap toggle breakpoint" })
+map("n", "<leader>sbp", function()
+  require("dap").set_breakpoint()
+end, { desc = "Dap set breakpoint" })
+map({ "n", "v" }, "<leader>dh", function()
+  require("dap.ui.widgets").hover()
+end)
+map({ "n", "v" }, "<leader>dp", function()
+  require("dap.ui.widgets").preview()
+end)
+map("n", "<leader>df", function()
+  local widgets = require "dap.ui.widgets"
+  widgets.centered_float(widgets.frames)
+end)
+map("n", "<leader>ds", function()
+  local widgets = require "dap.ui.widgets"
+  widgets.centered_float(widgets.scopes)
+end)
 
 -- Insert mode
 map("i", "jk", "<ESC>", { desc = "ESC", silent = true, noremap = true })
