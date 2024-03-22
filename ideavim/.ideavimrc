@@ -48,14 +48,14 @@ sethandler <S-Tab> a:vim
 inoremap <nowait> jj <ESC>
 inoremap <nowait> jk <ESC>
 
-nnoremap <C-d> <C-d>zz<CR>
+nnoremap <C-d> <C-d>zz
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 nnoremap <C-n> :NERDTreeToggle<CR>
 nnoremap <C-t> :action ActivateTerminalToolWindow<CR>
-nnoremap <C-u> <C-u>zz<CR>
+nnoremap <C-u> <C-u>zz
 nnoremap <S-TAB> :action PreviousTab<CR>
 nnoremap <TAB> :action NextTab<CR>
 nnoremap <leader>bp :action ToggleLineBreakpoint<CR>
@@ -86,7 +86,7 @@ nnoremap <leader>sh :action Vcs.ShowTabbedFileHistory<CR>
 nnoremap <leader>si :action StepInto<CR>
 nnoremap <leader>so :action StepOver<CR>
 nnoremap <leader>su :action StepOut<CR>
-nnoremap <leader>t :action Terminal.OpenInTerminal<CR>
+nnoremap <leader>to :action Terminal.OpenInTerminal<CR>
 nnoremap <leader>vs :action SplitVertically<CR>
 nnoremap <leader>xa :action CloseAllEditorsButActive<CR>
 nnoremap <leader>xl :action CloseAllEditors<CR>

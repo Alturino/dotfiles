@@ -265,7 +265,6 @@ M.nvimtree = {
 
   filters = {
     custom = {
-      "build",
       "dist",
       "lib",
       "node_modules",
@@ -291,7 +290,6 @@ M.telescope = {
   defaults = {
     file_ignore_patterns = {
       "node_modules",
-      "build",
       "dist",
     },
   },

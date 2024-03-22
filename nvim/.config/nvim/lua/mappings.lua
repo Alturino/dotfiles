@@ -4,7 +4,7 @@ require "nvchad.mappings"
 
 local map = vim.keymap.set
 
-vim.keymap.del("n", "<leader>b")
+-- vim.keymap.del("n", "<leader>b")
 
 -- General
 map("n", "<C-Down>", "<C-w>-", { desc = "Decrease buffer height", silent = true, noremap = true })
@@ -288,7 +288,7 @@ map("n", "<leader>bp", function()
   require("dap").toggle_breakpoint()
 end, { desc = "ESC", silent = true, noremap = true })
 
-map("n", "<leader>dc", function()
+map("n", "<leader>sd", function()
   require("dap").continue()
 end, { desc = "Dap continue" })
 map("n", "<leader>dr", function()
