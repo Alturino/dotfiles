@@ -12,7 +12,7 @@ return {
         function()
           require("refactoring").refactor "Inline Function"
         end,
-        desc = "Extrack block to file",
+        desc = "Refactoring inline function",
         noremap = true,
         nowait = true,
         silent = true,
@@ -23,18 +23,18 @@ return {
         function()
           require("refactoring").refactor "Inline Var"
         end,
-        desc = "Extrack block to inline variable",
+        desc = "Refactoring inline variable",
         noremap = true,
         nowait = true,
         silent = true,
       },
       {
         mode = { "n", "x" },
-        "<leader>rr",
+        "<leader>trs",
         function()
           require("telescope").extensions.refactoring.refactors()
         end,
-        desc = "Telescope Refactor Selection",
+        desc = "Refactoring Telecope selection",
         noremap = true,
         nowait = true,
         silent = true,

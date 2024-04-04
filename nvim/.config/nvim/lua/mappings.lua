@@ -324,5 +324,9 @@ map("n", "<leader>ds", function()
   widgets.centered_float(widgets.scopes)
 end)
 
+-- Rest.nvim
+map("n", "<leader>rr", "<cmd>Rest run<cr>", { desc = "Rest run", silent = true, noremap = true })
+map("n", "<leader>rl", "<cmd>Rest run last<cr>", { desc = "Rest run last", silent = true, noremap = true })
+
 -- Insert mode
 map("i", "jk", "<ESC>", { desc = "ESC", silent = true, noremap = true })
