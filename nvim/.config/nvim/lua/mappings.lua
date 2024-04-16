@@ -288,6 +288,10 @@ map("n", "<leader>bp", function()
   require("dap").toggle_breakpoint()
 end, { desc = "ESC", silent = true, noremap = true })
 
+map("n", "<leader>cbp", function()
+  require("dap").set_breakpoint(vim.fn.input "Dap conditional breakpoint: ")
+end, { desc = "ESC", silent = true, noremap = true })
+
 map("n", "<leader>sd", function()
   require("dap").continue()
 end, { desc = "Dap continue" })
