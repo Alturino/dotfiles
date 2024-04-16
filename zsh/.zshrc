@@ -96,7 +96,7 @@ plugins=(
   docker-compose
   dotenv
   fd
-  # flutter
+  flutter
   fzf
   fzf-tab
   fzf-tab-source
@@ -106,6 +106,7 @@ plugins=(
   golang
   gpg-agent
   gradle
+  helm
   kubectl
   minikube
   ng
