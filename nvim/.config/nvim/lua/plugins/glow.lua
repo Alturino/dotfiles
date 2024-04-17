@@ -15,8 +15,5 @@ return {
       require("glow").setup(opts)
     end,
     cmd = "Glow",
-    keys = {
-      { "<leader>pd", "<cmd>Glow<cr>", desc = "Preview Markdown", nowait = true, noremap = true },
-    },
   },
 }
