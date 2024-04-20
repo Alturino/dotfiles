@@ -6,13 +6,13 @@ return {
       {
         "nvim-treesitter/nvim-treesitter-context",
         opts = {
-          enable = true,    -- Enable this plugin (Can be enabled/disabled later via commands)
-          max_lines = 0,    -- How many lines the window should span. Values <= 0 mean no limit.
+          enable = true, -- Enable this plugin (Can be enabled/disabled later via commands)
+          max_lines = 0, -- How many lines the window should span. Values <= 0 mean no limit.
           min_window_height = 0, -- Minimum editor window height to enable context. Values <= 0 mean no limit.
           line_numbers = true,
           multiline_threshold = 20, -- Maximum number of lines to show for a single context
-          trim_scope = 'outer', -- Which context lines to discard if `max_lines` is exceeded. Choices: 'inner', 'outer'
-          mode = 'cursor',  -- Line used to calculate context. Choices: 'cursor', 'topline'
+          trim_scope = "outer", -- Which context lines to discard if `max_lines` is exceeded. Choices: 'inner', 'outer'
+          mode = "cursor", -- Line used to calculate context. Choices: 'cursor', 'topline'
           -- Separator between context and content. Should be a single character string, like '-'.
           -- When separator is set, the context will only show up when there are at least 2 lines above cursorline.
           separator = nil,
@@ -96,19 +96,19 @@ return {
           lookahead = true,
           selection_modes = {
             ["@parameter.outer"] = "v", -- charwise
-            ["@function.outer"] = "V",  -- linewise
-            ["@class.outer"] = "<c-v>", -- blockwise
+            ["@function.outer"] = "V", -- linewise
+            ["@class.outer"] = "V",
           },
           keymaps = {
-            ["ia"] = "@parameter.outer",   -- a = args\ arguments
+            ["ia"] = "@parameter.outer", -- a = args\ arguments
             ["aa"] = "@parameter.inner",
-            ["af"] = "@function.outer",    -- f = function
+            ["af"] = "@function.outer", -- f = function
             ["if"] = "@function.inner",
-            ["ac"] = "@class.outer",       -- c = class
+            ["ac"] = "@class.outer", -- c = class
             ["ic"] = "@class.inner",
-            ["il"] = "@loop.inner",        -- l = loop
+            ["il"] = "@loop.inner", -- l = loop
             ["al"] = "@loop.outer",
-            ["ib"] = "@block.inner",       -- b = block
+            ["ib"] = "@block.inner", -- b = block
             ["ab"] = "@block.outer",
             ["ad"] = "@conditional.outer", -- d = determiner / conditional
             ["id"] = "@conditional.inner",
