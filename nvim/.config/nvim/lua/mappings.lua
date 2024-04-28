@@ -198,36 +198,36 @@ map("n", "<leader>fr", function()
 end, { desc = "Find lsp_references", silent = true, noremap = true })
 
 -- Trouble
-map("n", "<leader>tt", "<Cmd>TroubleToggle<CR>", { desc = "TroubleToggle", silent = true, noremap = true })
+map("n", "<leader>tt", "<Cmd>TroubleToggle<CR>", { desc = "Trouble toggle", silent = true, noremap = true })
 map(
   "n",
   "<leader>tqf",
   "<Cmd>TroubleToggle quickfix<CR>",
-  { desc = "TroubleToggle quick fix", silent = true, noremap = true }
+  { desc = "Trouble toggle quick fix", silent = true, noremap = true }
 )
 map(
   "n",
   "<leader>twd",
   "<Cmd>TroubleToggle workspace_diagnostics<CR>",
-  { desc = "TroubleToggle workspace diagnostics", silent = true, noremap = true }
+  { desc = "Trouble toggle workspace diagnostics", silent = true, noremap = true }
 )
 map(
   "n",
   "<leader>tdd",
   "<Cmd>TroubleToggle document_diagnostic<CR>",
-  { desc = "TroubleToggle document diagnostic", silent = true, noremap = true }
+  { desc = "Trouble toggle document diagnostic", silent = true, noremap = true }
 )
 map(
   "n",
   "<leader>tll",
   "<Cmd>TroubleToggle loclist<CR>",
-  { desc = "TroubleToggle loclist", silent = true, noremap = true }
+  { desc = "Trouble toggle loclist", silent = true, noremap = true }
 )
 map(
   "n",
   "<leader>tlr",
   "<Cmd>TroubleToggle lsp_references<CR>",
-  { desc = "TroubleToggle lsp_references", silent = true, noremap = true }
+  { desc = "Trouble toggle lsp_references", silent = true, noremap = true }
 )
 
 -- Treesitter Textobjects
