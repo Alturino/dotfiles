@@ -341,6 +341,3 @@ map("n", "<leader>mdp", "<cmd>MarkdownPreview<cr>", { desc = "Markdown preview",
 -- Insert mode
 map("i", "jk", "<ESC>", { desc = "ESC", silent = true, noremap = true })
 map("i", "jj", "<ESC>", { desc = "ESC", silent = true, noremap = true })
-
--- Visual mode
-map("x", "p", '"_dP')
