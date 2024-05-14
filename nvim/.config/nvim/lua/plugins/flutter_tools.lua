@@ -9,8 +9,7 @@ return {
       "stevearc/dressing.nvim", -- optional for vim.ui.select
     },
     config = function()
-      local on_attach = require("plugins.configs.lspconfig").on_attach
-      local capabilities = require("plugins.configs.lspconfig").capabilities
+      local configs = require "nvchad.configs.lspconfig"
       require("flutter-tools").setup {
         ui = {
           notification_style = "plugin",
@@ -31,8 +30,8 @@ return {
           run_via_dap = true,
         },
         lsp = {
-          on_attach = on_attach,
-          capabilities = capabilities,
+          on_attach = configs.on_attach,
+          capabilities = configs.capabilities,
           color = {
             enabled = true,
             background = true,

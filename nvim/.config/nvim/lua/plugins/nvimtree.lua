@@ -10,7 +10,6 @@ return {
         custom = {
           "build",
           "dist",
-          "lib",
           "node_modules",
         },
       },
@@ -29,5 +28,5 @@ return {
         centralize_selection = true,
       },
     },
-  }
+  },
 }
