@@ -75,6 +75,13 @@ autocmd("FileType", {
   end,
 })
 
+vim.filetype.add {
+  pattern = {
+    ["docker.*%.ya?ml"] = "yaml.docker-compose",
+    [".*compose%.ya?ml"] = "yaml.docker-compose",
+  },
+}
+
 local has = vim.fn.has
 local is_win = has "win32" == 1
 local is_mac = has "macunix" == 1
@@ -85,7 +92,7 @@ if is_win then
   clipboard:prepend { "unnamed", "unnamedplus" }
   opt.shell = "pwsh.exe"
   opt.shellcmdflag =
-  "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;"
+    "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;"
   opt.shellxquote = ""
   opt.shellquote = ""
   opt.shellredir = ""
