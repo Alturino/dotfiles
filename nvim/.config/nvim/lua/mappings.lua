@@ -58,7 +58,7 @@ map("n", "<leader>hls", function()
 end, { desc = "Harpoon logger show", silent = true, noremap = true })
 map("n", "<leader>ha", function()
   local harpoon = require "harpoon"
-  harpoon:list():append()
+  harpoon:list():add()
 end, { desc = "Harpoon Add", silent = true, noremap = true })
 map("n", "<leader>hm", function()
   local harpoon = require "harpoon"
