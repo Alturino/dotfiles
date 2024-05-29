@@ -12,8 +12,10 @@ return {
         end,
       },
       { "b0o/schemastore.nvim" },
+      { "nvim-java/nvim-java" },
     },
     config = function()
+      require("java").setup()
       require("nvchad.configs.lspconfig").defaults()
       require "configs.lspconfig"
     end, -- Override to setup mason-lspconfig

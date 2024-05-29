@@ -34,6 +34,8 @@ map("n", "<leader>vs", "<CMD>vsplit<CR><C-l>", { desc = "Vertical Split", silent
 map("n", "<leader>xa", function()
   require("nvchad.tabufline").closeOtherBufs()
 end, { desc = "Close buffers except current buffer", silent = true, noremap = true })
+map("n", "[b", "<C-O>", { desc = "Jump Back", silent = true, noremap = true })
+map("n", "]b", "<C-I>", { desc = "Jump Forward", silent = true, noremap = true })
 
 -- Harpoon
 map("n", "<leader>h1", function()

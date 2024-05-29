@@ -15,6 +15,7 @@ local servers = {
   graphql = {},
   groovyls = {},
   helm_ls = {},
+  jdtls = {},
   marksman = {},
   prismals = {},
   rubocop = {},

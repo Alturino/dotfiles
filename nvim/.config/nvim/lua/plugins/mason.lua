@@ -23,7 +23,7 @@ return {
         "groovy-language-server",
         "helm-ls",
         "html-lsp",
-        "jdtls",
+        -- "jdtls",
         "json-lsp",
         "ltex-ls",
         "lua-language-server",
