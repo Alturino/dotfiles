@@ -27,13 +27,21 @@ opt.ruler = true
 opt.smartcase = true
 opt.wrap = false
 
+-- Dart plugin
 g.dart_format_on_save = true
 g.dart_html_in_string = true
 g.dart_style_guid = 2
 g.dart_trailing_comma_indent = true
+
 g.lua_snippets_path = "./snippets/lua/"
 g.vscode_snippets_path = "./snippets/vscode/"
+
+-- Dadbod
 g.db_ui_bind_param_pattern = "\\$\\d\\+"
+g.db_ui_execute_on_save = 0
+g.db_ui_tmp_query_location = g.db_ui_save_location
+g.db_ui_use_nerd_fonts = 1
+g.db_ui_use_nvim_notify = 1
 
 opt.autoindent = true
 opt.backup = false
