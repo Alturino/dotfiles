@@ -148,7 +148,7 @@ for name, opts in pairs(servers) do
       })
       configs.on_attach(client, bufnr)
     end
-  elseif name == "tsserver" or name == "html" or name == "docker_compose_language_service" then
+  elseif name == "tsserver" or name == "html" or name == "docker_compose_language_service" or name == "jsonls" then
     opts.on_attach = function(client, bufnr)
       configs.on_attach(client, bufnr)
       client.server_capabilities.documentFormattingProvider = false

@@ -33,6 +33,8 @@ g.dart_style_guid = 2
 g.dart_trailing_comma_indent = true
 g.lua_snippets_path = "./snippets/lua/"
 g.vscode_snippets_path = "./snippets/vscode/"
+g.db_ui_bind_param_pattern = "\\$\\d\\+"
+
 opt.autoindent = true
 opt.backup = false
 opt.breakindent = true

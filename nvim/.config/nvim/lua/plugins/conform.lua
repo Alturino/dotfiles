@@ -22,7 +22,7 @@ return {
         sqlfluff = {
           inherit = false,
           command = "sqlfluff",
-          args = { "fix", "--disable-progress-bar", "-n", "-v", "-f" },
+          args = { "fix", "--disable-progress-bar", "-n", "-v" },
           stdin = false,
           require_cwd = false,
         },

@@ -18,6 +18,7 @@ return {
       require("java").setup()
       require("nvchad.configs.lspconfig").defaults()
       require "configs.lspconfig"
+      -- vim.lsp.set_log_level "debug"
     end, -- Override to setup mason-lspconfig
   },
 }

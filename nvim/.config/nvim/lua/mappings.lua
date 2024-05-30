@@ -13,13 +13,7 @@ map("n", "<C-Right>", "<C-w>>", { desc = "Increase buffer width", silent = true,
 map("n", "<C-Up>", "<C-w>+", { desc = "Increase buffer height", silent = true, noremap = true })
 map("n", "<C-d>", "<C-d>zz", { desc = "Scroll down and focus center", silent = true, noremap = true })
 map("n", "<C-u>", "<C-u>zz", { desc = "Scroll up and focus center", silent = true, noremap = true })
-map(
-  "n",
-  "<leader>dba",
-  "<CMD>DBUIAddConnection<CR>",
-  { desc = "Dadbod ui add connection", silent = true, noremap = true }
-)
-map("n", "<leader>tdb", "<CMD>DBUIToggle<CR>", { desc = "Dadbod ui toggle", silent = true, noremap = true })
+
 map("n", "<leader>fm", function()
   vim.lsp.buf.format { async = true }
 end, { desc = "LSP formatting", silent = true, noremap = true })
@@ -339,6 +333,24 @@ map("n", "<leader>gp", "<cmd>Glow<cr>", { desc = "Glow markdown preview", silent
 
 -- Markdown Preview
 map("n", "<leader>mdp", "<cmd>MarkdownPreview<cr>", { desc = "Markdown preview", silent = true, noremap = true })
+
+-- Dadbod
+map(
+  "n",
+  "<leader>dba",
+  "<CMD>DBUIAddConnection<CR>",
+  { desc = "Dadbod ui add connection", silent = true, noremap = true }
+)
+map("n", "<leader>tdb", "<CMD>DBUIToggle<CR>", { desc = "Dadbod ui toggle", silent = true, noremap = true })
+map("x", "<leader>rq", function()
+  return vim.fn["db#op_exec"]()
+end, {
+  desc = "Dadbod ui Run query under cursor",
+  silent = true,
+  noremap = true,
+  nowait = true,
+  expr = true,
+})
 
 -- Insert mode
 map("i", "jk", "<ESC>", { desc = "ESC", silent = true, noremap = true })
