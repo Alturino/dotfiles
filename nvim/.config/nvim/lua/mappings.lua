@@ -15,6 +15,7 @@ map("n", "<C-d>", "<C-d>zz", { desc = "Scroll down and focus center", silent = t
 map("n", "<C-u>", "<C-u>zz", { desc = "Scroll up and focus center", silent = true, noremap = true })
 map("n", "<C-u>", "<C-u>zz", { desc = "Scroll up and focus center", silent = true, noremap = true })
 map("n", "<leader>q", "<CMD>q<CR>", { desc = "Quit from buffer", silent = true, noremap = true })
+map("n", "<leader>qa", "<CMD>qa<CR>", { desc = "Quit from buffer", silent = true, noremap = true })
 
 map("n", "<leader>fm", function()
   vim.lsp.buf.format { async = true }

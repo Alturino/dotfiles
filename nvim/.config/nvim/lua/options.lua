@@ -39,7 +39,8 @@ g.vscode_snippets_path = "./snippets/vscode/"
 -- Dadbod
 g.db_ui_bind_param_pattern = "\\$\\d\\+"
 g.db_ui_execute_on_save = 0
-g.db_ui_tmp_query_location = g.db_ui_save_location
+g.db_ui_save_location = "~/.local/share/db_ui"
+g.db_ui_tmp_query_location = g.db_ui_save_location .. "/queries/"
 g.db_ui_use_nerd_fonts = 1
 g.db_ui_use_nvim_notify = 1
 
