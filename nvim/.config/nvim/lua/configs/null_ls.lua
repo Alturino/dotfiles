@@ -26,6 +26,16 @@ local sources = {
   d.vint,
 
   f.clang_format.with { filetypes = { "c", "cpp" } },
+  f.sqlfluff.with {
+    args = {
+      "fix",
+      "--disable-progress-bar",
+      "-n",
+      "--stdin-filename",
+      "$FILENAME",
+      "-",
+    },
+  },
   f.dart_format,
   f.gofumpt,
   f.goimports,
