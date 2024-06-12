@@ -344,16 +344,12 @@ map(
   "<CMD>DBUIAddConnection<CR>",
   { desc = "Dadbod ui add connection", silent = true, noremap = true }
 )
-map("n", "<leader>tdb", "<CMD>DBUIToggle<CR>", { desc = "Dadbod ui toggle", silent = true, noremap = true })
-map("x", "<leader>rq", function()
-  return vim.fn["db#op_exec"]()
-end, {
-  desc = "Dadbod ui Run query under cursor",
-  silent = true,
-  noremap = true,
-  nowait = true,
-  expr = true,
-})
+map("n", "<leader>db", "<CMD>DBUIToggle<CR>", { desc = "Dadbod ui toggle", silent = true, noremap = true })
+
+-- -- Dbee
+-- map("n", "<leader>db", function()
+--   require("dbee").toggle()
+-- end, { desc = "Dbee toggle drawer", silent = true, noremap = true })
 
 -- Insert mode
 map("i", "jk", "<ESC>", { desc = "ESC", silent = true, noremap = true })
