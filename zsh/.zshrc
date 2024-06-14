@@ -97,6 +97,7 @@ plugins=(
   dotenv
   fd
   flutter
+  fnm
   fzf
   fzf-tab
   fzf-tab-source
@@ -216,3 +217,12 @@ source ~/.zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh
 
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+# fnm
+FNM_PATH="/home/rickyalturino/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="/home/rickyalturino/.local/share/fnm:$PATH"
+  eval "`fnm env`"
+fi
+
+[[ -s "/home/rickyalturino/.gvm/scripts/gvm" ]] && source "/home/rickyalturino/.gvm/scripts/gvm"

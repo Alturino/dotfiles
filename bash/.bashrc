@@ -143,3 +143,5 @@ export SDKMAN_DIR="$HOME/.sdkman"
 export PATH=$PATH:$HOME/.maestro/bin
 
 complete -C /usr/bin/terraform terraform
+
+[[ -s "/home/rickyalturino/.gvm/scripts/gvm" ]] && source "/home/rickyalturino/.gvm/scripts/gvm"
