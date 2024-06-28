@@ -240,20 +240,20 @@ map({ "n", "x", "o" }, ";", function()
 end, { desc = "Treesitter Repeat Last Move Next", silent = true, noremap = true })
 map({ "n", "x", "o" }, "F", function()
   local ts_repeat_move = require "nvim-treesitter.textobjects.repeatable_move"
-  return ts_repeat_move.builtin_F()
-end, { desc = "Treesitter Repeat Builtin F", silent = true, noremap = true })
+  return ts_repeat_move.builtin_F_expr()
+end, { desc = "Treesitter Repeat Builtin F", silent = true, noremap = true, expr = true })
 map({ "n", "x", "o" }, "T", function()
   local ts_repeat_move = require "nvim-treesitter.textobjects.repeatable_move"
-  return ts_repeat_move.builtin_T()
-end, { desc = "Treesitter Repeat Builtin T", silent = true, noremap = true })
+  return ts_repeat_move.builtin_T_expr()
+end, { desc = "Treesitter Repeat Builtin T", silent = true, noremap = true, expr = true })
 map({ "n", "x", "o" }, "f", function()
   local ts_repeat_move = require "nvim-treesitter.textobjects.repeatable_move"
-  return ts_repeat_move.builtin_f()
-end, { desc = "Treesitter Repeat Builtin f", silent = true, noremap = true })
+  return ts_repeat_move.builtin_f_expr()
+end, { desc = "Treesitter Repeat Builtin f", silent = true, noremap = true, expr = true })
 map({ "n", "x", "o" }, "t", function()
   local ts_repeat_move = require "nvim-treesitter.textobjects.repeatable_move"
-  return ts_repeat_move.builtin_t()
-end, { desc = "Treesitter Repeat Builtin t", silent = true, noremap = true })
+  return ts_repeat_move.builtin_t_expr()
+end, { desc = "Treesitter Repeat Builtin t", silent = true, noremap = true, expr = true })
 
 -- SymbolsOutline
 map(

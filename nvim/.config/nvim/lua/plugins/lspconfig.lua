@@ -12,13 +12,13 @@ return {
         end,
       },
       { "b0o/schemastore.nvim" },
-      { "nvim-java/nvim-java" },
+      { "nvim-java/nvim-java", ft = { "java" } },
     },
     config = function()
       require("java").setup()
       require("nvchad.configs.lspconfig").defaults()
       require "configs.lspconfig"
-      -- vim.lsp.set_log_level "debug"
+      vim.lsp.set_log_level "debug"
     end, -- Override to setup mason-lspconfig
   },
 }
