@@ -221,3 +221,10 @@ export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
+
+# fnm
+FNM_PATH="/home/rickyalturino/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="/home/rickyalturino/.local/share/fnm:$PATH"
+  eval "`fnm env`"
+fi
