@@ -3,8 +3,10 @@ require "nvchad.mappings"
 -- add yours here
 
 local map = vim.keymap.set
+local del = vim.keymap.del
 
--- vim.keymap.del("n", "<leader>b")
+-- del("n", "<leader>b")
+del("n", "<C-n>")
 
 -- General
 map("n", "<C-Down>", "<C-w>-", { desc = "Decrease buffer height", silent = true, noremap = true })
@@ -136,6 +138,7 @@ end, { desc = "Find symbols", silent = true, noremap = true })
 map("n", "<leader>fu", function()
   require("telescope.builtin").lsp_references()
 end, { desc = "Find Usages", silent = true, noremap = true })
+map("n", "<leader>fk", "<CMD>Telescope keymaps<CR>", { desc = "Telescope find keymap", silent = true, noremap = true })
 
 -- LSP
 map("n", "<leader>cA", function()
@@ -350,6 +353,15 @@ map("n", "<leader>db", "<CMD>DBUIToggle<CR>", { desc = "Dadbod ui toggle", silen
 -- map("n", "<leader>db", function()
 --   require("dbee").toggle()
 -- end, { desc = "Dbee toggle drawer", silent = true, noremap = true })
+
+-- Oil
+map("n", "<leader>e", "<CMD>Oil<CR>", { desc = "Oil open current directory", silent = true, noremap = true })
+map(
+  "n",
+  "<leader>E",
+  require("oil").toggle_float,
+  { desc = "Oil open current directory", silent = true, noremap = true }
+)
 
 -- Insert mode
 map("i", "jk", "<ESC>", { desc = "ESC", silent = true, noremap = true })
