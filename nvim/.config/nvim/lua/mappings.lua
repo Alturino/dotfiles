@@ -315,20 +315,6 @@ end, { desc = "Dap toggle breakpoint" })
 map("n", "<leader>sbp", function()
   require("dap").set_breakpoint()
 end, { desc = "Dap set breakpoint" })
-map({ "n", "v" }, "<leader>dh", function()
-  require("dap.ui.widgets").hover()
-end)
-map({ "n", "v" }, "<leader>dp", function()
-  require("dap.ui.widgets").preview()
-end)
-map("n", "<leader>df", function()
-  local widgets = require "dap.ui.widgets"
-  widgets.centered_float(widgets.frames)
-end)
-map("n", "<leader>ds", function()
-  local widgets = require "dap.ui.widgets"
-  widgets.centered_float(widgets.scopes)
-end)
 
 -- Rest.nvim
 map("n", "<leader>rr", "<cmd>Rest run<cr>", { desc = "Rest run", silent = true, noremap = true })
@@ -343,11 +329,11 @@ map("n", "<leader>mdp", "<cmd>MarkdownPreview<cr>", { desc = "Markdown preview",
 -- Dadbod
 map(
   "n",
-  "<leader>dba",
+  "<leader>da",
   "<CMD>DBUIAddConnection<CR>",
   { desc = "Dadbod ui add connection", silent = true, noremap = true }
 )
-map("n", "<leader>db", "<CMD>DBUIToggle<CR>", { desc = "Dadbod ui toggle", silent = true, noremap = true })
+map("n", "<leader>d", "<CMD>DBUIToggle<CR>", { desc = "Dadbod ui toggle", silent = true, noremap = true })
 
 -- -- Dbee
 -- map("n", "<leader>db", function()
