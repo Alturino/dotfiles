@@ -114,7 +114,6 @@ plugins=(
   ng
   node
   npm
-  nvm
   pip
   pod
   podman
@@ -198,7 +197,6 @@ setopt SHARE_HISTORY
 setopt autocd
 
 eval "$(zoxide init zsh)"
-eval "$(fnm env --use-on-cd)"
 
 # Path
 # export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
@@ -213,6 +211,7 @@ export PATH="$PATH:$HOME/.maestro/bin"
 export PATH="$PATH:$HOME/Android/Sdk/platform-tools"
 export PATH="$PATH:$HOME/go/bin/"
 export PATH="$PATH:/usr/local/go/bin/"
+export PATH="$PATH:$HOME/.local/share/fnm"
 export TERM="xterm-256color"
 
 source ~/.zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh
@@ -223,8 +222,4 @@ export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 
 # fnm
-FNM_PATH="/home/rickyalturino/.local/share/fnm"
-if [ -d "$FNM_PATH" ]; then
-  export PATH="/home/rickyalturino/.local/share/fnm:$PATH"
-  eval "`fnm env`"
-fi
+eval "$(fnm env --use-on-cd)"
