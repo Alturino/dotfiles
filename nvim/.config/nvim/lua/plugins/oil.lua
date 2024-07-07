@@ -1,10 +1,16 @@
 return {
   {
     "stevearc/oil.nvim",
+    cmd = { "Oil" },
+    keys = {
+      -- stylua: ignore start
+      { "<leader>e", "<cmd>Oil<cr>", desc = "Oil toggle", nowait = true, noremap = true },
+      { "<leader>E", function() require("oil").toggle_float() end, desc = "Oil toggle float", nowait = true, silent = true, noremap = true },
+    },
+    dependencies = { "nvim-tree/nvim-web-devicons" },
     opts = {
       columns = {
         "icon",
-        "mtime",
       },
       delete_to_trash = true,
       view_options = {
@@ -17,12 +23,11 @@ return {
         ["<C-s>"] = false,
         ["<C-h>"] = false,
         ["<leader>e"] = "actions.close",
+        ["q"] = "actions.close",
       },
     },
     config = function(_, opts)
       require("oil").setup(opts)
     end,
-    cmd = { "Oil" },
-    dependencies = { "nvim-tree/nvim-web-devicons" },
   },
 }

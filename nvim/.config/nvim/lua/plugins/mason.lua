@@ -3,6 +3,10 @@ return {
     "williamboman/mason.nvim",
     opts = {
       log_level = vim.log.levels.DEBUG,
+      registries = {
+        "github:nvim-java/mason-registry",
+        "github:mason-org/mason-registry",
+      },
       ensure_installed = {
         -- LSP
         "angular-language-server",
@@ -23,7 +27,7 @@ return {
         "groovy-language-server",
         "helm-ls",
         "html-lsp",
-        -- "jdtls",
+        "jdtls",
         "json-lsp",
         "ltex-ls",
         "lua-language-server",

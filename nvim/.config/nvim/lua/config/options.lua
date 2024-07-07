@@ -1,7 +1,6 @@
-require "nvchad.options"
-
--- add yours here!
-local autocmd = vim.api.nvim_create_autocmd
+-- Options are automatically loaded before lazy.nvim startup
+-- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
+-- Add any additional options here
 
 local vim = vim
 local g = vim.g
@@ -58,49 +57,21 @@ opt.tabstop = 2
 opt.termguicolors = true
 opt.title = true
 
--- Auto resize panes when resizing nvim window
-autocmd("VimResized", {
-  pattern = "*",
-  command = "tabdo wincmd =",
-})
-
-autocmd("FileType", {
-  pattern = "*.go",
-  callback = function()
-    vim.schedule(function()
-      opt.shiftwidth = 4
-      opt.tabstop = 4
-      opt.expandtab = false
-    end)
-  end,
-})
-
-autocmd("FileType", {
-  pattern = { "*.java", "*.kotlin", "*.python" },
-  callback = function()
-    vim.schedule(function()
-      opt.shiftwidth = 4
-      opt.tabstop = 4
-      opt.expandtab = true
-    end)
-  end,
-})
-
-vim.filetype.add {
+vim.filetype.add({
   pattern = {
     ["docker.*%.ya?ml"] = "yaml.docker-compose",
     [".*compose%.ya?ml"] = "yaml.docker-compose",
   },
-}
+})
 
 local has = vim.fn.has
-local is_win = has "win32" == 1
-local is_mac = has "macunix" == 1
-local is_wsl = has "wsl" == 1
-local is_linux = has "linux" == 1
+local is_win = has("win32") == 1
+local is_mac = has("macunix") == 1
+local is_wsl = has("wsl") == 1
+local is_linux = has("linux") == 1
 
 if is_win then
-  clipboard:prepend { "unnamed", "unnamedplus" }
+  clipboard:prepend({ "unnamed", "unnamedplus" })
   opt.shell = "pwsh.exe"
   opt.shellcmdflag =
     "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;"
@@ -111,14 +82,14 @@ if is_win then
 end
 
 if is_wsl then
-  vim.cmd [[
+  vim.cmd([[
     augroup Yank
     autocmd!
     autocmd TextYankPost * :call system('/mnt/c/windows/system32/clip.exe ',@")
     augroup END
-  ]]
+  ]])
 end
 
 if is_mac or is_linux then
-  clipboard:append { "unnamedplus" }
+  clipboard:append({ "unnamedplus" })
 end

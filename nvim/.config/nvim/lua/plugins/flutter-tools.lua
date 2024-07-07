@@ -9,8 +9,8 @@ return {
       "stevearc/dressing.nvim", -- optional for vim.ui.select
     },
     config = function()
-      local configs = require "nvchad.configs.lspconfig"
-      require("flutter-tools").setup {
+      local configs = require("nvchad.configs.lspconfig")
+      require("flutter-tools").setup({
         ui = {
           notification_style = "plugin",
         },
@@ -41,7 +41,7 @@ return {
         widget_guides = {
           enabled = true,
         },
-      }
+      })
       vim.keymap.set("n", "<leader>rn", "<CMD>FlutterRun<CR>", { noremap = true, nowait = true, silent = true })
     end,
     keys = {
