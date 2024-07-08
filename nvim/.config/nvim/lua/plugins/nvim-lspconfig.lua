@@ -6,6 +6,9 @@ return {
       "b0o/schemastore.nvim",
       "nvim-java/nvim-java",
     },
+    init = function()
+      vim.lsp.set_log_level("debug")
+    end,
     opts = {
       servers = {
         angularls = {},
