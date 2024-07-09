@@ -3,7 +3,7 @@ return {
     "neovim/nvim-lspconfig",
     dependencies = {
       "nvimtools/none-ls.nvim",
-      "b0o/schemastore.nvim",
+      "b0o/SchemaStore.nvim",
       "nvim-java/nvim-java",
     },
     init = function()

@@ -11,7 +11,7 @@ del("n", "<leader>cf")
 set("i", "jk", "<ESC>", { desc = "ESC", silent = true, noremap = true })
 set("i", "jj", "<ESC>", { desc = "ESC", silent = true, noremap = true })
 
-set("n", "<leader>fm", function() vim.lsp.buf.format { async = true } end, { desc = "LSP formatting", silent = true, noremap = true })
+set("n", "<leader>fm", function() vim.lsp.buf.format { async = true } end, { desc = "LSP formatting", silent = true, noremap = true, nowait = true })
 set("n", "<leader>hs", "<CMD>split<CR><C-j>", { desc = "Horizontal Split", silent = true, noremap = true })
 set("n", "<leader>vs", "<CMD>vsplit<CR><C-l>", { desc = "Vertical Split", silent = true, noremap = true })
 set("n", "[b", "<C-O>", { desc = "Jump Back", silent = true, noremap = true })
