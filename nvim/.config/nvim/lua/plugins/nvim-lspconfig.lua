@@ -150,6 +150,42 @@ return {
         jdtls = function()
           require("java").setup({})
         end,
+        vtsls = function(server, _)
+          require("lazyvim.util").lsp.on_attach(function(client, _)
+            client.server_capabilities.documentFormattingProvider = false
+            client.server_capabilities.documentRangeFormattingProvider = false
+          end, server)
+        end,
+        denols = function(server, _)
+          require("lazyvim.util").lsp.on_attach(function(client, _)
+            client.server_capabilities.documentFormattingProvider = false
+            client.server_capabilities.documentRangeFormattingProvider = false
+          end, server)
+        end,
+        html = function(server, _)
+          require("lazyvim.util").lsp.on_attach(function(client, _)
+            client.server_capabilities.documentFormattingProvider = false
+            client.server_capabilities.documentRangeFormattingProvider = false
+          end, server)
+        end,
+        tsserver = function(server, _)
+          require("lazyvim.util").lsp.on_attach(function(client, _)
+            client.server_capabilities.documentFormattingProvider = false
+            client.server_capabilities.documentRangeFormattingProvider = false
+          end, server)
+        end,
+        jsonls = function(server, _)
+          require("lazyvim.util").lsp.on_attach(function(client, _)
+            client.server_capabilities.documentFormattingProvider = false
+            client.server_capabilities.documentRangeFormattingProvider = false
+          end, server)
+        end,
+        docker_compose_language_service = function(server, _)
+          require("lazyvim.util").lsp.on_attach(function(client, _)
+            client.server_capabilities.documentFormattingProvider = false
+            client.server_capabilities.documentRangeFormattingProvider = false
+          end, server)
+        end,
       },
     },
   },
