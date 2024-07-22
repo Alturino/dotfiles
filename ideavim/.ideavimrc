@@ -56,8 +56,8 @@ nnoremap <C-l> <C-w>l
 nnoremap <C-n> :NERDTreeToggle<CR>
 nnoremap <C-t> :action ActivateTerminalToolWindow<CR>
 nnoremap <C-u> <C-u>zz
-nnoremap <S-TAB> :action PreviousTab<CR>
-nnoremap <TAB> :action NextTab<CR>
+nnoremap H :action PreviousTab<CR>
+nnoremap L :action NextTab<CR>
 nnoremap <leader>bp :action ToggleLineBreakpoint<CR>
 nnoremap <leader>ca :action ShowIntentionActions<CR>
 nnoremap <leader>cp :action CloseProject<CR>
