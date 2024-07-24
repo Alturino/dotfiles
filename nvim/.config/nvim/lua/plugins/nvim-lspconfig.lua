@@ -34,6 +34,7 @@ return {
         spectral = {},
         sqlls = {},
         svelte = {},
+        sourcekit = {},
         terraformls = {},
         texlab = {},
         tflint = {},
