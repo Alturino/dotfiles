@@ -86,7 +86,6 @@ if [ ! -d "$ZSH/plugins/zsh-autosuggestions" ]; then
   git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH/plugins/zsh-autosuggestions
 fi
 plugins=(
-  adb
   ansible
   bun
   catimg
@@ -95,7 +94,6 @@ plugins=(
   docker
   docker-compose
   dotenv
-  fd
   flutter
   fnm
   fzf
@@ -120,7 +118,7 @@ plugins=(
   postgres
   python
   redis-cli
-  ripgrep
+  rust
   rvm
   spring
   systemd
