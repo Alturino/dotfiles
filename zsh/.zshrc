@@ -212,6 +212,7 @@ export PATH="$PATH:$HOME/Android/Sdk/platform-tools"
 export PATH="$PATH:$HOME/go/bin/"
 export PATH="$PATH:/usr/local/go/bin/"
 export PATH="$PATH:$HOME/.local/share/fnm"
+export PATH="$PATH:$HOME/flutter/bin/"
 export TERM="xterm-256color"
 
 source ~/.zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh
