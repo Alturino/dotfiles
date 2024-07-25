@@ -1,3 +1,4 @@
+local lspconfig = require("lspconfig")
 return {
   {
     "neovim/nvim-lspconfig",
@@ -32,6 +33,9 @@ return {
         ruff_lsp = {},
         rust_analyzer = {},
         spectral = {},
+        sqls = {
+          cmd = { "sqls", "-config", vim.fn.getcwd() .. "/config.yml" },
+        },
         sqlls = {},
         svelte = {},
         sourcekit = {},
@@ -182,6 +186,18 @@ return {
           end, server)
         end,
         docker_compose_language_service = function(server, _)
+          require("lazyvim.util").lsp.on_attach(function(client, _)
+            client.server_capabilities.documentFormattingProvider = false
+            client.server_capabilities.documentRangeFormattingProvider = false
+          end, server)
+        end,
+        sqls = function(server, _)
+          require("lazyvim.util").lsp.on_attach(function(client)
+            client.server_capabilities.documentFormattingProvider = false
+            client.server_capabilities.documentRangeFormattingProvider = false
+          end, server)
+        end,
+        sqlls = function(server, opts)
           require("lazyvim.util").lsp.on_attach(function(client, _)
             client.server_capabilities.documentFormattingProvider = false
             client.server_capabilities.documentRangeFormattingProvider = false
