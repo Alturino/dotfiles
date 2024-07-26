@@ -10,8 +10,8 @@ return {
     { "<leader>fk", "<cmd>Telescope keymaps<cr>",                                                  desc = "Keymaps" },
     { '<leader>f"', "<cmd>Telescope registers<cr>",                                                desc = "Register" },
     { "<leader>fq", "<cmd>Telescope quickfix<cr>",                                                 desc = "Quickfix" },
-    { "<leader>fs", function() require("telescope.builtin").lsp_workspace_symbols() end,           desc = "Symbol", },
-    { "<leader>fS", function() require("telescope.builtin").lsp_dynamic_workspace_symbols() end,   desc = "Symbol", },
+    { "<leader>fs", function() require("telescope.builtin").lsp_dynamic_workspace_symbols() end,   desc = "Symbol", },
+    { "<leader>fS", function() require("telescope.builtin").lsp_workspace_symbols() end,           desc = "Symbol", },
     { "<leader>fr", function() require("telescope.builtin").lsp_references() end,                  desc = "Find References", },
   },
   opts = {
@@ -45,6 +45,7 @@ return {
         "--hidden",
       },
       file_ignore_patterns = {
+        ".git",
         "node_modules",
         "build",
         "dist",
