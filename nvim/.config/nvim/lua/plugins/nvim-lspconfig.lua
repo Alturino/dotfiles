@@ -178,6 +178,7 @@ return {
             client.server_capabilities.documentFormattingProvider = false
             client.server_capabilities.documentRangeFormattingProvider = false
           end, server)
+          return false
         end,
         jsonls = function(server, _)
           LazyVim.lsp.on_attach(function(client, _)

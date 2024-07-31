@@ -88,9 +88,9 @@ nnoremap <leader>so :action StepOver<CR>
 nnoremap <leader>su :action StepOut<CR>
 nnoremap <leader>to :action Terminal.OpenInTerminal<CR>
 nnoremap <leader>vs :action SplitVertically<CR>
-nnoremap <leader>xa :action CloseAllEditorsButActive<CR>
-nnoremap <leader>xl :action CloseAllEditors<CR>
-nnoremap <leader>xx :action CloseEditor<CR>
+nnoremap <leader>bo :action CloseAllEditorsButActive<CR>
+nnoremap <leader>ba :action CloseAllEditors<CR>
+nnoremap <leader>bd :action CloseEditor<CR>
 nnoremap <leader>zc :action CollapseAllRegions<CR>
 nnoremap <leader>zo :action ExpandAllRegions<CR>
 nnoremap [b :action Back<CR>
