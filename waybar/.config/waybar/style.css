@@ -42,6 +42,8 @@
 #battery,
 #pulseaudio,
 #custom-lock,
+#cpu,
+#memory,
 #custom-power {
   background-color: @surface0;
   padding: 0.5rem 1rem;
@@ -73,6 +75,18 @@
 #backlight,
 #battery {
   border-radius: 0;
+}
+
+#cpu {
+  color: @maroon;
+  border-radius: 1rem 0px 0px 1rem;
+  margin-left: 1rem;
+}
+
+#memory {
+  color: @blue;
+  border-radius: 0px 1rem 1rem 0px;
+  margin-right: 1rem;
 }
 
 #pulseaudio {

@@ -3,7 +3,7 @@
   "position": "top", // Waybar position (top|bottom|left|right)
   // "width": 1280, // Waybar width
   // Choose the order of the modules
-  "modules-left": ["hypr/workspaces"],
+  "modules-left": ["hyprland/workspaces", "cpu", "memory"],
   "modules-center": ["custom/music"],
   "modules-right": [
     "pulseaudio",
@@ -13,10 +13,19 @@
     "custom/lock",
     "custom/power",
   ],
-  "hypr/workspaces": {
+  "cpu": {
+    "interval": 1,
+    "format": "{icon0} {usage}%",
+    "format-icons": [""],
+  },
+  "memory": {
+    "interval": 1,
+    "format": "{used} GiB",
+  },
+  "hyprland/workspaces": {
     "disable-scroll": true,
     "sort-by-name": true,
-    "format": "{name}",
+    "format": " {name} ",
   },
   "tray": {
     "icon-size": 21,
@@ -32,7 +41,8 @@
     "max-length": 50,
   },
   "clock": {
-    "format": "{%A, %B %Y :%H:%M:%S, %Z}",
+    "interval": 1,
+    "format": "{:%A, %d %B %Y %T (%Z)}",
   },
   "backlight": {
     "device": "intel_backlight",
@@ -44,24 +54,11 @@
       "warning": 30,
       "critical": 15,
     },
-    "format": "{icon}",
+    "format": "{icon}  {capacity}%",
     "format-charging": "",
     "format-plugged": "",
     "format-alt": "{icon}",
-    "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-    ],
+    "format-icons": ["", "", "", "", ""],
   },
   "pulseaudio": {
     // "scroll-step": 1, // %, can be a float
