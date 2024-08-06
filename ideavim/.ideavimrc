@@ -93,6 +93,7 @@ nnoremap <leader>ba :action CloseAllEditors<CR>
 nnoremap <leader>bd :action CloseEditor<CR>
 nnoremap <leader>zc :action CollapseAllRegions<CR>
 nnoremap <leader>zo :action ExpandAllRegions<CR>
+nnoremap <leader>q :action CloseEditor<CR>
 nnoremap [b :action Back<CR>
 nnoremap [e :action GotoPreviousError<CR>
 nnoremap [t :action PreviousTab<CR>

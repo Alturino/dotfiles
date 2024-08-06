@@ -1,16 +1,14 @@
 return {
   {
     "akinsho/flutter-tools.nvim",
-    event = "BufEnter *.dart",
+    ft = "dart",
     dependencies = {
       "neovim/nvim-lspconfig",
-      "dart-lang/dart-vim-plugin",
       "nvim-lua/plenary.nvim",
       "stevearc/dressing.nvim", -- optional for vim.ui.select
     },
-    config = function()
-      local configs = require("nvchad.configs.lspconfig")
-      require("flutter-tools").setup({
+    opts = function()
+      return {
         ui = {
           notification_style = "plugin",
         },
@@ -30,8 +28,6 @@ return {
           run_via_dap = true,
         },
         lsp = {
-          on_attach = configs.on_attach,
-          capabilities = configs.capabilities,
           color = {
             enabled = true,
             background = true,
@@ -41,7 +37,10 @@ return {
         widget_guides = {
           enabled = true,
         },
-      })
+      }
+    end,
+    config = function(_, opts)
+      require("flutter-tools").setup(opts)
       vim.keymap.set("n", "<leader>rn", "<CMD>FlutterRun<CR>", { noremap = true, nowait = true, silent = true })
     end,
     keys = {
