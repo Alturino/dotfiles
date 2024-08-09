@@ -13,6 +13,7 @@ return {
   end,
   init = function()
     -- Your DBUI configuration
+    vim.g.db_ui_bind_param_pattern = "\\$\\d\\+"
     vim.g.db_ui_execute_on_save = 0
     vim.g.db_ui_save_location = "./"
     vim.g.db_ui_show_database_icon = 1
