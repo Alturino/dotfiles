@@ -11,7 +11,8 @@ del("n", "<leader>cf")
 set("i", "jk", "<ESC>", { desc = "ESC", silent = true, noremap = true })
 set("i", "jj", "<ESC>", { desc = "ESC", silent = true, noremap = true })
 
-set("n", "<leader>fm", function() vim.lsp.buf.format { async = true } end, { desc = "LSP formatting", silent = true, noremap = true, nowait = true })
+set("n", "<leader>fm", function() vim.lsp.buf.format { async = true } end,
+  { desc = "LSP formatting", silent = true, noremap = true, nowait = true })
 set("n", "<leader>hs", "<CMD>split<CR><C-j>", { desc = "Horizontal Split", silent = true, noremap = true })
 set("n", "<leader>vs", "<CMD>vsplit<CR><C-l>", { desc = "Vertical Split", silent = true, noremap = true })
 set("n", "[b", "<C-O>", { desc = "Jump Back", silent = true, noremap = true })
@@ -24,7 +25,10 @@ set("n", "<C-u>", "<C-u>zz", { desc = "Scroll up and focus center", silent = tru
 set("n", "<leader>q", "<CMD>q<CR>", { desc = "Quit from buffer", silent = true, noremap = true })
 set("n", "<leader>qa", "<CMD>qa<CR>", { desc = "Quit all", silent = true, noremap = true })
 
-set("n", "<leader>rA", function() LazyVim.lsp.rename_file() end, { desc = "Rename File" })
-set("n", "<leader>ra", function() vim.lsp.buf.rename() end, { desc = "Rename" })
+set("n", "<leader>rA", LazyVim.lsp.rename_file, { desc = "Rename File" })
+set("n", "<leader>ra", vim.lsp.buf.rename, { desc = "Rename" })
 
-set("n", "<leader>cA", function() vim.lsp.buf.code_action { context = { only = { "source" }, diagnostics = {} } } end, { desc = "code action", silent = true, noremap = true })
+set("n", "<leader>cA", function() vim.lsp.buf.code_action { context = { only = { "source" }, diagnostics = {} } } end,
+  { desc = "code action", silent = true, noremap = true })
+set("n", "gi", vim.lsp.buf.implementation, { desc = "Goto Implementation", silent = true, noremap = true })
+set("x", "p", "_dP", { desc = "Paste without copying to register", silent = true, noremap = true })
