@@ -58,17 +58,20 @@ nnoremap <C-t> :action ActivateTerminalToolWindow<CR>
 nnoremap <C-u> <C-u>zz
 nnoremap H :action PreviousTab<CR>
 nnoremap L :action NextTab<CR>
-nnoremap <leader>bp :action ToggleLineBreakpoint<CR>
 nnoremap <leader>ca :action ShowIntentionActions<CR>
 nnoremap <leader>cp :action CloseProject<CR>
 nnoremap <leader>e :NERDTreeFocus<CR>
+
+
+" Find / Search
 nnoremap <leader>fa :action GotoAction<CR>
 nnoremap <leader>fc :action GotoClass<CR>
 nnoremap <leader>ff :action GotoFile<CR>
-nnoremap <leader>fm :action ReformatCode<CR>
 nnoremap <leader>fs :action GotoSymbol<CR>
-nnoremap <leader>fu :action FindUsages<CR>
+nnoremap gr :action FindUsages<CR>
 nnoremap <leader>fw :action FindInPath<CR>
+
+nnoremap <leader>fm :action ReformatCode<CR>
 nnoremap <leader>hs :action SplitHorizontally<CR>
 nnoremap <leader>np :action NewProject<CR>
 nnoremap <leader>op :action OpenFile<CR>
@@ -83,9 +86,6 @@ nnoremap <leader>rs :action Android.SyncProject<CR>
 nnoremap <leader>rt :action RunClass<CR>
 nnoremap <leader>sd :action Debug<CR>
 nnoremap <leader>sh :action Vcs.ShowTabbedFileHistory<CR>
-nnoremap <leader>si :action StepInto<CR>
-nnoremap <leader>so :action StepOver<CR>
-nnoremap <leader>su :action StepOut<CR>
 nnoremap <leader>to :action Terminal.OpenInTerminal<CR>
 nnoremap <leader>vs :action SplitVertically<CR>
 nnoremap <leader>bo :action CloseAllEditorsButActive<CR>
@@ -94,19 +94,30 @@ nnoremap <leader>bd :action CloseEditor<CR>
 nnoremap <leader>zc :action CollapseAllRegions<CR>
 nnoremap <leader>zo :action ExpandAllRegions<CR>
 nnoremap <leader>q :action CloseEditor<CR>
+nnoremap ch :action CallHierarchy<CR>
+nnoremap <leader>gc :action Generate<CR>
+
+
+"Navigation/Jump
 nnoremap [b :action Back<CR>
 nnoremap [e :action GotoPreviousError<CR>
 nnoremap [t :action PreviousTab<CR>
 nnoremap ]b :action Forward<CR>
 nnoremap ]e :action GotoNextError<CR>
 nnoremap ]t :action NextTab<CR>
-nnoremap ch :action CallHierarchy<CR>
-nnoremap gD :action GotoTypeDeclaration<CR>
-nnoremap gc :action Generate<CR>
 nnoremap gd :action GotoDeclaration<CR>
+nnoremap gD :action GotoTypeDeclaration<CR>
 nnoremap gi :action GotoImplementation<CR>
 nnoremap gs :action GotoSuperMethod<CR>
 nnoremap gt :action GotoTest<CR>
+
+"Debugger
+nnoremap <leader>du :action ActivateDebugToolWindow<CR>
+nnoremap <leader>dc :action Resume<CR>
+nnoremap <leader>dp :action ToggleLineBreakpoint<CR>
+nnoremap <leader>di :action StepInto<CR>
+nnoremap <leader>so :action StepOver<CR>
+nnoremap <leader>sO :action StepOut<CR>
 
 xnoremap <leader>rcl :action ExtractClass<CR>
 xnoremap <leader>ref :action ExtractFunction<CR>
