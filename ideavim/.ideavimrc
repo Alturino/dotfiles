@@ -78,13 +78,11 @@ nnoremap <leader>op :action OpenFile<CR>
 nnoremap <leader>ra :action RenameElement<CR>
 nnoremap <leader>rb :action MakeGradleProject<CR>
 nnoremap <leader>rc :action Compile<CR>
-nnoremap <leader>rd :action Resume<CR>
 nnoremap <leader>rh :action Vcs.RollbackChangedLines<CR>
 nnoremap <leader>rn :action Run<CR>
 nnoremap <leader>ro :action IdeaVim.ReloadVimRc.reload <CR>
 nnoremap <leader>rs :action Android.SyncProject<CR>
 nnoremap <leader>rt :action RunClass<CR>
-nnoremap <leader>sd :action Debug<CR>
 nnoremap <leader>sh :action Vcs.ShowTabbedFileHistory<CR>
 nnoremap <leader>to :action Terminal.OpenInTerminal<CR>
 nnoremap <leader>vs :action SplitVertically<CR>
@@ -112,12 +110,13 @@ nnoremap gs :action GotoSuperMethod<CR>
 nnoremap gt :action GotoTest<CR>
 
 "Debugger
+nnoremap <leader>ds :action Debug<CR>
 nnoremap <leader>du :action ActivateDebugToolWindow<CR>
 nnoremap <leader>dc :action Resume<CR>
 nnoremap <leader>dp :action ToggleLineBreakpoint<CR>
 nnoremap <leader>di :action StepInto<CR>
-nnoremap <leader>so :action StepOver<CR>
-nnoremap <leader>sO :action StepOut<CR>
+nnoremap <leader>do :action StepOver<CR>
+nnoremap <leader>dO :action StepOut<CR>
 
 xnoremap <leader>rcl :action ExtractClass<CR>
 xnoremap <leader>ref :action ExtractFunction<CR>
