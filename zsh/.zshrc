@@ -178,6 +178,7 @@ alias ll='eza -l'
 alias lla='eza -la'
 alias ls='eza'
 alias lt='eza --tree'
+alias kitty='kitty --start-as maximized'
 
 HISTSIZE="100000000000"
 SAVEHIST="100000000000"
