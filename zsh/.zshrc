@@ -117,6 +117,7 @@ plugins=(
   podman
   postgres
   python
+  rbenv
   redis-cli
   rust
   rvm
