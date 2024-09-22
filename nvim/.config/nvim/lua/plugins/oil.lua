@@ -4,7 +4,7 @@ return {
     cmd = { "Oil" },
     keys = {
       -- stylua: ignore start
-      { "<leader>e", "<cmd>Oil<cr>", desc = "Oil toggle", nowait = true, noremap = true },
+      { "<leader>e", "<cmd>Oil<cr>",                               desc = "Oil toggle",       nowait = true, noremap = true },
       { "<leader>E", function() require("oil").toggle_float() end, desc = "Oil toggle float", nowait = true, silent = true, noremap = true },
     },
     dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -23,7 +23,6 @@ return {
         ["<C-s>"] = false,
         ["<C-h>"] = false,
         ["<leader>e"] = "actions.close",
-        ["q"] = "actions.close",
       },
     },
     config = function(_, opts)
