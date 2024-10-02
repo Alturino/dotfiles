@@ -22,7 +22,6 @@ set("n", "]b", "<C-I>", { desc = "Jump Forward", silent = true, noremap = true }
 set("n", "<C-Up>", "<C-w>+", { desc = "Increase buffer height", silent = true, noremap = true })
 set("n", "<C-d>", "<C-d>zz", { desc = "Scroll down and focus center", silent = true, noremap = true })
 set("n", "<C-u>", "<C-u>zz", { desc = "Scroll up and focus center", silent = true, noremap = true })
-set("n", "<C-u>", "<C-u>zz", { desc = "Scroll up and focus center", silent = true, noremap = true })
 set("n", "<leader>q", "<CMD>q<CR>", { desc = "Quit from buffer", silent = true, noremap = true })
 set("n", "<leader>qa", "<CMD>qa<CR>", { desc = "Quit all", silent = true, noremap = true })
 
