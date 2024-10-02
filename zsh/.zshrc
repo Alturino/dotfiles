@@ -199,7 +199,6 @@ eval "$(zoxide init zsh)"
 # Path
 # export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
 # export PATH=$PATH:"$GEM_HOME/bin"
-export GOROOT=/usr/local/go
 export GRAPHVIZ_DOT=/usr/bin/dot
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$PATH:$GOROOT/bin:$GOPATH/bin"
