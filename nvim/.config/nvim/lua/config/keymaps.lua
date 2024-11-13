@@ -11,8 +11,10 @@ del("n", "<leader>cf")
 set("i", "jk", "<ESC>", { desc = "ESC", silent = true, noremap = true })
 set("i", "jj", "<ESC>", { desc = "ESC", silent = true, noremap = true })
 
-set("n", "<leader>fm", function() vim.lsp.buf.format { async = true } end, { desc = "LSP formatting", silent = true, noremap = true, nowait = true })
-set("x", "<leader>fm", function() vim.lsp.buf.format { async = true } end, { desc = "LSP formatting", silent = true, noremap = true, nowait = true })
+set("n", "<leader>fm", function() vim.lsp.buf.format { async = true } end,
+  { desc = "LSP formatting", silent = true, noremap = true, nowait = true })
+set("x", "<leader>fm", function() vim.lsp.buf.format { async = true } end,
+  { desc = "LSP formatting", silent = true, noremap = true, nowait = true })
 
 set("n", "<leader>hs", "<CMD>split<CR><C-j>", { desc = "Horizontal Split", silent = true, noremap = true })
 set("n", "<leader>vs", "<CMD>vsplit<CR><C-l>", { desc = "Vertical Split", silent = true, noremap = true })
@@ -25,7 +27,7 @@ set("n", "<C-u>", "<C-u>zz", { desc = "Scroll up and focus center", silent = tru
 set("n", "<leader>q", "<CMD>q<CR>", { desc = "Quit from buffer", silent = true, noremap = true })
 set("n", "<leader>qa", "<CMD>qa<CR>", { desc = "Quit all", silent = true, noremap = true })
 
-set("n", "<leader>rA", LazyVim.lsp.rename_file, { desc = "Rename File" })
+set("n", "<leader>rA", Snacks.rename.rename_file, { desc = "Rename File" })
 set("n", "<leader>ra", vim.lsp.buf.rename, { desc = "Rename" })
 
 set("n", "<leader>cA", function() vim.lsp.buf.code_action { context = { only = { "source" }, diagnostics = {} } } end,
