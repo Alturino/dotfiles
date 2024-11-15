@@ -20,7 +20,7 @@ return {
               buffer = bufnr,
               callback = function()
                 vim.lsp.buf.format({
-                  async = true,
+                  async = false,
                   bufnr = bufnr,
                   filter = function(c)
                     return c.name == "null-ls"
