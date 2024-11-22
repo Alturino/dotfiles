@@ -8,7 +8,7 @@ return {
       "nvim-java/nvim-java",
     },
     init = function()
-      vim.lsp.set_log_level("debug")
+      vim.lsp.set_log_level("error")
     end,
     opts = {
       servers = {
