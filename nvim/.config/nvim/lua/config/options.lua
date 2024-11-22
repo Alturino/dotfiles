@@ -39,6 +39,7 @@ opt.shiftwidth = 2
 opt.showcmd = true
 opt.smartindent = true
 opt.smarttab = true
+opt.conceallevel = 0
 opt.tabstop = 2
 opt.termguicolors = true
 opt.title = true
