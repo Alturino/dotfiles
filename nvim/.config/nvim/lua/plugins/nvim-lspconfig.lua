@@ -23,6 +23,7 @@ return {
         eslint = {},
         gopls = {},
         gradle_ls = {},
+        ast_grep = {},
         graphql = {},
         groovyls = {},
         helm_ls = {},
