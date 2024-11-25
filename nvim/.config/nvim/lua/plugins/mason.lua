@@ -2,7 +2,7 @@ return {
   {
     "williamboman/mason.nvim",
     opts = {
-      log_level = vim.log.levels.DEBUG,
+      log_level = vim.log.levels.ERROR,
       registries = {
         "github:nvim-java/mason-registry",
         "github:mason-org/mason-registry",
