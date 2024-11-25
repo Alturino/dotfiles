@@ -1,5 +1,6 @@
 return {
   "nvim-telescope/telescope.nvim",
+  dependencies = { "Marskey/telescope-sg" },
   keys = {
     -- stylua: ignore start
     { "<leader>ff", LazyVim.pick("find_files", { root = false, hidden = true, no_ignore = true }), desc = "Find Files (cwd)" },
@@ -58,6 +59,7 @@ return {
       "terms",
       "themes",
       "harpoon",
+      "ast_grep",
     },
     extensions = {
       fzf = {
@@ -65,6 +67,11 @@ return {
         override_generic_sorter = true,
         override_file_sorter = true,
         case_mode = "smart_case",
+      },
+      ast_grep = {
+        command = { "sg", "--json=stream" }, -- must have --json=stream
+        grep_open_files = false, -- search in opened files
+        lang = nil, -- string value, specify language for ast-grep `nil` for default
       },
     },
   },
