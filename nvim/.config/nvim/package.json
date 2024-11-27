@@ -1,0 +1,654 @@
+{
+  "name": "onirutlA-custom-snippets",
+  "engines": {
+    "vscode": "^1.11.0"
+  },
+  "contributes": {
+    "snippets": [
+      {
+        "language": [
+          "plaintext",
+          "markdown",
+          "tex",
+          "html",
+          "global",
+          "all"
+        ],
+        "path": "./vscodesnippets/global.json"
+      },
+      {
+        "language": [
+          "license"
+        ],
+        "path": "./vscodesnippets/license.json"
+      },
+      {
+        "language": "c",
+        "path": "./vscodesnippets/c/c.json"
+      },
+      {
+        "language": "cdoc",
+        "path": "./vscodesnippets/c/cdoc.json"
+      },
+      {
+        "language": "cpp",
+        "path": "./vscodesnippets/cpp/cpp.json"
+      },
+      {
+        "language": "cppdoc",
+        "path": "./vscodesnippets/cpp/cppdoc.json"
+      },
+      {
+        "language": [
+          "csharp",
+          "cs"
+        ],
+        "path": "./vscodesnippets/csharp/csharp.json"
+      },
+      {
+        "language": "csharpdoc",
+        "path": "./vscodesnippets/csharp/csharpdoc.json"
+      },
+      {
+        "language": "editorconfig",
+        "path": "./vscodesnippets/editorconfig.json"
+      },
+      {
+        "language": [
+          "gitcommit",
+          "NeogitCommitMessage"
+        ],
+        "path": "./vscodesnippets/gitcommit.json"
+      },
+      {
+        "language": "ejs",
+        "path": "./vscodesnippets/frameworks/ejs.json"
+      },
+      {
+        "language": "eruby",
+        "path": "./vscodesnippets/erb.json"
+      },
+      {
+        "language": "erlang",
+        "path": "./vscodesnippets/erlang.json"
+      },
+      {
+        "language": "elixir",
+        "path": "./vscodesnippets/elixir.json"
+      },
+      {
+        "language": [
+          "eelixir",
+          "heex"
+        ],
+        "path": "./vscodesnippets/eelixir.json"
+      },
+      {
+        "language": "fortran",
+        "path": "./vscodesnippets/fortran.json"
+      },
+      {
+        "language": "glsl",
+        "path": "./vscodesnippets/glsl.json"
+      },
+      {
+        "language": "nix",
+        "path": "./vscodesnippets/nix.json"
+      },
+      {
+        "language": "kivy",
+        "path": "./vscodesnippets/kivy.json"
+      },
+      {
+        "language": "liquid",
+        "path": "./vscodesnippets/liquid.json"
+      },
+      {
+        "language": "lua",
+        "path": "./vscodesnippets/lua/lua.json"
+      },
+      {
+        "language": "luadoc",
+        "path": "./vscodesnippets/lua/luadoc.json"
+      },
+      {
+        "language": "go",
+        "path": "./vscodesnippets/go.json"
+      },
+      {
+        "language": "fennel",
+        "path": "./vscodesnippets/fennel.json"
+      },
+      {
+        "language": "fsh",
+        "path": "./vscodesnippets/fsh.json"
+      },
+      {
+        "language": "php",
+        "path": "./vscodesnippets/php/php.json"
+      },
+      {
+        "language": "phpdoc",
+        "path": "./vscodesnippets/php/phpdoc.json"
+      },
+      {
+        "language": "quarto",
+        "path": "./vscodesnippets/quarto.json"
+      },
+      {
+        "language": "rescript",
+        "path": "./vscodesnippets/rescript.json"
+      },
+      {
+        "language": "ruby",
+        "path": "./vscodesnippets/ruby/ruby.json"
+      },
+      {
+        "language": "rdoc",
+        "path": "./vscodesnippets/ruby/rdoc.json"
+      },
+      {
+        "language": "rails",
+        "path": "./vscodesnippets/frameworks/rails.json"
+      },
+      {
+        "language": "rust",
+        "path": "./vscodesnippets/rust/rust.json"
+      },
+      {
+        "language": "rustdoc",
+        "path": "./vscodesnippets/rust/rustdoc.json"
+      },
+      {
+        "language": "rust",
+        "path": "./vscodesnippets/frameworks/relm4/workers.json"
+      },
+      {
+        "language": "rust",
+        "path": "./vscodesnippets/frameworks/relm4/factories.json"
+      },
+      {
+        "language": "rust",
+        "path": "./vscodesnippets/frameworks/relm4/templates.json"
+      },
+      {
+        "language": "rust",
+        "path": "./vscodesnippets/frameworks/relm4/components.json"
+      },
+      {
+        "language": "haskell",
+        "path": "./vscodesnippets/haskell.json"
+      },
+      {
+        "language": "scala",
+        "path": "./vscodesnippets/scala.json"
+      },
+      {
+        "language": "solidity",
+        "path": "./vscodesnippets/solidity.json"
+      },
+      {
+        "language": "swift",
+        "path": "./vscodesnippets/swift.json"
+      },
+      {
+        "language": "sql",
+        "path": "./vscodesnippets/sql.json"
+      },
+      {
+        "language": "systemverilog",
+        "path": "./vscodesnippets/systemverilog.json"
+      },
+      {
+        "language": [
+          "shellscript",
+          "shell",
+          "sh",
+          "zsh"
+        ],
+        "path": "./vscodesnippets/shell/shell.json"
+      },
+      {
+        "language": "shelldoc",
+        "path": "./vscodesnippets/shell/shelldoc.json"
+      },
+      {
+        "language": [
+          "markdown",
+          "rmd"
+        ],
+        "path": "./vscodesnippets/markdown.json"
+      },
+      {
+        "language": [
+          "plaintex",
+          "tex"
+        ],
+        "path": "./vscodesnippets/latex.json"
+      },
+      {
+        "language": "plantuml",
+        "path": "./vscodesnippets/plantuml.json"
+      },
+      {
+        "language": "java",
+        "path": "./vscodesnippets/java/java.json"
+      },
+      {
+        "language": "java-testing",
+        "path": "./vscodesnippets/java/java-tests.json"
+      },
+      {
+        "language": "javadoc",
+        "path": "./vscodesnippets/java/javadoc.json"
+      },
+      {
+        "language": "julia",
+        "path": "./vscodesnippets/julia.json"
+      },
+      {
+        "language": [
+          "html",
+          "jade",
+          "pug",
+          "eruby",
+          "javascriptreact",
+          "htmldjango",
+          "astro",
+          "blade"
+        ],
+        "path": "./vscodesnippets/html.json"
+      },
+      {
+        "language": [
+          "css",
+          "scss",
+          "sass",
+          "less",
+          "stylus"
+        ],
+        "path": "./vscodesnippets/css.json"
+      },
+      {
+        "language": [
+          "javascript",
+          "javascriptreact",
+          "vue",
+          "svelte"
+        ],
+        "path": "./vscodesnippets/javascript/javascript.json"
+      },
+      {
+        "language": "jsdoc",
+        "path": "./vscodesnippets/javascript/jsdoc.json"
+      },
+      {
+        "language": "tsdoc",
+        "path": "./vscodesnippets/javascript/tsdoc.json"
+      },
+      {
+        "language": [
+          "typescript",
+          "typescriptreact"
+        ],
+        "path": "./vscodesnippets/javascript/typescript.json"
+      },
+      {
+        "language": "javascriptreact",
+        "path": "./vscodesnippets/javascript/next.json"
+      },
+      {
+        "language": "typescriptreact",
+        "path": "./vscodesnippets/javascript/react-ts.json"
+      },
+      {
+        "language": "typescriptreact",
+        "path": "./vscodesnippets/javascript/next-ts.json"
+      },
+      {
+        "language": "javascriptreact",
+        "path": "./vscodesnippets/javascript/react.json"
+      },
+      {
+        "language": "javascriptreact",
+        "path": "./vscodesnippets/javascript/react-native.json"
+      },
+      {
+        "language": "typescriptreact",
+        "path": "./vscodesnippets/javascript/react-native-ts.json"
+      },
+      {
+        "language": [
+          "javascriptreact",
+          "typescriptreact"
+        ],
+        "path": "./vscodesnippets/javascript/react-es7.json"
+      },
+      {
+        "language": "remix",
+        "path": "./vscodesnippets/frameworks/remix-ts.json"
+      },
+      {
+        "language": "terraform",
+        "path": "./vscodesnippets/terraform.json"
+      },
+      {
+        "language": "svelte",
+        "path": "./vscodesnippets/svelte.json"
+      },
+      {
+        "language": "vue",
+        "path": "./vscodesnippets/frameworks/vue/html.json"
+      },
+      {
+        "language": "vue",
+        "path": "./vscodesnippets/frameworks/vue/nuxt-html.json"
+      },
+      {
+        "language": "vue",
+        "path": "./vscodesnippets/frameworks/vue/nuxt-script.json"
+      },
+      {
+        "language": "vue",
+        "path": "./vscodesnippets/frameworks/vue/script.json"
+      },
+      {
+        "language": "vue",
+        "path": "./vscodesnippets/frameworks/vue/vue.json"
+      },
+      {
+        "language": "vue",
+        "path": "./vscodesnippets/frameworks/vue/style.json"
+      },
+      {
+        "language": "angular",
+        "path": "./vscodesnippets/frameworks/angular/html.json"
+      },
+      {
+        "language": "angular",
+        "path": "./vscodesnippets/frameworks/angular/typescript.json"
+      },
+      {
+        "language": "angular",
+        "path": "./vscodesnippets/frameworks/angular/jsonc.json"
+      },
+      {
+        "language": "python",
+        "path": "./vscodesnippets/python/python.json"
+      },
+      {
+        "language": "python",
+        "path": "./vscodesnippets/python/comprehension.json"
+      },
+      {
+        "language": "python",
+        "path": "./vscodesnippets/python/unittest.json"
+      },
+      {
+        "language": "python",
+        "path": "./vscodesnippets/python/debug.json"
+      },
+      {
+        "language": "pydoc",
+        "path": "./vscodesnippets/python/pydoc.json"
+      },
+      {
+        "language": "django",
+        "path": "./vscodesnippets/frameworks/django/admin.json"
+      },
+      {
+        "language": "django",
+        "path": "./vscodesnippets/frameworks/django/forms.json"
+      },
+      {
+        "language": "django",
+        "path": "./vscodesnippets/frameworks/django/models.json"
+      },
+      {
+        "language": "django",
+        "path": "./vscodesnippets/frameworks/django/tags.json"
+      },
+      {
+        "language": "django",
+        "path": "./vscodesnippets/frameworks/django/urls.json"
+      },
+      {
+        "language": "django",
+        "path": "./vscodesnippets/frameworks/django/views.json"
+      },
+      {
+        "language": [
+          "djangohtml",
+          "htmldjango"
+        ],
+        "path": "./vscodesnippets/frameworks/djangohtml.json"
+      },
+      {
+        "language": "django-rest",
+        "path": "./vscodesnippets/frameworks/django/django_rest/serializers.json"
+      },
+      {
+        "language": "django-rest",
+        "path": "./vscodesnippets/frameworks/django/django_rest/views.json"
+      },
+      {
+        "language": "flutter",
+        "path": "./vscodesnippets/frameworks/flutter.json"
+      },
+      {
+        "language": "jekyll",
+        "path": "./vscodesnippets/frameworks/jekyll.json"
+      },
+      {
+        "language": "cobol",
+        "path": "./vscodesnippets/cobol/vscode_cobol.json"
+      },
+      {
+        "language": "cobol",
+        "path": "./vscodesnippets/cobol/vscode_cobol-compound.json"
+      },
+      {
+        "language": "cobol",
+        "path": "./vscodesnippets/cobol/vscode_cobol_dir.json"
+      },
+      {
+        "language": "cobol",
+        "path": "./vscodesnippets/cobol/vscode_cobol_jcl.json"
+      },
+      {
+        "language": "kotlin",
+        "path": "./vscodesnippets/kotlin/kotlin.json"
+      },
+      {
+        "language": "kdoc",
+        "path": "./vscodesnippets/kotlin/kdoc.json"
+      },
+      {
+        "language": [
+          "plaintex",
+          "tex"
+        ],
+        "path": "./vscodesnippets/latex/latex-vscode.json"
+      },
+      {
+        "language": [
+          "plaintex",
+          "tex"
+        ],
+        "path": "./vscodesnippets/latex/vscode-latex-vscode.json"
+      },
+      {
+        "language": [
+          "bibtex",
+          "bib"
+        ],
+        "path": "./vscodesnippets/latex/bibtex.json"
+      },
+      {
+        "language": "twig",
+        "path": "./vscodesnippets/frameworks/twig.json"
+      },
+      {
+        "language": "blade",
+        "path": "./vscodesnippets/frameworks/blade/blade.json"
+      },
+      {
+        "language": "blade",
+        "path": "./vscodesnippets/frameworks/blade/helpers.json"
+      },
+      {
+        "language": "blade",
+        "path": "./vscodesnippets/frameworks/blade/livewire.json"
+      },
+      {
+        "language": "blade",
+        "path": "./vscodesnippets/frameworks/blade/vscode.json"
+      },
+      {
+        "language": [
+          "r",
+          "rmd"
+        ],
+        "path": "./vscodesnippets/r.json"
+      },
+      {
+        "language": "rmd",
+        "path": "./vscodesnippets/rmarkdown.json"
+      },
+      {
+        "language": "org",
+        "path": "./vscodesnippets/org.json"
+      },
+      {
+        "language": "norg",
+        "path": "./vscodesnippets/norg.json"
+      },
+      {
+        "language": "mint",
+        "path": "./vscodesnippets/mint.json"
+      },
+      {
+        "language": "gdscript",
+        "path": "./vscodesnippets/gdscript.json"
+      },
+      {
+        "language": "yaml",
+        "path": "./vscodesnippets/kubernetes.json"
+      },
+      {
+        "language": "yaml",
+        "path": "./vscodesnippets/docker/docker-compose.json"
+      },
+      {
+        "language": "make",
+        "path": "./vscodesnippets/make.json"
+      },
+      {
+        "language": "dart",
+        "path": "./vscodesnippets/dart.json"
+      },
+      {
+        "language": "objc",
+        "path": "./vscodesnippets/objc.json"
+      },
+      {
+        "language": "unreal",
+        "path": "./vscodesnippets/frameworks/unreal.json"
+      },
+      {
+        "language": "unity",
+        "path": "./vscodesnippets/frameworks/unity.json"
+      },
+      {
+        "language": "tcl",
+        "path": "./vscodesnippets/tcl.json"
+      },
+      {
+        "language": "perl",
+        "path": "./vscodesnippets/perl.json"
+      },
+      {
+        "language": "verilog",
+        "path": "./vscodesnippets/verilog.json"
+      },
+      {
+        "language": "vhdl",
+        "path": "./vscodesnippets/vhdl.json"
+      },
+      {
+        "language": "dockerfile",
+        "path": "./vscodesnippets/docker/docker_file.json"
+      },
+      {
+        "language": "edge",
+        "path": "./vscodesnippets/frameworks/edge.json"
+      },
+      {
+        "language": [
+          "powershell",
+          "ps1"
+        ],
+        "path": "./vscodesnippets/PowerShell.json"
+      },
+      {
+        "language": "nu",
+        "path": "./vscodesnippets/nushell.json"
+      },
+      {
+        "language": "reason",
+        "path": "./vscodesnippets/reason.json"
+      },
+      {
+        "language": [
+          "ocaml",
+          "ocamlinterface"
+        ],
+        "path": "./vscodesnippets/ocaml/ocaml.json"
+      },
+      {
+        "language": "ocaml.ocamllex",
+        "path": "./vscodesnippets/ocaml/ocamllex.json"
+      },
+      {
+        "language": "dune-project",
+        "path": "./vscodesnippets/ocaml/dune-project.json"
+      },
+      {
+        "language": "dune",
+        "path": "./vscodesnippets/ocaml/dune.json"
+      },
+      {
+        "language": "purescript",
+        "path": "./vscodesnippets/purescript.json"
+      },
+      {
+        "language": "gleam",
+        "path": "./vscodesnippets/gleam.json"
+      },
+      {
+        "language": "asciidoc",
+        "path": "./vscodesnippets/asciidoc.json"
+      },
+      {
+        "language": "beancount",
+        "path": "./vscodesnippets/beancount.json"
+      },
+      {
+        "language": "rst",
+        "path": "./vscodesnippets/rst.json"
+      },
+      {
+        "language": "loremipsum",
+        "path": "./vscodesnippets/loremipsum.json"
+      },
+      {
+        "language": "cmake",
+        "path": "./vscodesnippets/cmake.json"
+      },
+      {
+        "language": "zig",
+        "path": "./vscodesnippets/zig.json"
+      }
+    ]
+  }
+}
