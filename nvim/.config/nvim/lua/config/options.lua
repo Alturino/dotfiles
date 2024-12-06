@@ -3,7 +3,6 @@
 -- Add any additional options here
 
 local vim = vim
-local g = vim.g
 
 local opt = vim.opt
 local clipboard = opt.clipboard
@@ -14,10 +13,6 @@ opt.autowrite = true
 opt.encoding = "utf-8"
 opt.fileencoding = "utf-8"
 opt.foldenable = false
-opt.foldexpr = "nvim_treesitter#foldexpr()"
-opt.foldlevel = 99
-opt.foldlevelstart = 99
-opt.foldmethod = "expr"
 opt.ignorecase = true
 opt.lazyredraw = false
 opt.number = true
@@ -25,7 +20,6 @@ opt.relativenumber = true
 opt.ruler = true
 opt.smartcase = true
 opt.wrap = false
-
 g.lua_snippets_path = "./snippets/lua/"
 g.vscode_snippets_path = "./snippets/vscode/"
 
