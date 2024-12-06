@@ -20,8 +20,6 @@ opt.relativenumber = true
 opt.ruler = true
 opt.smartcase = true
 opt.wrap = false
-g.lua_snippets_path = "./snippets/lua/"
-g.vscode_snippets_path = "./snippets/vscode/"
 
 opt.autoindent = true
 opt.backup = false
