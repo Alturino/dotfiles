@@ -5,6 +5,7 @@ return {
     lazy = false,
     opts = {
       dashboard = { enabled = false },
+      scroll = { enabled = false },
     },
   },
 }

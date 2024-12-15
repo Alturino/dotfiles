@@ -8,6 +8,7 @@
     "lazyvim.plugins.extras.editor.navic",
     "lazyvim.plugins.extras.editor.overseer",
     "lazyvim.plugins.extras.editor.refactoring",
+    "lazyvim.plugins.extras.editor.telescope",
     "lazyvim.plugins.extras.formatting.prettier",
     "lazyvim.plugins.extras.lang.angular",
     "lazyvim.plugins.extras.lang.ansible",
@@ -44,7 +45,7 @@
     "lazyvim.plugins.extras.util.startuptime"
   ],
   "news": {
-    "NEWS.md": "7429"
+    "NEWS.md": "10960"
   },
   "version": 7
 }
