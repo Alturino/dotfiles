@@ -20,7 +20,6 @@ opt.relativenumber = true
 opt.ruler = true
 opt.smartcase = true
 opt.wrap = false
-opt.colorcolumn = "100"
 
 opt.autoindent = true
 opt.backup = false
