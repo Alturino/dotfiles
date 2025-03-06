@@ -109,6 +109,7 @@ plugins=(
   helm
   kubectl
   minikube
+  mise
   ng
   node
   npm
