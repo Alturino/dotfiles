@@ -68,6 +68,7 @@ nnoremap <leader>fa :action GotoAction<CR>
 nnoremap <leader>fc :action GotoClass<CR>
 nnoremap <leader>ff :action GotoFile<CR>
 nnoremap <leader>fs :action GotoSymbol<CR>
+nnoremap <leader>sr :action ReplaceInPath<CR>
 nnoremap gr :action FindUsages<CR>
 nnoremap <leader>fw :action FindInPath<CR>
 
