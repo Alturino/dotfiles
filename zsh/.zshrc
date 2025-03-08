@@ -201,8 +201,6 @@ setopt HIST_IGNORE_SPACE
 setopt SHARE_HISTORY
 setopt autocd
 
-eval "$(zoxide init zsh)"
-
 # Path
 # export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
 # export PATH=$PATH:"$GEM_HOME/bin"
