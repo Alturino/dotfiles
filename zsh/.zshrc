@@ -86,6 +86,8 @@ if [ ! -d "$ZSH/plugins/zsh-autosuggestions" ]; then
   git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH/plugins/zsh-autosuggestions
 fi
 plugins=(
+  aliases
+  alias-finder
   ansible
   bun
   catimg
@@ -94,6 +96,7 @@ plugins=(
   docker
   docker-compose
   dotenv
+  eza
   flutter
   fnm
   fzf
@@ -125,6 +128,7 @@ plugins=(
   systemd
   terraform
   tmux
+  xcode
   yarn
   zoxide
   zsh-autosuggestions
