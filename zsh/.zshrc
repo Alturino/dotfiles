@@ -199,8 +199,6 @@ setopt HIST_IGNORE_SPACE
 setopt SHARE_HISTORY
 setopt autocd
 
-eval "$(zoxide init zsh)"
-
 # Path
 # export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
 # export PATH=$PATH:"$GEM_HOME/bin"
@@ -225,6 +223,5 @@ export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
-
 # fnm
 eval "$(fnm env --use-on-cd)"
