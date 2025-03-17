@@ -47,6 +47,7 @@ return {
       },
       file_ignore_patterns = {
         ".git",
+        "vendor",
         "node_modules",
         "build",
         "dist",
