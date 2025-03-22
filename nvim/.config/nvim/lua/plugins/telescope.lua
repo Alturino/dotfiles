@@ -1,5 +1,6 @@
 return {
   "nvim-telescope/telescope.nvim",
+  branch = "0.1.x",
   dependencies = { "Marskey/telescope-sg" },
   keys = {
     -- stylua: ignore start
