@@ -1,7 +1,7 @@
 return {
   {
     "vyfor/cord.nvim",
-    build = ":CordUpdate",
+    build = ":Cord update",
     event = "VeryLazy",
     opts = {
       log_level = vim.log.levels.OFF,
