@@ -40,6 +40,7 @@ return {
             require("sqls").on_attach(client, buffer)
           end,
         },
+        postgres_lsp = {},
         sqlls = {},
         svelte = {},
         sourcekit = {},
