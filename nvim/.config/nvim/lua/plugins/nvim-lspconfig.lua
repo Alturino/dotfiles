@@ -60,7 +60,6 @@ return {
         cssmodules_ls = {
           filetypes = { "typescriptreact", "javascriptreact" },
         },
-        golangci_lint_ls = {},
         html = {
           filetypes = { "html", "typescriptreact", "javascriptreact" },
         },
