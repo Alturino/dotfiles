@@ -186,11 +186,9 @@ alias ls='eza'
 alias lt='eza --tree'
 alias kitty='kitty --start-as maximized'
 
-HISTSIZE="100000000000"
-SAVEHIST="100000000000"
-
-HISTFILE="$HOME/.zsh_history"
-mkdir -p "$(dirname "$HISTFILE")"
+export HISTSIZE=99999999999999
+export SAVEHIST=$HISTSIZE
+export HISTFILE="$HOME/.zsh_history"
 
 setopt EXTENDED_HISTORY
 setopt HIST_EXPIRE_DUPS_FIRST
@@ -226,3 +224,11 @@ export SDKMAN_DIR="$HOME/.sdkman"
 
 # fnm
 eval "$(fnm env --use-on-cd)"
+
+# pnpm
+export PNPM_HOME="/home/onirutla/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
