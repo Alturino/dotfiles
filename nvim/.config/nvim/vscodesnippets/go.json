@@ -13,5 +13,39 @@
     "prefix": "fme",
     "body": ["fmt.Errorf(\"$0 error:%w\", $1, err)"],
     "description": "Errorf"
+  },
+  "middleware function": {
+    "prefix": "midf",
+    "body": [
+      "func ${1:name}() func(http.Handler) http.Handler {",
+      "\treturn func(next http.Handler) http.Handler {",
+      "\t\treturn http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {",
+      "\t\t\t$0",
+      "\t\t\tnext.ServeHTTP(w, r)",
+      "\t\t})",
+      "\t}",
+      "}"
+    ],
+    "description": "login middleware"
+  },
+  "http HandlerFunc": {
+    "prefix": "hf",
+    "body": [
+      "func ${1:name}() http.HandlerFunc {",
+      "\treturn func(w http.ResponseWriter, r *http.Request) {",
+      "\t\t$0",
+      "}"
+    ],
+    "description": "HandlerFunc"
+  },
+  "controller HandlerFunc": {
+    "prefix": "hfc",
+    "body": [
+      "func (c ${1:controller_name}) ${2:func_name}() http.HandlerFunc {",
+      "\treturn func(w http.ResponseWriter, r *http.Request) {",
+      "\t\t$0",
+      "}"
+    ],
+    "description": "HandlerFunc"
   }
 }
