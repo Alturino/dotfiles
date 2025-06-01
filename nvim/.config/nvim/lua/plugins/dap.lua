@@ -7,7 +7,7 @@ return {
   keys = function()
     return {
       -- stylua: ignore start
-      { "<leader>db", "", desc = "+debug", mode = {"n", "v"} },
+      { "<leader>dd", "", desc = "+debug", mode = {"n", "v"} },
       { "<leader>dp", function() require("dap").toggle_breakpoint() end, desc = "Toggle Breakpoint" },
       { "<leader>dc", function() require("dap").continue() end, desc = "Continue" },
       { "<leader>di", function() require("dap").step_into() end, desc = "Step Into" },

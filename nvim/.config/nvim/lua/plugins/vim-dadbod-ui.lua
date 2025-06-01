@@ -7,7 +7,7 @@ return {
   cmd = { "DBUI", "DBUIToggle", "DBUIAddConnection", "DBUIFindBuffer" },
   keys = function()
     return {
-      { "<leader>d", "<cmd>DBUIToggle<CR>", desc = "Dadbod toggle" },
+      { "<leader>db", "<cmd>DBUIToggle<CR>", desc = "Dadbod toggle" },
       { "<leader>da", "<cmd>DBUIAddConnection<CR>", desc = "Dadbod add connection" },
     }
   end,
