@@ -48,9 +48,7 @@ return {
           f.golines,
           -- f.google_java_format,
           f.ktlint,
-          f.prettierd.with({
-            disabled_filetypes = { "html", "css" },
-          }),
+          f.prettierd.with({ disabled_filetypes = { "html", "css" } }),
           f.rubocop,
           f.shellharden,
           f.stylua,
