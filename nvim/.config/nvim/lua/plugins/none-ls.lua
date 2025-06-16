@@ -8,8 +8,6 @@ return {
       local ca = null_ls.builtins.code_actions
       local f = null_ls.builtins.formatting
 
-      local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
-
       return {
         debug = false,
         sources = {
@@ -50,7 +48,9 @@ return {
           f.golines,
           -- f.google_java_format,
           f.ktlint,
-          f.prettierd,
+          f.prettierd.with({
+            disabled_filetypes = { "html", "css" },
+          }),
           f.rubocop,
           f.shellharden,
           f.stylua,
