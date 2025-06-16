@@ -99,6 +99,5 @@ return {
       },
     },
     build = ":MasonUpdate",
-    dependencies = { "williamboman/mason-lspconfig" },
   },
 }

@@ -6,5 +6,6 @@ return {
     config = function(_, opts)
       require("mason-lspconfig").setup(opts)
     end,
+    dependencies = { "williamboman/mason.nvim" },
   },
 }
