@@ -9,6 +9,7 @@ local clipboard = opt.clipboard
 
 vim.scriptencoding = "utf-8"
 
+opt.nrformats:append({ "alpha" })
 opt.autowrite = true
 opt.encoding = "utf-8"
 opt.fileencoding = "utf-8"
