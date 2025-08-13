@@ -88,10 +88,10 @@ fi
 plugins=(
   aliases
   alias-finder
-  ansible
-  bun
+  # ansible
+  # bun
   catimg
-  deno
+  # deno
   dnf
   docker
   docker-compose
@@ -102,18 +102,18 @@ plugins=(
   fzf
   fzf-tab
   fzf-tab-source
-  gcloud
-  gh
+  # gcloud
+  # gh
   git
   git-commit
   golang
   gpg-agent
-  gradle
-  helm
-  kubectl
-  minikube
+  # gradle
+  # helm
+  # kubectl
+  # minikube
   mise
-  ng
+  # ng
   node
   npm
   pip
@@ -124,8 +124,8 @@ plugins=(
   rbenv
   redis-cli
   rust
-  rvm
-  spring
+  # rvm
+  # spring
   systemd
   terraform
   tmux
@@ -177,19 +177,6 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# Aliases
-alias eza='eza '\''--icons'\'' '\''--git'\'''
-alias la='eza -a'
-alias ll='eza -l'
-alias lla='eza -la'
-alias ls='eza'
-alias lt='eza --tree'
-alias kitty='kitty --start-as maximized'
-
-export HISTSIZE=99999999999999
-export SAVEHIST=$HISTSIZE
-export HISTFILE="$HOME/.zsh_history"
-
 setopt EXTENDED_HISTORY
 setopt HIST_EXPIRE_DUPS_FIRST
 setopt HIST_FCNTL_LOCK
@@ -200,22 +187,6 @@ setopt SHARE_HISTORY
 setopt autocd
 
 # Path
-# export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
-# export PATH=$PATH:"$GEM_HOME/bin"
-export GRAPHVIZ_DOT=/usr/bin/dot
-export PATH="$HOME/.cargo/bin:$PATH"
-export PATH="$PATH:$GOROOT/bin:$GOPATH/bin"
-export PATH="$PATH:$GRAPHVIZ_DOT"
-export PATH="$PATH:$HOME/.cargo/env"
-export PATH="$PATH:$HOME/.maestro/bin"
-export PATH="$PATH:$HOME/Android/Sdk/platform-tools"
-export PATH="$PATH:$HOME/go/bin/"
-export PATH="$PATH:/usr/local/go/bin/"
-export PATH="$PATH:$HOME/.local/share/fnm"
-export PATH="$PATH:$HOME/flutter/bin/"
-export PATH="$PATH:$HOME/.local/bin"
-export TERM="xterm-256color"
-
 source ~/.zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh
 
 export SDKMAN_DIR="$HOME/.sdkman"
