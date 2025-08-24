@@ -1,7 +1,7 @@
 return {
   {
     "williamboman/mason-lspconfig.nvim",
-    opts = { automatic_installation = true },
+    opts = { automatic_installation = false },
     cmd = { "LspInstall", "LspUninstall" },
     config = function(_, opts)
       require("mason-lspconfig").setup(opts)
