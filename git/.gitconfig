@@ -1,3 +1,6 @@
+[include]
+  path = ~/.config/git-delta/.gitconfig
+
 [user]
 	email = alturino001@gmail.com
 	name = Ricky Alturino
