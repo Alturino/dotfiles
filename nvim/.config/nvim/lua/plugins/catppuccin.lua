@@ -4,10 +4,8 @@ return {
     lazy = true,
     name = "catppuccin",
     opts = function()
-      local module = require("catppuccin.groups.integrations.bufferline")
-      if module then
-        module.get = module.get_theme
-      end
+      local bufferline = require("catppuccin.groups.integrations.bufferline")
+      bufferline.get = bufferline.get or bufferline.get_theme
       return {
         integrations = {
           aerial = true,
