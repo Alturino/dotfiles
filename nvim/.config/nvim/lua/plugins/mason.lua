@@ -2,6 +2,7 @@ return {
   {
     "williamboman/mason.nvim",
     opts = {
+      max_concurrent_installers = 6,
       ui = {
         check_outdated_packages_on_open = false,
       },
