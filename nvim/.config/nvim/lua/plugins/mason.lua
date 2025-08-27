@@ -2,6 +2,9 @@ return {
   {
     "williamboman/mason.nvim",
     opts = {
+      ui = {
+        check_outdated_packages_on_open = false,
+      },
       log_level = vim.log.levels.ERROR,
       registries = {
         "github:nvim-java/mason-registry",
