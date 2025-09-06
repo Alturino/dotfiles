@@ -4,7 +4,10 @@ return {
     dependencies = {
       "nvimtools/none-ls.nvim",
       "b0o/SchemaStore.nvim",
-      "nvim-java/nvim-java",
+      {
+        "nvim-java/nvim-java",
+        opts = false,
+      },
       "nanotee/sqls.nvim",
     },
     init = function()
@@ -22,6 +25,7 @@ return {
         emmet_ls = {},
         eslint = {},
         gopls = {},
+        kotlin_lsp = {},
         -- gradle_ls = {},
         ast_grep = {},
         graphql = {},
