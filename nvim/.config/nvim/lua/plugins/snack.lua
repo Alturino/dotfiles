@@ -15,6 +15,11 @@ return {
     "folke/snacks.nvim",
     opts = {
       picker = {
+        win = {
+          wo = {
+            wrap = true,
+          },
+        },
         sources = {
           files = {
             hidden = true,
