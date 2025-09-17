@@ -1,4 +1,4 @@
 return {
   "Marskey/telescope-sg",
-  event = "BufEnter",
+  event = "VeryLazy",
 }
