@@ -205,6 +205,9 @@ return {
             client.server_capabilities.documentRangeFormattingProvider = false
           end, server)
         end,
+        kotlin_lsp = function()
+          vim.lsp.enable("kotlin_lsp")
+        end,
       },
     },
   },
