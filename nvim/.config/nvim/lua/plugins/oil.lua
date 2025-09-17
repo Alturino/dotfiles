@@ -2,6 +2,7 @@ return {
   {
     "stevearc/oil.nvim",
     cmd = { "Oil" },
+    event = "VeryLazy",
     keys = {
       -- stylua: ignore start
       { "<leader>e", "<cmd>Oil<cr>",                               desc = "Oil toggle",       nowait = true, noremap = true },
