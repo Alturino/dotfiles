@@ -3,6 +3,7 @@ return {
     "catppuccin/nvim",
     lazy = true,
     name = "catppuccin",
+    event = "VeryLazy",
     opts = function()
       local bufferline = require("catppuccin.groups.integrations.bufferline")
       bufferline.get = bufferline.get or bufferline.get_theme
