@@ -2,6 +2,7 @@ return {
   {
     "rmagatti/goto-preview",
     opts = {},
+    event = "VeryLazy",
     keys = {
       {
         "gpd",
