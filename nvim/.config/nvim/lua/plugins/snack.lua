@@ -16,8 +16,10 @@ return {
     opts = {
       picker = {
         win = {
-          wo = {
-            wrap = true,
+          preview = {
+            wo = {
+              wrap = true,
+            },
           },
         },
         sources = {
