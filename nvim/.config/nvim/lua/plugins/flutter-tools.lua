@@ -2,6 +2,7 @@ return {
   {
     "akinsho/flutter-tools.nvim",
     ft = "dart",
+    event = "VeryLazy",
     dependencies = {
       "neovim/nvim-lspconfig",
       "nvim-lua/plenary.nvim",
