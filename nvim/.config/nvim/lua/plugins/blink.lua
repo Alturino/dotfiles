@@ -1,6 +1,7 @@
 return {
   "saghen/blink.cmp",
   optional = true,
+  event = "VeryLazy",
   dependencies = { "codeium.nvim", "saghen/blink.compat", "giuxtaposition/blink-cmp-copilot", "supermaven-nvim" },
   opts = {
     sources = {
