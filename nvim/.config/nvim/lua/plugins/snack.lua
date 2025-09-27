@@ -1,6 +1,7 @@
 local exclude = {
   "**/.git/*",
   "**/node_modules/*",
+  "**/.venv/*",
   "**/vendor/*",
   "**/dist/*",
   "**/build/*",
