@@ -5,8 +5,6 @@ return {
     name = "catppuccin",
     event = "VeryLazy",
     opts = function()
-      local bufferline = require("catppuccin.groups.integrations.bufferline")
-      bufferline.get = bufferline.get or bufferline.get_theme
       return {
         integrations = {
           aerial = true,
