@@ -165,6 +165,8 @@ else
   export EDITOR='nvim'
 fi
 
+bindkey '^U' backward-kill-line
+
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
