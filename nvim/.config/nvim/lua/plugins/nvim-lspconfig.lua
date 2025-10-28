@@ -4,11 +4,8 @@ return {
     dependencies = {
       "nvimtools/none-ls.nvim",
       "b0o/SchemaStore.nvim",
-      {
-        "nvim-java/nvim-java",
-        opts = false,
-      },
-      "nanotee/sqls.nvim",
+      { "nvim-java/nvim-java", opts = false },
+      -- "nanotee/sqls.nvim",
     },
     init = function()
       vim.lsp.set_log_level("error")
@@ -158,53 +155,53 @@ return {
           require("java").setup({})
         end,
         vtsls = function(server)
-          LazyVim.lsp.on_attach(function(client)
+          Snacks.util.lsp.on({ name = server }, function(_, client)
             client.server_capabilities.documentFormattingProvider = false
             client.server_capabilities.documentRangeFormattingProvider = false
-          end, server)
+          end)
         end,
         denols = function(server)
-          LazyVim.lsp.on_attach(function(client)
+          Snacks.util.lsp.on({ name = server }, function(_, client)
             client.server_capabilities.documentFormattingProvider = false
             client.server_capabilities.documentRangeFormattingProvider = false
-          end, server)
+          end)
         end,
         html = function(server)
-          LazyVim.lsp.on_attach(function(client)
+          Snacks.util.lsp.on({ name = server }, function(_, client)
             client.server_capabilities.documentFormattingProvider = false
             client.server_capabilities.documentRangeFormattingProvider = false
-          end, server)
+          end)
         end,
         tsserver = function(server)
-          LazyVim.lsp.on_attach(function(client)
+          Snacks.util.lsp.on({ name = server }, function(_, client)
             client.server_capabilities.documentFormattingProvider = false
             client.server_capabilities.documentRangeFormattingProvider = false
-          end, server)
+          end)
         end,
         jsonls = function(server)
-          LazyVim.lsp.on_attach(function(client)
+          Snacks.util.lsp.on({ name = server }, function(_, client)
             client.server_capabilities.documentFormattingProvider = false
             client.server_capabilities.documentRangeFormattingProvider = false
-          end, server)
+          end)
         end,
         docker_compose_language_service = function(server)
-          LazyVim.lsp.on_attach(function(client)
+          Snacks.util.lsp.on({ name = server }, function(_, client)
             client.server_capabilities.documentFormattingProvider = false
             client.server_capabilities.documentRangeFormattingProvider = false
-          end, server)
+          end)
         end,
-        sqls = function(server)
-          LazyVim.lsp.on_attach(function(client)
-            client.server_capabilities.documentFormattingProvider = false
-            client.server_capabilities.documentRangeFormattingProvider = false
-          end, server)
-        end,
-        sqlls = function(server)
-          LazyVim.lsp.on_attach(function(client)
-            client.server_capabilities.documentFormattingProvider = false
-            client.server_capabilities.documentRangeFormattingProvider = false
-          end, server)
-        end,
+        -- sqls = function(server)
+        --   Snacks.util.lsp.on({ name = server }, function(_, client)
+        --     client.server_capabilities.documentFormattingProvider = false
+        --     client.server_capabilities.documentRangeFormattingProvider = false
+        --   end)
+        -- end,
+        -- sqlls = function(server)
+        --   Snacks.util.lsp.on({ name = server }, function(_, client)
+        --     client.server_capabilities.documentFormattingProvider = false
+        --     client.server_capabilities.documentRangeFormattingProvider = false
+        --   end)
+        -- end,
         kotlin_lsp = function()
           vim.lsp.enable("kotlin_lsp")
         end,
