@@ -29,5 +29,4 @@ set("n", "<leader>rA", Snacks.rename.rename_file, { desc = "Rename File" })
 set("n", "<leader>ra", vim.lsp.buf.rename, { desc = "Rename" })
 
 set("n", "<leader>cA", function() vim.lsp.buf.code_action { context = { only = { "source" }, diagnostics = {} } } end, { desc = "code action", silent = true, noremap = true })
-set("n", "gi", vim.lsp.buf.implementation, { desc = "Goto Implementation", silent = true, noremap = true })
 set("x", "p", "\"_dP", { desc = "Paste without copying to register", silent = true, noremap = true })

@@ -48,6 +48,8 @@ return {
       { "<leader>fS", function() Snacks.picker.lsp_symbols() end,                                                desc = "LSP Workspace Symbols", },
       { "<leader>ss", mode = { 'n', 'x', },                                                                      false },
       { "<leader>fr", function() Snacks.picker.lsp_references() end,                                             nowait = true,                  desc = "References", },
+
+      { "gi",         function() Snacks.picker.lsp_implementations() end,                                        desc = "Goto Implementation" },
     },
   },
 }
