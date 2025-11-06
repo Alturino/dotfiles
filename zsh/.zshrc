@@ -209,3 +209,4 @@ esac
 # pnpm end
 
 eval "$(uv generate-shell-completion zsh)"
+eval "$(starship init zsh)"
