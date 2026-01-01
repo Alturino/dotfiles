@@ -109,6 +109,8 @@ nnoremap gD :action GotoTypeDeclaration<CR>
 nnoremap gi :action GotoImplementation<CR>
 nnoremap gs :action GotoSuperMethod<CR>
 nnoremap gt :action GotoTest<CR>
+nnoremap [f :action MethodUp<CR>
+nnoremap ]f :action MethodDown<CR>
 
 "Debugger
 nnoremap <leader>ds :action Debug<CR>
