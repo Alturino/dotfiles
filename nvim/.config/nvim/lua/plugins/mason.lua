@@ -7,10 +7,10 @@ return {
         check_outdated_packages_on_open = false,
       },
       log_level = vim.log.levels.ERROR,
-      registries = {
-        "github:nvim-java/mason-registry",
-        "github:mason-org/mason-registry",
-      },
+      -- registries = {
+      --   "github:nvim-java/mason-registry",
+      --   "github:mason-org/mason-registry",
+      -- },
       ensure_installed = {
         -- LSP
         -- "angular-language-server",
