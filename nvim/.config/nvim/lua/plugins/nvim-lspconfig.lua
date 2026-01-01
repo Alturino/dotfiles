@@ -205,6 +205,9 @@ return {
         kotlin_lsp = function()
           vim.lsp.enable("kotlin_lsp")
         end,
+        postgres_lsp = function()
+          vim.lsp.enable("postgres_lsp")
+        end,
       },
     },
   },
