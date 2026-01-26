@@ -14,7 +14,7 @@
     "body": ["fmt.Errorf(\"$0 error:%w\", $1, err)"],
     "description": "Errorf"
   },
-  "middleware function": {
+  "net/http middleware": {
     "prefix": "midf",
     "body": [
       "func ${1:name}() func(http.Handler) http.Handler {",
@@ -26,7 +26,7 @@
       "\t}",
       "}"
     ],
-    "description": "login middleware"
+    "description": "net/http middleware"
   },
   "http HandlerFunc": {
     "prefix": "hf",
