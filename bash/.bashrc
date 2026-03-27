@@ -87,11 +87,6 @@ fi
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
-# some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
@@ -116,26 +111,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# Zoxide
-eval "$(zoxide init bash)"
-
-# Aliases
-alias exa='exa '\''--icons'\'' '\''--git'\'''
-alias la='exa -a'
-alias ll='exa -l'
-alias lla='exa -la'
-alias ls='exa'
-alias lt='exa --tree'
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-
-export PATH=$PATH:/usr/local/go/bin
-export PATH="$HOME/.cargo/bin:$PATH"
-export PATH="$PATH:$HOME/.cargo/env"
-
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
@@ -144,4 +119,7 @@ export PATH=$PATH:$HOME/.maestro/bin
 
 complete -C /usr/bin/terraform terraform
 
-[[ -s "/home/rickyalturino/.gvm/scripts/gvm" ]] && source "/home/rickyalturino/.gvm/scripts/gvm"
+eval "$(zoxide init bash)"
+eval "$(fnm env --use-on-cd --shell bash)"
+eval "$(uv generate-shell-completion bash)"
+eval "$(starship init bash)"

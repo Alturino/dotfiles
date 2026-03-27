@@ -192,21 +192,6 @@ setopt autocd
 # Path
 source ~/.zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh
 
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
-[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
-
-# fnm
-eval "$(fnm env --use-on-cd)"
-
-# pnpm
-export PNPM_HOME="/home/onirutla/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
-
+eval "$(fnm env --use-on-cd --shell zsh)"
 eval "$(uv generate-shell-completion zsh)"
 eval "$(starship init zsh)"
