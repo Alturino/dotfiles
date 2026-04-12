@@ -9,8 +9,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="agnoster"
-ZSH_TMUX_AUTOSTART=true
-ZSH_TMUX_AUTOQUIT=true
+ZSH_TMUX_AUTOSTART=false
+ZSH_TMUX_AUTOQUIT=false
 ZSH_TMUX_FIXTERM=false
 
 # Set list of themes to pick from when loading at random
@@ -189,8 +189,25 @@ setopt HIST_IGNORE_SPACE
 setopt SHARE_HISTORY
 setopt autocd
 
+# Aliases
+alias eza='eza '\''--icons'\'' '\''--git'\'''
+alias la='eza -a'
+alias ll='eza -l'
+alias lla='eza -la'
+alias ls='eza'
+alias lt='eza --tree'
+alias kitty='kitty --start-as maximized'
+alias nv='nvim'
+alias v='vim'
+
 # Path
 source ~/.zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh
+
+
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 eval "$(fnm env --use-on-cd --shell zsh)"
 eval "$(uv generate-shell-completion zsh)"
