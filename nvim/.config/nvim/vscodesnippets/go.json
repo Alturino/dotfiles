@@ -355,5 +355,44 @@
       "}"
     ],
     "description": "Initialize MinIO client with sync.OnceValues and OTel HTTP tracing."
+  },
+  "OpenTelemetry Span": {
+    "prefix": "ts",
+    "body": [
+      "ctx, ${1:span} := ${2:tracer}.Start(",
+      "\tctx,",
+      "\t\"${3:OperationName}\",",
+      "\ttrace.WithSpanKind(trace.SpanKindClient),",
+      "\ttrace.WithAttributes(attribute.String(\"${4:key}\", ${5:value})),",
+      ")",
+      "defer ${1:span}.End()",
+      "$0"
+    ],
+    "description": "Create an OpenTelemetry span with defer end"
+  },
+  "Slog With": {
+    "prefix": "slw",
+    "body": ["${1:logger} := ${2:logger}.With(", "$0", ")"],
+    "description": "Create a scoped slog logger with attributes"
+  },
+  "Slog Debug Context": {
+    "prefix": "sldc",
+    "body": ["${1:logger}.DebugContext(${2:ctx}, \"${3:message}\")$0"],
+    "description": "slog debug message with context"
+  },
+  "Slog Info Context": {
+    "prefix": "slic",
+    "body": ["${1:logger}.InfoContext(${2:ctx}, \"${3:message}\")$0"],
+    "description": "slog info message with context"
+  },
+  "Slog Error Context": {
+    "prefix": "slec",
+    "body": ["${1:logger}.ErrorContext(${2:ctx}, \"${3:message}\")$0"],
+    "description": "slog error message with context"
+  },
+  "OTEL Span Event": {
+    "prefix": "se",
+    "body": ["${1:span}.AddEvent(\"${2:event name}\")$0"],
+    "description": "Add an event to an OpenTelemetry span"
   }
 }
