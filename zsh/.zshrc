@@ -199,6 +199,9 @@ alias lt='eza --tree'
 alias kitty='kitty --start-as maximized'
 alias nv='nvim'
 alias v='vim'
+alias lg='lazygit'
+alias tm='tmux'
+alias cl='clear'
 
 # Path
 source ~/.zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh
