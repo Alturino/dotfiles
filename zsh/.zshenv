@@ -26,6 +26,7 @@ export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.opencode/bin"
 export PATH="$PATH:/usr/bin"
 export PATH="$PATH:$PNPM_HOME"
+export SSLKEYLOGFILE="$HOME/.wireshark/sslkeylog.log"
 
 
 export ANTHROPIC_BASE_URL="https://openrouter.ai/api"
