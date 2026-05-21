@@ -4,6 +4,11 @@
     "body": ["if err != nil {", "\t$0", "}"],
     "description": "if err != nil"
   },
+  "iferr": {
+    "prefix": "iferr",
+    "body": ["if err := $1; err != nil {", "\t$0", "}"],
+    "description": "if err := $1; err != nil"
+  },
   "fms": {
     "prefix": "fms",
     "body": ["fmt.Sprintf(\"$0\", $1)"],
@@ -357,7 +362,7 @@
     "description": "Initialize MinIO client with sync.OnceValues and OTel HTTP tracing."
   },
   "OpenTelemetry Span": {
-    "prefix": "ts",
+    "prefix": "ots",
     "body": [
       "ctx, ${1:span} := ${2:tracer}.Start(",
       "\tctx,",
@@ -369,6 +374,11 @@
       "$0"
     ],
     "description": "Create an OpenTelemetry span with defer end"
+  },
+  "OTEL Span Event": {
+    "prefix": "ose",
+    "body": ["${1:span}.AddEvent(\"${2:event name}\")$0"],
+    "description": "Add an event to an OpenTelemetry span"
   },
   "Slog With": {
     "prefix": "slw",
@@ -389,10 +399,5 @@
     "prefix": "slec",
     "body": ["${1:logger}.ErrorContext(${2:ctx}, \"${3:message}\")$0"],
     "description": "slog error message with context"
-  },
-  "OTEL Span Event": {
-    "prefix": "se",
-    "body": ["${1:span}.AddEvent(\"${2:event name}\")$0"],
-    "description": "Add an event to an OpenTelemetry span"
   }
 }
