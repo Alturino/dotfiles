@@ -79,7 +79,7 @@ nnoremap <leader>op :action OpenFile<CR>
 nnoremap <leader>ra :action RenameElement<CR>
 nnoremap <leader>rb :action MakeGradleProject<CR>
 nnoremap <leader>rc :action Compile<CR>
-nnoremap <leader>rh :action Vcs.RollbackChangedLines<CR>
+nnoremap <leader>ghr :action Vcs.RollbackChangedLines<CR>
 nnoremap <leader>rn :action Run<CR>
 nnoremap <leader>ro :action IdeaVim.ReloadVimRc.reload <CR>
 nnoremap <leader>rs :action Android.SyncProject<CR>
@@ -89,7 +89,10 @@ nnoremap <leader>to :action Terminal.OpenInTerminal<CR>
 nnoremap <leader>vs :action SplitVertically<CR>
 nnoremap <leader>bo :action CloseAllEditorsButActive<CR>
 nnoremap <leader>ba :action CloseAllEditors<CR>
+nnoremap <leader>bh :action CloseAllToTheLeft<CR>
+nnoremap <leader>bl :action CloseAllToTheRight<CR>
 nnoremap <leader>bd :action CloseEditor<CR>
+nnoremap <leader>rd :action ActivateRunningDevicesToolWindow<CR>
 nnoremap <leader>zc :action CollapseAllRegions<CR>
 nnoremap <leader>zo :action ExpandAllRegions<CR>
 nnoremap <leader>q :action CloseEditor<CR>
@@ -101,6 +104,7 @@ nnoremap <leader>gc :action Generate<CR>
 nnoremap [b :action Back<CR>
 nnoremap [e :action GotoPreviousError<CR>
 nnoremap [t :action PreviousTab<CR>
+nnoremap H :action PreviousTab<CR>
 nnoremap ]b :action Forward<CR>
 nnoremap ]e :action GotoNextError<CR>
 nnoremap ]t :action NextTab<CR>
