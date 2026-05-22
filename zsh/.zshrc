@@ -202,6 +202,8 @@ alias v='vim'
 alias lg='lazygit'
 alias tm='tmux'
 alias cl='clear'
+alias op='opencode'
+alias cc='claude'
 
 # Path
 source ~/.zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh
