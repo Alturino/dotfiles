@@ -1,0 +1,31 @@
+# ansible/tasks/tools.yml
+---
+- name: Check if lazygit is installed
+  ansible.builtin.stat:
+    path: "{{ home }}/.local/bin/lazygit"
+  register: lazygit_installed
+  vars:
+    home: "{{ lookup('env', 'HOME') }}"
+  tags: dev-tools
+
+- name: Install lazygit
+  ansible.builtin.shell: |
+    curl -s {{ lazygit_install_url }} | bash
+  when: not lazygit_installed.stat.exists
+  vars:
+    home: "{{ lookup('env', 'HOME') }}"
+  tags: dev-tools
+
+- name: Build bat cache
+  ansible.builtin.command: bat cache --build
+  become: yes
+  changed_when: false
+  tags: dev-tools
+
+- name: Install opencode-ai globally
+  community.general.npm:
+    name: opencode-ai
+    global: yes
+    state: present
+  become: yes
+  tags: dev-tools
