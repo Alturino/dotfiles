@@ -10,27 +10,27 @@
     home: "{{ lookup('env', 'HOME') }}"
   tags: dotfiles
 
-- name: Create symlink for .tmux.conf
+- name: Create directory for tmux config
   ansible.builtin.file:
-    src: "{{ dotfiles_repo_path }}/tmux/.tmux.conf"
-    dest: "{{ home }}/.tmux.conf"
+    path: "{{ home }}/.config/tmux"
+    state: directory
+  vars:
+    home: "{{ lookup('env', 'HOME') }}"
+  tags: dotfiles
+
+- name: Create symlink for tmux.conf
+  ansible.builtin.file:
+    src: "{{ dotfiles_repo_path }}/tmux/.config/tmux/tmux.conf"
+    dest: "{{ home }}/.config/tmux/tmux.conf"
     state: link
     force: yes
   vars:
     home: "{{ lookup('env', 'HOME') }}"
   tags: dotfiles
 
-- name: Create directory for starship config
-  ansible.builtin.file:
-    path: "{{ home }}/.config"
-    state: directory
-  vars:
-    home: "{{ lookup('env', 'HOME') }}"
-  tags: dotfiles
-
 - name: Create symlink for starship.toml
   ansible.builtin.file:
-    src: "{{ dotfiles_repo_path }}/starship/starship.toml"
+    src: "{{ dotfiles_repo_path }}/starship/.config/starship.toml"
     dest: "{{ home }}/.config/starship.toml"
     state: link
     force: yes
@@ -38,17 +38,9 @@
     home: "{{ lookup('env', 'HOME') }}"
   tags: dotfiles
 
-- name: Create directory for bat config
-  ansible.builtin.file:
-    path: "{{ home }}/.config/bat"
-    state: directory
-  vars:
-    home: "{{ lookup('env', 'HOME') }}"
-  tags: dotfiles
-
 - name: Create symlink for bat config
   ansible.builtin.file:
-    src: "{{ dotfiles_repo_path }}/bat/"
+    src: "{{ dotfiles_repo_path }}/bat/.config/bat/"
     dest: "{{ home }}/.config/bat"
     state: link
     force: yes
@@ -58,7 +50,7 @@
 
 - name: Create symlink for git-delta config
   ansible.builtin.file:
-    src: "{{ dotfiles_repo_path }}/delta/.gitconfig"
+    src: "{{ dotfiles_repo_path }}/delta/.config/delta/.gitconfig"
     dest: "{{ home }}/.gitconfig"
     state: link
     force: yes
@@ -66,17 +58,9 @@
     home: "{{ lookup('env', 'HOME') }}"
   tags: dotfiles
 
-- name: Create directory for lazygit config
-  ansible.builtin.file:
-    path: "{{ home }}/.config/lazygit"
-    state: directory
-  vars:
-    home: "{{ lookup('env', 'HOME') }}"
-  tags: dotfiles
-
 - name: Create symlink for lazygit config
   ansible.builtin.file:
-    src: "{{ dotfiles_repo_path }}/lazygit/"
+    src: "{{ dotfiles_repo_path }}/lazygit/.config/lazygit/"
     dest: "{{ home }}/.config/lazygit"
     state: link
     force: yes
