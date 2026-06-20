@@ -1,0 +1,33 @@
+# ansible/tasks/cleanup.yml
+---
+- name: Remove old Docker packages (Ubuntu/Debian)
+  ansible.builtin.apt:
+    name:
+      - docker.io
+      - docker-compose
+      - docker-compose-v2
+      - docker-doc
+      - podman-docker
+      - containerd
+      - runc
+    state: absent
+  become: yes
+  when: ansible_os_family == "Debian"
+  ignore_errors: yes
+  tags: docker
+
+- name: Purge old Docker CE packages (Ubuntu/Debian)
+  ansible.builtin.apt:
+    name:
+      - docker-ce
+      - docker-ce-cli
+      - containerd.io
+      - docker-buildx-plugin
+      - docker-compose-plugin
+      - docker-ce-rootless-extras
+    state: absent
+    purge: yes
+  become: yes
+  when: ansible_os_family == "Debian"
+  ignore_errors: yes
+  tags: docker
