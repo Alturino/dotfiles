@@ -1,0 +1,43 @@
+# ansible/tasks/locale.yml
+---
+- name: Install locale package (Ubuntu/Debian)
+  ansible.builtin.apt:
+    name: locales
+    state: present
+  become: yes
+  when: ansible_os_family == "Debian"
+  tags: locale
+
+- name: Generate en_US.UTF-8 locale (Ubuntu/Debian)
+  community.general.locale_gen:
+    name: en_US.UTF-8
+    state: present
+  become: yes
+  when: ansible_os_family == "Debian"
+  tags: locale
+
+- name: Set default locale (Ubuntu/Debian)
+  ansible.builtin.lineinfile:
+    path: /etc/default/locale
+    regexp: '^LANG='
+    line: 'LANG=en_US.UTF-8'
+  become: yes
+  when: ansible_os_family == "Debian"
+  tags: locale
+
+- name: Install glibc-langpack-en (Fedora)
+  ansible.builtin.dnf:
+    name: glibc-langpack-en
+    state: present
+  become: yes
+  when: ansible_os_family == "RedHat"
+  tags: locale
+
+- name: Set default locale (Fedora)
+  ansible.builtin.lineinfile:
+    path: /etc/locale.conf
+    regexp: '^LANG='
+    line: 'LANG=en_US.UTF-8'
+  become: yes
+  when: ansible_os_family == "RedHat"
+  tags: locale
