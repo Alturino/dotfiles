@@ -1,0 +1,17 @@
+# ansible/tasks/zoxide.yml
+---
+- name: Check if zoxide is installed
+  ansible.builtin.stat:
+    path: "{{ home }}/.local/bin/zoxide"
+  register: zoxide_installed
+  vars:
+    home: "{{ lookup('env', 'HOME') }}"
+  tags: dev-tools
+
+- name: Install zoxide
+  ansible.builtin.shell: |
+    curl -sS {{ zoxide_install_url }} | bash
+  when: not zoxide_installed.stat.exists
+  environment:
+    ZOXID_INSTALL_NO_MODIFY_RC: "1"
+  tags: dev-tools
