@@ -1,0 +1,19 @@
+# ansible/tasks/tmux.yml
+---
+- name: Check if TPM is installed
+  ansible.builtin.stat:
+    path: "{{ home }}/.tmux/plugins/tpm"
+  register: tpm_installed
+  vars:
+    home: "{{ lookup('env', 'HOME') }}"
+  tags: tmux
+
+- name: Clone TPM
+  ansible.builtin.git:
+    repo: https://github.com/tmux-plugins/tpm
+    dest: "{{ home }}/.tmux/plugins/tpm"
+    version: master
+  when: not tpm_installed.stat.exists
+  vars:
+    home: "{{ lookup('env', 'HOME') }}"
+  tags: tmux
