@@ -1,0 +1,85 @@
+# ansible/tasks/dotfiles.yml
+---
+- name: Create symlink for .zshrc
+  ansible.builtin.file:
+    src: "{{ dotfiles_repo_path }}/zsh/.zshrc"
+    dest: "{{ home }}/.zshrc"
+    state: link
+    force: yes
+  vars:
+    home: "{{ lookup('env', 'HOME') }}"
+  tags: dotfiles
+
+- name: Create symlink for .tmux.conf
+  ansible.builtin.file:
+    src: "{{ dotfiles_repo_path }}/tmux/.tmux.conf"
+    dest: "{{ home }}/.tmux.conf"
+    state: link
+    force: yes
+  vars:
+    home: "{{ lookup('env', 'HOME') }}"
+  tags: dotfiles
+
+- name: Create directory for starship config
+  ansible.builtin.file:
+    path: "{{ home }}/.config"
+    state: directory
+  vars:
+    home: "{{ lookup('env', 'HOME') }}"
+  tags: dotfiles
+
+- name: Create symlink for starship.toml
+  ansible.builtin.file:
+    src: "{{ dotfiles_repo_path }}/starship/starship.toml"
+    dest: "{{ home }}/.config/starship.toml"
+    state: link
+    force: yes
+  vars:
+    home: "{{ lookup('env', 'HOME') }}"
+  tags: dotfiles
+
+- name: Create directory for bat config
+  ansible.builtin.file:
+    path: "{{ home }}/.config/bat"
+    state: directory
+  vars:
+    home: "{{ lookup('env', 'HOME') }}"
+  tags: dotfiles
+
+- name: Create symlink for bat config
+  ansible.builtin.file:
+    src: "{{ dotfiles_repo_path }}/bat/"
+    dest: "{{ home }}/.config/bat"
+    state: link
+    force: yes
+  vars:
+    home: "{{ lookup('env', 'HOME') }}"
+  tags: dotfiles
+
+- name: Create symlink for git-delta config
+  ansible.builtin.file:
+    src: "{{ dotfiles_repo_path }}/delta/.gitconfig"
+    dest: "{{ home }}/.gitconfig"
+    state: link
+    force: yes
+  vars:
+    home: "{{ lookup('env', 'HOME') }}"
+  tags: dotfiles
+
+- name: Create directory for lazygit config
+  ansible.builtin.file:
+    path: "{{ home }}/.config/lazygit"
+    state: directory
+  vars:
+    home: "{{ lookup('env', 'HOME') }}"
+  tags: dotfiles
+
+- name: Create symlink for lazygit config
+  ansible.builtin.file:
+    src: "{{ dotfiles_repo_path }}/lazygit/"
+    dest: "{{ home }}/.config/lazygit"
+    state: link
+    force: yes
+  vars:
+    home: "{{ lookup('env', 'HOME') }}"
+  tags: dotfiles
