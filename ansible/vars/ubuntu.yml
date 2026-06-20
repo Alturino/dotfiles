@@ -1,0 +1,64 @@
+# ansible/vars/ubuntu.yml
+apt_packages:
+  # Base
+  - curl
+  - unzip
+  - git
+  - zip
+  - bison
+  - xdg-utils
+  - ca-certificates
+  - gnupg
+  - lsb-release
+  - software-properties-common
+  - apt-transport-https
+
+  # Shells
+  - zsh
+  - fzf
+  - zsh-syntax-highlighting
+
+  # Dev tools
+  - htop
+  - ripgrep
+  - bat
+  - git-delta
+  - eza
+  - tmux
+
+  # From deb_install.sh
+  - ubuntu-restricted-extras
+  - gnome-tweaks
+  - vlc
+  - python-is-python3
+  - cmake
+  - pkg-config
+  - libfreetype6-dev
+  - libfontconfig1-dev
+  - libxcb-xfixes0-dev
+  - libxkbcommon-dev
+  - python3
+  - texlive-full
+  - android-tools-adb
+  - cpp
+  - gcc
+  - g++-12
+  - libqt5widgets5
+  - libqt5network5
+  - libqt5svg5
+  - ruby-full
+  - fish
+  - iptables
+
+  # Syncthing
+  - syncthing
+
+  # GitHub CLI
+  - gh
+
+docker_packages:
+  - docker-ce
+  - docker-ce-cli
+  - containerd.io
+  - docker-buildx-plugin
+  - docker-compose-plugin

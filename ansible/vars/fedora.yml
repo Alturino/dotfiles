@@ -1,0 +1,40 @@
+# ansible/vars/fedora.yml
+dnf_packages:
+  # Base
+  - curl
+  - unzip
+  - git
+  - zip
+  - bison
+  - xdg-utils
+  - ca-certificates
+  - gnupg2
+
+  # Shells
+  - zsh
+  - fzf
+  - zsh-syntax-highlighting
+
+  # Dev tools
+  - htop
+  - ripgrep
+  - bat
+  - git-delta
+  - eza
+  - tmux
+
+  # Dev
+  - python3
+  - python3-pip
+  - cmake
+  - pkg-config
+  - gcc
+  - gcc-c++
+  - make
+
+docker_packages:
+  - docker-ce
+  - docker-ce-cli
+  - containerd.io
+  - docker-buildx-plugin
+  - docker-compose-plugin

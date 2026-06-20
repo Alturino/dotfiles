@@ -1,0 +1,33 @@
+# ansible/vars/common.yml
+dotfiles_repo_path: "{{ playbook_dir }}/.."
+user: "{{ ansible_user_id }}"
+
+# Oh My Zsh
+ohmyzsh_install_url: "https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh"
+
+# fnm
+fnm_install_url: "https://fnm.vercel.app/install"
+
+# uv
+uv_install_url: "https://astral.sh/uv/install.sh"
+
+# starship
+starship_install_url: "https://starship.rs/install.sh"
+
+# bob (neovim)
+bob_install_url: "https://raw.githubusercontent.com/MordechaiHadad/bob/master/scripts/install.sh"
+bob_version: "v0.12.3"
+
+# SDKMAN
+sdkman_install_url: "https://get.sdkman.io"
+
+# GVM
+gvm_install_url: "https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer"
+go_version: "go1.26.4"
+
+# Docker
+docker_gpg_url: "https://download.docker.com/linux/ubuntu/gpg"
+docker_repo_url: "https://download.docker.com/linux/ubuntu"
+
+# Lazygit
+lazygit_install_url: "https://raw.githubusercontent.com/jesseduffield/lazygit/master/install.sh"
