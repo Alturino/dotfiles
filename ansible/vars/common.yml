@@ -31,3 +31,6 @@ docker_repo_url: "https://download.docker.com/linux/ubuntu"
 
 # Lazygit
 lazygit_install_url: "https://raw.githubusercontent.com/jesseduffield/lazygit/master/install.sh"
+
+# zoxide
+zoxide_install_url: "https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh"
