@@ -1,0 +1,29 @@
+# ansible/tasks/dnf_packages.yml
+---
+- name: Update dnf cache
+  ansible.builtin.dnf:
+    update_cache: yes
+  become: yes
+  tags: always
+
+- name: Install dnf packages
+  ansible.builtin.dnf:
+    name: "{{ dnf_packages }}"
+    state: present
+  become: yes
+  tags: always
+
+- name: Add Docker CE repository
+  ansible.builtin.shell: |
+    dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
+  args:
+    creates: /etc/yum.repos.d/docker-ce.repo
+  become: yes
+  tags: docker
+
+- name: Install Docker packages
+  ansible.builtin.dnf:
+    name: "{{ docker_packages }}"
+    state: present
+  become: yes
+  tags: docker
