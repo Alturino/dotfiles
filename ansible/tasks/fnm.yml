@@ -1,0 +1,25 @@
+# ansible/tasks/fnm.yml
+---
+- name: Check if fnm is installed
+  ansible.builtin.stat:
+    path: "{{ home }}/.local/share/fnm/fnm"
+  register: fnm_installed
+  vars:
+    home: "{{ lookup('env', 'HOME') }}"
+  tags: dev-tools
+
+- name: Install fnm
+  ansible.builtin.shell: |
+    curl -fsSL {{ fnm_install_url }} | bash
+  when: not fnm_installed.stat.exists
+  tags: dev-tools
+
+- name: Install Node.js LTS via fnm
+  ansible.builtin.shell: |
+    export PATH="{{ home }}/.local/share/fnm:$PATH"
+    eval "$(fnm env)"
+    fnm install --lts
+    fnm use lts-latest
+  vars:
+    home: "{{ lookup('env', 'HOME') }}"
+  tags: dev-tools
