@@ -1,0 +1,26 @@
+# ansible/tasks/sdkman.yml
+---
+- name: Check if SDKMAN is installed
+  ansible.builtin.stat:
+    path: "{{ home }}/.sdkman/bin/sdkman-init.sh"
+  register: sdkman_installed
+  vars:
+    home: "{{ lookup('env', 'HOME') }}"
+  tags: dev-tools
+
+- name: Install SDKMAN
+  ansible.builtin.shell: |
+    curl -s "{{ sdkman_install_url }}" | bash
+  when: not sdkman_installed.stat.exists
+  vars:
+    home: "{{ lookup('env', 'HOME') }}"
+  tags: dev-tools
+
+- name: Install Java via SDKMAN
+  ansible.builtin.shell: |
+    source {{ home }}/.sdkman/bin/sdkman-init.sh
+    sdk install java 26.0.1-tem
+  vars:
+    home: "{{ lookup('env', 'HOME') }}"
+  when: not sdkman_installed.stat.exists
+  tags: dev-tools
