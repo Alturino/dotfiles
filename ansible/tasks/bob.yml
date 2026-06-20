@@ -1,0 +1,27 @@
+# ansible/tasks/bob.yml
+---
+- name: Check if bob is installed
+  ansible.builtin.stat:
+    path: "{{ home }}/.local/bin/bob"
+  register: bob_installed
+  vars:
+    home: "{{ lookup('env', 'HOME') }}"
+  tags: editors
+
+- name: Install bob
+  ansible.builtin.shell: |
+    curl -sS {{ bob_install_url }} | bash
+  when: not bob_installed.stat.exists
+  vars:
+    home: "{{ lookup('env', 'HOME') }}"
+  tags: editors
+
+- name: Install Neovim {{ bob_version }} via bob
+  ansible.builtin.shell: |
+    export PATH="{{ home }}/.local/bin:$PATH"
+    bob install {{ bob_version }}
+    bob use {{ bob_version }}
+  vars:
+    home: "{{ lookup('env', 'HOME') }}"
+  when: not bob_installed.stat.exists
+  tags: editors
