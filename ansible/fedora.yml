@@ -1,0 +1,67 @@
+# ansible/fedora.yml
+---
+- name: Dev environment setup for Fedora
+  hosts: local
+  connection: local
+  become: no
+
+  vars_files:
+    - vars/common.yml
+    - vars/fedora.yml
+
+  tasks:
+    - name: Import dnf packages
+      ansible.builtin.import_tasks: tasks/dnf_packages.yml
+      tags: always
+
+    - name: Import locale
+      ansible.builtin.import_tasks: tasks/locale.yml
+      tags: locale
+
+    - name: Import Oh My Zsh
+      ansible.builtin.import_tasks: tasks/ohmyzsh.yml
+      tags: shells
+
+    - name: Import fnm
+      ansible.builtin.import_tasks: tasks/fnm.yml
+      tags: dev-tools
+
+    - name: Import uv
+      ansible.builtin.import_tasks: tasks/uv.yml
+      tags: dev-tools
+
+    - name: Import starship
+      ansible.builtin.import_tasks: tasks/starship.yml
+      tags: dev-tools
+
+    - name: Import zoxide
+      ansible.builtin.import_tasks: tasks/zoxide.yml
+      tags: dev-tools
+
+    - name: Import tmux
+      ansible.builtin.import_tasks: tasks/tmux.yml
+      tags: tmux
+
+    - name: Import bob
+      ansible.builtin.import_tasks: tasks/bob.yml
+      tags: editors
+
+    - name: Import SDKMAN
+      ansible.builtin.import_tasks: tasks/sdkman.yml
+      tags: dev-tools
+
+    - name: Import GVM
+      ansible.builtin.import_tasks: tasks/gvm.yml
+      tags: dev-tools
+
+    - name: Import Docker
+      ansible.builtin.import_tasks: tasks/docker.yml
+      tags: docker
+
+    - name: Import tools
+      ansible.builtin.import_tasks: tasks/tools.yml
+      tags: dev-tools
+
+    - name: Import dotfiles
+      ansible.builtin.import_tasks: tasks/dotfiles.yml
+      tags: dotfiles
