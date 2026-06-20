@@ -1,0 +1,27 @@
+# ansible/tasks/gvm.yml
+---
+- name: Check if GVM is installed
+  ansible.builtin.stat:
+    path: "{{ home }}/.gvm/scripts/gvm"
+  register: gvm_installed
+  vars:
+    home: "{{ lookup('env', 'HOME') }}"
+  tags: dev-tools
+
+- name: Install GVM
+  ansible.builtin.shell: |
+    bash < <(curl -s -S -L {{ gvm_install_url }})
+  when: not gvm_installed.stat.exists
+  vars:
+    home: "{{ lookup('env', 'HOME') }}"
+  tags: dev-tools
+
+- name: Install Go {{ go_version }} via GVM
+  ansible.builtin.shell: |
+    source {{ home }}/.gvm/scripts/gvm
+    gvm install {{ go_version }} -B
+    gvm use --default {{ go_version }}
+  vars:
+    home: "{{ lookup('env', 'HOME') }}"
+  when: not gvm_installed.stat.exists
+  tags: dev-tools
