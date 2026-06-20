@@ -1,0 +1,15 @@
+# ansible/tasks/starship.yml
+---
+- name: Check if starship is installed
+  ansible.builtin.stat:
+    path: "{{ home }}/.local/bin/starship"
+  register: starship_installed
+  vars:
+    home: "{{ lookup('env', 'HOME') }}"
+  tags: dev-tools
+
+- name: Install starship
+  ansible.builtin.shell: |
+    curl -sS {{ starship_install_url }} | sh -s -- --yes
+  when: not starship_installed.stat.exists
+  tags: dev-tools
