@@ -1,0 +1,15 @@
+# ansible/tasks/ohmyzsh.yml
+---
+- name: Check if Oh My Zsh is installed
+  ansible.builtin.stat:
+    path: "{{ home }}/.oh-my-zsh"
+  register: ohmyzsh_installed
+  vars:
+    home: "{{ lookup('env', 'HOME') }}"
+  tags: shells
+
+- name: Install Oh My Zsh
+  ansible.builtin.shell: |
+    sh -c "$(curl -fsSL {{ ohmyzsh_install_url }})" "" --unattended --keep-zshrc
+  when: not ohmyzsh_installed.stat.exists
+  tags: shells
