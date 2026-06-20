@@ -1,0 +1,37 @@
+# ansible/tasks/apt_packages.yml
+---
+- name: Update apt cache
+  ansible.builtin.apt:
+    update_cache: yes
+    cache_valid_time: 3600
+  become: yes
+  tags: always
+
+- name: Install apt packages
+  ansible.builtin.apt:
+    name: "{{ apt_packages }}"
+    state: present
+  become: yes
+  tags: always
+
+- name: Install Docker apt repository GPG key
+  ansible.builtin.apt_key:
+    url: "{{ docker_gpg_url }}"
+    state: present
+  become: yes
+  tags: docker
+
+- name: Add Docker apt repository
+  ansible.builtin.apt_repository:
+    repo: "deb [arch={{ ansible_architecture | replace('x86_64', 'amd64') | replace('aarch64', 'arm64') }} signed-by=/usr/share/keyrings/docker.asc] {{ docker_repo_url }} {{ ansible_distribution_release }} stable"
+    state: present
+  become: yes
+  tags: docker
+
+- name: Install Docker packages
+  ansible.builtin.apt:
+    name: "{{ docker_packages }}"
+    state: present
+    update_cache: yes
+  become: yes
+  tags: docker
