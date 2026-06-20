@@ -1,0 +1,28 @@
+# ansible/tasks/docker.yml
+---
+- name: Add current user to docker group
+  ansible.builtin.user:
+    name: "{{ user }}"
+    groups: docker
+    append: yes
+  become: yes
+  tags: docker
+
+- name: Start Docker service
+  ansible.builtin.service:
+    name: docker
+    state: started
+    enabled: yes
+  become: yes
+  tags: docker
+
+- name: Verify Docker installation
+  ansible.builtin.command: docker run hello-world
+  register: docker_test
+  changed_when: false
+  tags: docker
+
+- name: Display Docker test output
+  ansible.builtin.debug:
+    var: docker_test.stdout_lines
+  tags: docker
