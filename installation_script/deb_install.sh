@@ -1,4 +1,8 @@
 #!/bin/bash
+# NOTE: This script is superseded by ansible/ubuntu.yml
+# For new installations, use:
+#   cd ansible && ansible-playbook ubuntu.yml -i inventory.ini
+# This script is kept for reference only.
 sudo apt update && sudo apt upgrade -y
 sudo apt install ubuntu-restricted-extras -y
 sudo apt install gnome-tweaks -y

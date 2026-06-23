@@ -1,3 +1,9 @@
+#!/bin/bash
+# NOTE: This script is superseded by ansible/fedora.yml
+# For new installations, use:
+#   cd ansible && ansible-playbook fedora.yml -i inventory.ini
+# This script is kept for reference only.
+
 sudo dnf config-manager --save --setopt=fastestmirror=True
 sudo dnf update -y
 sudo dnf install alacritty -y
