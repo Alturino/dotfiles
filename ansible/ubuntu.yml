@@ -62,6 +62,10 @@
       ansible.builtin.import_tasks: tasks/tools.yml
       tags: dev-tools
 
+    - name: Import VS Code
+      ansible.builtin.import_tasks: tasks/vscode.yml
+      tags: gui-apps
+
     - name: Import dotfiles
       ansible.builtin.import_tasks: tasks/dotfiles.yml
       tags: dotfiles

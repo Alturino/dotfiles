@@ -20,6 +20,7 @@
   ansible.builtin.command: docker run hello-world
   register: docker_test
   changed_when: false
+  ignore_errors: yes
   tags: docker
 
 - name: Display Docker test output

@@ -10,7 +10,7 @@
 
 - name: Install SDKMAN
   ansible.builtin.shell: |
-    curl -s "{{ sdkman_install_url }}" | bash
+    curl -fsSL "{{ sdkman_install_url }}" | bash
   when: not sdkman_installed.stat.exists
   vars:
     home: "{{ lookup('env', 'HOME') }}"
