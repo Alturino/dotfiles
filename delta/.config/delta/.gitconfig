@@ -1,5 +1,5 @@
 [include]
-	path = ./themes/catppuccin.gitconfig
+	path = ~/.config/delta/themes/catppuccin.gitconfig
 
 [core]
   pager = delta
