@@ -56,6 +56,9 @@ apt_packages:
   # GitHub CLI
   - gh
 
+  # Stow (symlink manager for dotfiles)
+  - stow
+
 docker_packages:
   - docker-ce
   - docker-ce-cli

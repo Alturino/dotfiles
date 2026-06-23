@@ -1,69 +1,9 @@
 # ansible/tasks/dotfiles.yml
 ---
-- name: Create symlink for .zshrc
-  ansible.builtin.file:
-    src: "{{ dotfiles_repo_path }}/zsh/.zshrc"
-    dest: "{{ home }}/.zshrc"
-    state: link
-    force: yes
-  vars:
-    home: "{{ lookup('env', 'HOME') }}"
-  tags: dotfiles
-
-- name: Create directory for tmux config
-  ansible.builtin.file:
-    path: "{{ home }}/.config/tmux"
-    state: directory
-  vars:
-    home: "{{ lookup('env', 'HOME') }}"
-  tags: dotfiles
-
-- name: Create symlink for tmux.conf
-  ansible.builtin.file:
-    src: "{{ dotfiles_repo_path }}/tmux/.config/tmux/tmux.conf"
-    dest: "{{ home }}/.config/tmux/tmux.conf"
-    state: link
-    force: yes
-  vars:
-    home: "{{ lookup('env', 'HOME') }}"
-  tags: dotfiles
-
-- name: Create symlink for starship.toml
-  ansible.builtin.file:
-    src: "{{ dotfiles_repo_path }}/starship/.config/starship.toml"
-    dest: "{{ home }}/.config/starship.toml"
-    state: link
-    force: yes
-  vars:
-    home: "{{ lookup('env', 'HOME') }}"
-  tags: dotfiles
-
-- name: Create symlink for bat config
-  ansible.builtin.file:
-    src: "{{ dotfiles_repo_path }}/bat/.config/bat/"
-    dest: "{{ home }}/.config/bat"
-    state: link
-    force: yes
-  vars:
-    home: "{{ lookup('env', 'HOME') }}"
-  tags: dotfiles
-
-- name: Create symlink for git-delta config
-  ansible.builtin.file:
-    src: "{{ dotfiles_repo_path }}/delta/.config/delta/.gitconfig"
-    dest: "{{ home }}/.gitconfig"
-    state: link
-    force: yes
-  vars:
-    home: "{{ lookup('env', 'HOME') }}"
-  tags: dotfiles
-
-- name: Create symlink for lazygit config
-  ansible.builtin.file:
-    src: "{{ dotfiles_repo_path }}/lazygit/.config/lazygit/"
-    dest: "{{ home }}/.config/lazygit"
-    state: link
-    force: yes
-  vars:
-    home: "{{ lookup('env', 'HOME') }}"
+- name: Stow dotfile packages
+  ansible.builtin.command:
+    cmd: stow --restow "{{ item }}"
+    chdir: "{{ dotfiles_repo_path }}"
+  become: no
+  loop: "{{ stow_packages }}"
   tags: dotfiles

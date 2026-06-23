@@ -32,6 +32,9 @@ dnf_packages:
   - gcc-c++
   - make
 
+  # Stow (symlink manager for dotfiles)
+  - stow
+
 docker_packages:
   - docker-ce
   - docker-ce-cli

@@ -1,5 +1,28 @@
 # ansible/vars/common.yml
 dotfiles_repo_path: "{{ playbook_dir }}/.."
+
+stow_packages:
+  - alacritty
+  - bash
+  - bat
+  - delta
+  - fish
+  - git
+  - home-manager
+  - hypr
+  - ideavim
+  - kitty
+  - lazygit
+  - mako
+  - nvim
+  - opencode
+  - rofi
+  - scripts
+  - starship
+  - tmux
+  - waybar
+  - yazi
+  - zsh
 user: "{{ ansible_user_id }}"
 
 # Oh My Zsh
