@@ -1,0 +1,22 @@
+services:
+  ubuntu-test:
+    build:
+      context: .
+      dockerfile: Dockerfile.ubuntu
+    container_name: ansible-ubuntu-test
+    volumes:
+      - ../:/ansible
+    working_dir: /ansible
+    cap_add:
+      - SYS_ADMIN
+
+  fedora-test:
+    build:
+      context: .
+      dockerfile: Dockerfile.fedora
+    container_name: ansible-fedora-test
+    volumes:
+      - ../:/ansible
+    working_dir: /ansible
+    cap_add:
+      - SYS_ADMIN
