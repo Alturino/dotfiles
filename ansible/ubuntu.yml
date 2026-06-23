@@ -10,6 +10,10 @@
     - vars/ubuntu.yml
 
   tasks:
+    - name: Import cleanup
+      ansible.builtin.import_tasks: tasks/cleanup.yml
+      tags: cleanup
+
     - name: Import apt packages
       ansible.builtin.import_tasks: tasks/apt_packages.yml
       tags: always
@@ -69,7 +73,3 @@
     - name: Import dotfiles
       ansible.builtin.import_tasks: tasks/dotfiles.yml
       tags: dotfiles
-
-    - name: Import cleanup
-      ansible.builtin.import_tasks: tasks/cleanup.yml
-      tags: cleanup
