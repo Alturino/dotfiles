@@ -1,6 +1,8 @@
 # export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
 # export PATH=$PATH:"$GEM_HOME/bin"
 . "$HOME/.cargo/env"
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 
 export PNPM_HOME="$HOME/.local/share/pnpm"
 export ZSH="$HOME/.oh-my-zsh"
@@ -37,3 +39,4 @@ export ANTHROPIC_DEFAULT_SONNET_MODEL="anthropic/claude-sonnet-4.6"
 export ANTHROPIC_DEFAULT_HAIKU_MODEL="anthropic/claude-haiku-4.5"
 export CLAUDE_CODE_SUBAGENT_MODEL="anthropic/claude-sonnet-4.6"
 
+. "/home/onirutla/.local/share/bob/env/env.sh"

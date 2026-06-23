@@ -42,7 +42,7 @@ return {
         "pyright",
         "ruff",
         -- "rust-analyzer",
-        "spectral-language-server",
+        -- "spectral-language-server",
         -- "sqlls",
         -- "svelte-language-server",
         "tailwindcss-language-server",

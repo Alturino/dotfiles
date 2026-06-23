@@ -123,3 +123,14 @@ eval "$(zoxide init bash)"
 eval "$(fnm env --use-on-cd --shell bash)"
 eval "$(uv generate-shell-completion bash)"
 eval "$(starship init bash)"
+
+# fnm
+FNM_PATH="/home/onirutla/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="$FNM_PATH:$PATH"
+  eval "$(fnm env --shell bash)"
+fi
+
+. "$HOME/.local/bin/env"
+
+[[ -s "/home/onirutla/.gvm/scripts/gvm" ]] && source "/home/onirutla/.gvm/scripts/gvm"

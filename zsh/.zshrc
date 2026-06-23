@@ -127,6 +127,7 @@ plugins=(
   # rvm
   # spring
   systemd
+  ssh-agent
   terraform
   tmux
   xcode
@@ -217,3 +218,7 @@ source ~/.zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh
 eval "$(fnm env --use-on-cd --shell zsh)"
 eval "$(uv generate-shell-completion zsh)"
 eval "$(starship init zsh)"
+
+. "$HOME/.local/bin/env"
+
+[[ -s "/home/onirutla/.gvm/scripts/gvm" ]] && source "/home/onirutla/.gvm/scripts/gvm"
