@@ -84,16 +84,16 @@ return {
         ltex = {
           filetypes = { "latex" },
         },
-        pyright = {
-          settings = {
-            python = {
-              analysis = {
-                autoSearchPaths = true,
-                typeCheckingMode = "basic",
-              },
-            },
-          },
-        },
+        -- pyright = {
+        --   settings = {
+        --     python = {
+        --       analysis = {
+        --         autoSearchPaths = true,
+        --         typeCheckingMode = "basic",
+        --       },
+        --     },
+        --   },
+        -- },
         stylelint_lsp = {
           filetypes = {
             "css",
@@ -149,10 +149,21 @@ return {
             },
           },
         },
+        ty = {
+          completions = {
+            autoImport = true,
+          },
+        },
       },
       setup = {
         jdtls = function()
           require("java").setup({})
+        end,
+        ty = function()
+          vim.lsp.enable("ty")
+        end,
+        ruff = function()
+          vim.lsp.enable("ruff")
         end,
         vtsls = function(server)
           Snacks.util.lsp.on({ name = server }, function(_, client)
