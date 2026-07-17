@@ -1,5 +1,8 @@
 local exclude = {
   "**/.git/*",
+  "**/.beads/*",
+  "**/.agents/*",
+  "**/.codex/*",
   "**/node_modules/*",
   "**/.venv/*",
   "**/vendor/*",
