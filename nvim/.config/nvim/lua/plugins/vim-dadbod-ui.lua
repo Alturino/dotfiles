@@ -16,7 +16,7 @@ return {
     -- Your DBUI configuration
     vim.g.db_ui_bind_param_pattern = "\\$\\d\\+"
     vim.g.db_ui_execute_on_save = 0
-    vim.g.db_ui_save_location = "./"
+    vim.g.db_ui_save_location = "./.dadbod"
     vim.g.db_ui_show_database_icon = 1
     vim.g.db_ui_tmp_query_location = vim.g.db_ui_save_location .. "/queries/"
     vim.g.db_ui_use_nerd_fonts = 1
