@@ -21,7 +21,7 @@ return {
           d.gitlint,
           d.hadolint,
           d.ktlint,
-          d.mypy,
+          -- d.mypy,
           d.rubocop,
           d.sqlfluff,
           d.staticcheck,
