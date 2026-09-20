@@ -70,6 +70,7 @@ For each task, load the **primary skill** and all applicable **secondary skills*
 | Use samber/oops (structured errors) | `golang-samber-oops` | `golang-error-handling` |
 | Use log/slog | `golang-samber-slog` | `golang-observability`, `golang-error-handling` |
 | Use dependency injection | `golang-dependency-injection` | `golang-google-wire` or `golang-uber-dig` or `golang-uber-fx` or `golang-samber-do` |
+| Implement OpenTelemetry declarative configuration | `golang-otelconf` | `golang-observability` |
 
 All skill identifiers above are short forms of `samber/cc-skills-golang@<name>`.
 
@@ -123,6 +124,7 @@ Full catalog with "use when" hooks: [by-category.md](references/by-category.md)
 | QA & Performance | `golang-benchmark` `golang-observability` `golang-performance` `golang-testing` `golang-troubleshooting` |
 | Project Setup | `golang-cli` `golang-continuous-integration` `golang-dependency-management` `golang-gopls` `golang-pkg-go-dev` `golang-popular-libraries` `golang-project-layout` `golang-stay-updated` |
 | APIs | `golang-graphql` `golang-grpc` `golang-swagger` |
+| Configuration | `golang-otelconf` `golang-spf13-viper` |
 | Dependency Injection | `golang-dependency-injection` `golang-google-wire` `golang-uber-dig` `golang-uber-fx` `golang-samber-do` |
 | Frameworks | `golang-spf13-cobra` `golang-spf13-viper` |
 | samber/\* | `golang-samber-do` `golang-samber-hot` `golang-samber-lo` `golang-samber-mo` `golang-samber-oops` `golang-samber-ro` `golang-samber-slog` |
@@ -141,6 +143,7 @@ Key clusters and their owners:
 - **Style**: `golang-code-style` · `golang-naming` · `golang-lint` · `golang-documentation`
 - **CLI**: `golang-cli` (architecture) · `golang-spf13-cobra` (command tree) · `golang-spf13-viper` (config layering)
 - **Package lookup**: `golang-pkg-go-dev` (query pkg.go.dev for an existing path: versions/docs/symbols/importers/CVEs) · `golang-gopls` (navigate/refactor your locally resolved build) · `golang-popular-libraries` (which library to adopt) · `golang-dependency-management` (manage go.mod) · `golang-security` (whole-tree CVE scan)
+- **Configuration**: `golang-otelconf` (OpenTelemetry declarative configuration) · `golang-spf13-viper` (config layering from flags/env/file)
 - **Gap — type vs arch**: `golang-structs-interfaces` (type design) vs `golang-design-patterns` (architectural patterns)
 - **Gap — goroutine vs cancel**: `golang-concurrency` + `golang-context` — load both when cancelling goroutines via context
 - **Gap — correctness vs threat**: `golang-safety` (internal bugs) vs `golang-security` (external threats)
